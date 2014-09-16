@@ -1,0 +1,16 @@
+FUNCTION SET:
+[add, sub, mul, div, log, sqrt, power, mod, sin, cos]
+TERMINAL SET:
+[4.174260694257006, -8.019072577719488, 0.3097670590930357, 5.310956521217936, 4.48344382617563, 8.777124049413926, 6.811122340007806, -5.114031900015059, -8.685007967933627, 3.3162912521309695, 0.0, 3.141592653589793, Parameter[0], Parameter[1], Parameter[2], Parameter[3], Parameter[4], Parameter[5], Parameter[6], Parameter[7], Parameter[8]]
+
+EXPERIMENT PARAMETERS:
+Maximum initial depth: 2
+Maximum depth: 4
+Primitive probability in Grow method: 0.6
+Terminal node crossover bias: 0.1
+No of generations: 25
+Population size: 250
+Tournament size: 3
+Crossover probability: 0.9
+Reproduction probability: 0.09999999999999998
+Mutation probability: 0.01
