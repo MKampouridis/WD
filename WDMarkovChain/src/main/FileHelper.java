@@ -1,6 +1,8 @@
 package main;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -118,5 +120,62 @@ public class FileHelper
     {
       e.printStackTrace();
     }
+  }
+  
+  public int checkWidth(String filename) {
+      try
+      {
+        BufferedReader reader = new BufferedReader(new FileReader (filename));
+        int columnCounter = 1;        
+        String thisLine = reader.readLine();        
+        for (int i = 0; i < thisLine.length(); i++) {
+            String a = thisLine.substring(i, i + 1);
+            if (a.equals(",")) {
+                columnCounter++;
+            }
+        }
+        int width = columnCounter;
+        
+        return width;
+      }
+      catch (Exception e)
+      {
+          e.printStackTrace();
+      }
+      return 0;
+  }
+  
+  public int checkLength(String filename) {
+      try {
+           BufferedReader reader = new BufferedReader(new FileReader(filename));
+           int rowCounter = 0;
+           String thisLine;
+           while ((thisLine = reader.readLine()) != null) {
+               
+               rowCounter++;
+           }
+           int length = rowCounter;
+           return length;
+      }
+      catch (Exception e){
+          e.printStackTrace();
+      }
+      return 0;
+  }
+  
+  public void readArray(String filename, int[][] array){
+      try {
+          BufferedReader reader = new BufferedReader(new FileReader(filename));
+          int rowCounter = 0;
+          String thisLine;
+          while ((thisLine = reader.readLine()) != null) {
+              String[] cols = thisLine.split(",");
+              array[rowCounter][0] = Integer.parseInt(cols[0]);
+              rowCounter++;
+          }
+      }       
+      catch (Exception e) { 
+          e.printStackTrace();
+      } 
   }
 }
