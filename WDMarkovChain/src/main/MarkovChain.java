@@ -15,7 +15,7 @@ public class MarkovChain {
     private final FileHelper fileHelper = new FileHelper();
     private final int width = fileHelper.checkWidth("C:\\WD\\luxembourgRainData.csv");//Will do the code to find absolute path later
     private final int length = fileHelper.checkLength("C:\\WD\\luxembourgRainData.csv");
-    BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, bdDR, bdRR;
+    BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR;
     /*
     Start the process off by checking whether a file has been preprocessed to start the Markov chain
     If it hasn't been then calculate the values first before calculating the Markov chain
@@ -76,11 +76,16 @@ public class MarkovChain {
         }
         bdDR = new BigDecimal(String.valueOf(countCondDR));
         bdRR = new BigDecimal(String.valueOf(countCondRR));
+        BigDecimal a = new BigDecimal(String.valueOf("1"));
         
         condDR = bdDR.divide(bdLength,5,RoundingMode.HALF_DOWN);
         condRR = bdRR.divide(bdLength,5,RoundingMode.HALF_DOWN);
+        condRD = a.subtract(condRR);
+        condDD = a.subtract(condDR);       
         System.out.println("P(R|D) = " + condDR);
         System.out.println("P(R|R) = " + condRR); //THESE ARE VERY GENERAL PROBABILITIES FIXED THROUGHOUT THE YEAR, next is to produce probabilities on a daily basis.
+        System.out.println("P(D|D) = " + condDD);
+        System.out.println("P(D|R) = " + condRD);
     }
     
     /*
@@ -90,7 +95,13 @@ public class MarkovChain {
         if (width != 2) {
             //load the data in
         }
-        
+        int iterationNumber = 50000; //choose an iteration number, something above 30k
+        for (int i = 0; i < iterationNumber; i++) { //main iteration loop
+            for (int t = 1; t < 365; t++) {//iterate over the year
+                //start dry day (model outcome) and create a random path from then on, from 2nd day onwards
+                
+            }
+        }
     }
     
     /*
