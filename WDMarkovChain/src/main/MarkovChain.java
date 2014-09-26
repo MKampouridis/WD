@@ -15,7 +15,7 @@ public class MarkovChain {
     private final FileHelper fileHelper = new FileHelper();
     private final int width = fileHelper.checkWidth("C:\\WD\\luxembourgRainData.csv");//Will do the code to find absolute path later
     private final int length = fileHelper.checkLength("C:\\WD\\luxembourgRainData.csv");
-    BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR;
+    BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, rand, r3;
     /*
     Start the process off by checking whether a file has been preprocessed to start the Markov chain
     If it hasn't been then calculate the values first before calculating the Markov chain
@@ -23,7 +23,7 @@ public class MarkovChain {
     private void checkData() {   
         if (width == 2) {            //Therefore, no preprocessing as been done, currently only the rainfall amount and day 
             doProcessing();    // Will calculate coniditional probabilities
-            simulateMCRun();   // then run MC
+            //simulateMCRun();   // then run MC
         }
         
         else {
@@ -95,10 +95,18 @@ public class MarkovChain {
         if (width != 2) {
             //load the data in
         }
-        int iterationNumber = 50000; //choose an iteration number, something above 30k
+        int iterationNumber = 1; //choose an iteration number, something above 30k
+        byte[] occurence = new byte[365]; 
         for (int i = 0; i < iterationNumber; i++) { //main iteration loop
+            occurence[0] = 0;
             for (int t = 1; t < 365; t++) {//iterate over the year
                 //start dry day (model outcome) and create a random path from then on, from 2nd day onwards
+                if (occurence[t-1] == 0) {
+                    transitionProb = condDR; //in state 0
+                } else {
+                    transitionProb = condRR; //in state 1
+                }
+                
                 
             }
         }
