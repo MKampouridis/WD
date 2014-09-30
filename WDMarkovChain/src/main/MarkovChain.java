@@ -5,7 +5,9 @@
  */
 package main;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.util.Random;
 
 /**
  *
@@ -15,7 +17,9 @@ public class MarkovChain {
     private final FileHelper fileHelper = new FileHelper();
     private final int width = fileHelper.checkWidth("C:\\WD\\luxembourgRainData.csv");//Will do the code to find absolute path later
     private final int length = fileHelper.checkLength("C:\\WD\\luxembourgRainData.csv");
-    BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, rand, r3;
+    private BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, uniformRnd, zero;
+    private final int days = 365;
+    
     /*
     Start the process off by checking whether a file has been preprocessed to start the Markov chain
     If it hasn't been then calculate the values first before calculating the Markov chain
@@ -23,7 +27,8 @@ public class MarkovChain {
     private void checkData() {   
         if (width == 2) {            //Therefore, no preprocessing as been done, currently only the rainfall amount and day 
             doProcessing();    // Will calculate coniditional probabilities
-            //simulateMCRun();   // then run MC
+            simulateMCRun();   // then run MC
+            
         }
         
         else {
@@ -57,8 +62,6 @@ public class MarkovChain {
         
         int countCondRR = 0; //marked as 1
         int countCondDR = 0; //marked as 2
-        int countCondRD = 0; //marked as 3
-        int countCondDD = 0; //marked as 4 
         for (int i = 1; i < length; i++) {
             if (rain[i-1][1] == 1 && rain[i][1] == 1) {
                 rain[i][2] = 1;
@@ -66,12 +69,6 @@ public class MarkovChain {
             } else if (rain[i-1][1] == 0 && rain[i][1] == 1) {
                 rain[i][2] = 2;
                 countCondDR++;
-            } else if (rain[i-1][1] == 1 && rain[i][1] == 0) {
-                rain[i][2] = 3;
-                countCondRD++;
-            } else if (rain[i-1][1] == 0 && rain[i][1] == 0) {
-                rain[i][2] = 4;
-                countCondDD++;
             } 
         }
         bdDR = new BigDecimal(String.valueOf(countCondDR));
@@ -96,19 +93,33 @@ public class MarkovChain {
             //load the data in
         }
         int iterationNumber = 1; //choose an iteration number, something above 30k
-        byte[] occurence = new byte[365]; 
+        zero = new BigDecimal(String.valueOf("0"));
+        byte[] occurence = new byte[days]; 
         for (int i = 0; i < iterationNumber; i++) { //main iteration loop
             occurence[0] = 0;
-            for (int t = 1; t < 365; t++) {//iterate over the year
+            for (int t = 1; t < days; t++) {//iterate over the year
                 //start dry day (model outcome) and create a random path from then on, from 2nd day onwards
+                Random r = new Random();
+                uniformRnd = newRandomBigDecimal(r, 4); //gives a uniformly distributed big decimal to compare transition probabilities against
                 if (occurence[t-1] == 0) {
                     transitionProb = condDR; //in state 0
+                    if (transitionProb.subtract(uniformRnd).doubleValue() >= 0) { //check whether we move to a rainy day, if positive 
+                        occurence[t] = 1; 
+                    } else { //else stay in the same state
+                        occurence[t] = 0;
+                    }
                 } else {
                     transitionProb = condRR; //in state 1
-                }
-                
-                
+                    if (transitionProb.subtract(uniformRnd).doubleValue() >= 0) { //check whether we move to a dry day, if positive 
+                        occurence[t] = 0;
+                    } else {
+                        occurence[t] = 1;
+                    }
+                } 
             }
+        }
+        for (int i = 0; i < days; i++) {
+            System.out.println(occurence[i]);
         }
     }
     
@@ -117,6 +128,19 @@ public class MarkovChain {
     */
     public void runMarkovChain() {
         checkData();
+    }
+    
+    private static BigDecimal newRandomBigDecimal(Random r, int precision) {
+    BigInteger n = BigInteger.TEN.pow(precision);
+    return new BigDecimal(newRandomBigInteger(n, r), precision);
+    }
+
+    private static BigInteger newRandomBigInteger(BigInteger n, Random rnd) {
+        BigInteger r;        
+        do { 
+            r = new BigInteger(n.bitLength(), rnd);
+        } while (r.compareTo(n) >= 0);
+        return r;
     }
     
 }
