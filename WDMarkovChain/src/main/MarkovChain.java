@@ -19,6 +19,8 @@ public class MarkovChain {
     private final int length = fileHelper.checkLength("C:\\WD\\luxembourgRainData.csv");
     private BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, uniformRnd, zero;
     private final int days = 365;
+    private byte[] modelOccurence = new byte[days];
+    private final int iterationNumber = 3; //choose an iteration number, something above 30k using odd number in case model value is the same
     
     /*
     Start the process off by checking whether a file has been preprocessed to start the Markov chain
@@ -92,34 +94,42 @@ public class MarkovChain {
         if (width != 2) {
             //load the data in
         }
-        int iterationNumber = 1; //choose an iteration number, something above 30k
+        
         zero = new BigDecimal(String.valueOf("0"));
-        byte[] occurence = new byte[days]; 
+        byte[][] occurence = new byte[days][iterationNumber]; 
         for (int i = 0; i < iterationNumber; i++) { //main iteration loop
-            occurence[0] = 0;
+            occurence[0][i] = 0;
             for (int t = 1; t < days; t++) {//iterate over the year
                 //start dry day (model outcome) and create a random path from then on, from 2nd day onwards
                 Random r = new Random();
-                uniformRnd = newRandomBigDecimal(r, 4); //gives a uniformly distributed big decimal to compare transition probabilities against
-                if (occurence[t-1] == 0) {
+                uniformRnd = newRandomBigDecimal(r, 4); //gives a uniformly distributed big decimal to compare transition probabilities against, change the accuracy to required number of dp
+                if (occurence[t-1][i] == 0) {
                     transitionProb = condDR; //in state 0
                     if (transitionProb.subtract(uniformRnd).doubleValue() >= 0) { //check whether we move to a rainy day, if positive 
-                        occurence[t] = 1; 
+                        occurence[t][i] = 1; 
                     } else { //else stay in the same state
-                        occurence[t] = 0;
+                        occurence[t][i] = 0;
                     }
                 } else {
                     transitionProb = condRR; //in state 1
                     if (transitionProb.subtract(uniformRnd).doubleValue() >= 0) { //check whether we move to a dry day, if positive 
-                        occurence[t] = 0;
+                        occurence[t][i] = 0;
                     } else {
-                        occurence[t] = 1;
+                        occurence[t][i] = 1;
                     }
                 } 
             }
         }
+         
+        modelOccurence = checkModelOccurence(occurence);
         for (int i = 0; i < days; i++) {
-            System.out.println(occurence[i]);
+        System.out.println(modelOccurence[i]);        
+        }
+        for (int i = 0; i < days; i++) {
+            for (int j = 0; j < iterationNumber; j++) {
+                System.out.print(occurence[i][j]);       
+            }
+            System.out.println("");
         }
     }
     
@@ -141,6 +151,24 @@ public class MarkovChain {
             r = new BigInteger(n.bitLength(), rnd);
         } while (r.compareTo(n) >= 0);
         return r;
+    }
+    
+    private byte[] checkModelOccurence(byte[][] occur) {
+        int counter = 0;
+        for (int i = 0; i < days; i++) {
+            for (int j = 0; j < iterationNumber; j++) {
+                
+                if (occur[i][j] == 0) {
+                    counter++;                        
+                }
+            }
+            if (counter <= iterationNumber/2) {
+                modelOccurence[i] = 1;
+            } else {
+                modelOccurence[i] = 0;                
+            }
+        }
+        return modelOccurence;
     }
     
 }
