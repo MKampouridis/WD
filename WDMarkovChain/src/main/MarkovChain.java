@@ -20,7 +20,8 @@ public class MarkovChain {
     private BigDecimal probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, uniformRnd, zero;
     private final int days = 365;
     private byte[] modelOccurence = new byte[days];
-    private final int iterationNumber = 3; //choose an iteration number, something above 30k using odd number in case model value is the same
+    private final int iterationNumber = 30000; //choose an iteration number, something above 30k using odd number in case model value is the same
+    private int[][] rain = new int[length][5];
     
     /*
     Start the process off by checking whether a file has been preprocessed to start the Markov chain
@@ -42,7 +43,7 @@ public class MarkovChain {
     Calculate the conditional probabilities of the rainfall amount for a P(W|D), P(D|W), P(W|W) and P(D|D) for each day of the year
     */
     private void doProcessing() {
-        int[][] rain = new int[length][5];
+        
         fileHelper.readArray("C:\\WD\\luxembourgRainData.csv", rain); //create an array from the first column of the data only
         int countDry = 0;
         int countRain = 0;
@@ -77,14 +78,15 @@ public class MarkovChain {
         bdRR = new BigDecimal(String.valueOf(countCondRR));
         BigDecimal a = new BigDecimal(String.valueOf("1"));
         
-        condDR = bdDR.divide(bdLength,5,RoundingMode.HALF_DOWN);
-        condRR = bdRR.divide(bdLength,5,RoundingMode.HALF_DOWN);
+        condDR = bdDR.divide(bdDry,5,RoundingMode.HALF_DOWN);
+        condRR = bdRR.divide(bdRain,5,RoundingMode.HALF_DOWN);
         condRD = a.subtract(condRR);
         condDD = a.subtract(condDR);       
-        System.out.println("P(R|D) = " + condDR);
+        System.out.println("P(D|R) = " + condDR);
         System.out.println("P(R|R) = " + condRR); //THESE ARE VERY GENERAL PROBABILITIES FIXED THROUGHOUT THE YEAR, next is to produce probabilities on a daily basis.
         System.out.println("P(D|D) = " + condDD);
-        System.out.println("P(D|R) = " + condRD);
+        System.out.println("P(R|D) = " + condRD);
+        
     }
     
     /*
@@ -96,10 +98,10 @@ public class MarkovChain {
         }
         
         zero = new BigDecimal(String.valueOf("0"));
-        byte[][] occurence = new byte[days][iterationNumber]; 
+        byte[][] occurence = new byte[length][iterationNumber]; 
         for (int i = 0; i < iterationNumber; i++) { //main iteration loop
             occurence[0][i] = 0;
-            for (int t = 1; t < days; t++) {//iterate over the year
+            for (int t = 1; t < length; t++) {//iterate over the year
                 //start dry day (model outcome) and create a random path from then on, from 2nd day onwards
                 Random r = new Random();
                 uniformRnd = newRandomBigDecimal(r, 4); //gives a uniformly distributed big decimal to compare transition probabilities against, change the accuracy to required number of dp
@@ -119,18 +121,49 @@ public class MarkovChain {
                     }
                 } 
             }
+            //update probabilities
+            int countDry = 0;
+            int countRain = 0;
+            for (int k=0;k<length;k++) {
+                if (occurence[k][i] == 0) {
+                    countDry++;
+                } else {
+                    countRain++;
+                }
+            }
+            bdDry = new BigDecimal(String.valueOf(countDry));
+            bdRain = new BigDecimal(String.valueOf(countRain));
+            
+            int countCondRR = 0; //marked as 1
+            int countCondDR = 0; //marked as 2
+            for (int k = 1; k < length; k++) {
+            if (occurence[k-1][i] == 1 && occurence[k][i] == 1) {
+                countCondRR++;
+            } else if (occurence[k-1][i] == 0 && occurence[k][i] == 1) {
+                countCondDR++;
+            }
+            bdDR = new BigDecimal(String.valueOf(countCondDR));
+            bdRR = new BigDecimal(String.valueOf(countCondRR));
+            BigDecimal a = new BigDecimal(String.valueOf("1"));
+        
+            condDR = bdDR.divide(bdDry,5,RoundingMode.HALF_DOWN);
+            condRR = bdRR.divide(bdRain,5,RoundingMode.HALF_DOWN);
+            condRD = a.subtract(condRR);
+            condDD = a.subtract(condDR);
+            }
+            System.out.println("New Prob "+condDD);
         }
          
-        modelOccurence = checkModelOccurence(occurence);
-        for (int i = 0; i < days; i++) {
-        System.out.println(modelOccurence[i]);        
-        }
-        for (int i = 0; i < days; i++) {
-            for (int j = 0; j < iterationNumber; j++) {
-                System.out.print(occurence[i][j]);       
-            }
-            System.out.println("");
-        }
+        //modelOccurence = checkModelOccurence(occurence);
+        //for (int i = 0; i < days; i++) {
+        //System.out.println(modelOccurence[i]);        
+        //}
+        //for (int i = 0; i < days; i++) {
+        //    for (int j = 0; j < iterationNumber; j++) {
+        //        System.out.print(occurence[i][j]);       
+        //    }
+        //    System.out.println("");
+        //}
     }
     
     /*
@@ -154,21 +187,25 @@ public class MarkovChain {
     }
     
     private byte[] checkModelOccurence(byte[][] occur) {
-        int counter = 0;
+        byte[] modelV = new byte[days];
         for (int i = 0; i < days; i++) {
+            int counterD = 0;
+            int counterR = 0;
             for (int j = 0; j < iterationNumber; j++) {
-                
-                if (occur[i][j] == 0) {
-                    counter++;                        
+                byte num = occur[i][j]; 
+                if (num == 0) {
+                    counterD++;
+                } else {
+                    counterR++;
                 }
-            }
-            if (counter <= iterationNumber/2) {
-                modelOccurence[i] = 1;
+            }            
+            if (counterD > counterR) {
+                modelV[i] = 0;                
             } else {
-                modelOccurence[i] = 0;                
+                modelV[i] = 1;
             }
         }
-        return modelOccurence;
+        return modelV;
     }
     
 }
