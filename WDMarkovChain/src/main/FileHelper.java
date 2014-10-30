@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -163,14 +164,30 @@ public class FileHelper
       return 0;
   }
   
-  public void readArray(String filename, int[][] array){
+  public void readArray(String filename, int[][] array, int col){
       try {
           BufferedReader reader = new BufferedReader(new FileReader(filename));
           int rowCounter = 0;
           String thisLine;
           while ((thisLine = reader.readLine()) != null) {
               String[] cols = thisLine.split(",");
-              array[rowCounter][0] = Integer.parseInt(cols[0]);
+              array[rowCounter][col] = Integer.parseInt(cols[col]);
+              rowCounter++;
+          }
+      }       
+      catch (Exception e) { 
+          e.printStackTrace();
+      } 
+  }
+  
+  public void readDArray(String filename, String[] array, int col){
+      try {
+          BufferedReader reader = new BufferedReader(new FileReader(filename));
+          String thisLine;
+          int rowCounter = 0;
+          while ((thisLine = reader.readLine()) != null) {
+              String[] cols = thisLine.split(",");
+              array[rowCounter] = cols[col];
               rowCounter++;
           }
       }       

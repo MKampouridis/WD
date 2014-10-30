@@ -17,19 +17,18 @@ public class MarkovChain {
     private final FileHelper fileHelper = new FileHelper();
     private final int width = fileHelper.checkWidth("C:\\WD\\luxembourgRainData.csv");//Will do the code to find absolute path later
     private final int length = fileHelper.checkLength("C:\\WD\\luxembourgRainData.csv");
-    private BigDecimal a0, an, bn, bda00, bda01, bda10, bda11, probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, uniformRnd;
-    private final BigDecimal zero = new BigDecimal(String.valueOf("0"));
+    private BigDecimal a0, a1, b1, w, bda00, bda01, bda10, bda11, probRain, probDry, bdRain, bdDry, bdLength, condDR, condRR, condRD, condDD, bdDR, bdRR, transitionProb, uniformRnd;
     private final BigDecimal one = new BigDecimal(String.valueOf("1"));
-    private final BigDecimal pi = new BigDecimal(String.valueOf("3.14159"));
     private final int days = 365;
     private final int years = length/days;
     private byte[] modelOccurence = new byte[days];
-    private final int iterationNumber = 50; //choose an iteration number, something above 30k using odd number in case model value is the same
+    private final int iterationNumber = 10000; //choose an iteration number, something above 30k using odd number in case model value is the same
     private int[][] rain = new int[length][5];
     private int[][][] occurenceNumDay = new int[days][2][2]; //3D array for each day and rain/dry following a rain/dry day
     private BigDecimal[][][] occurenceProbDay = new BigDecimal[days][2][2]; //3D array for the transition prob of each day
     private BigDecimal[][][] occurenceFSDay = new BigDecimal[days][2][2];
-    
+    private BigDecimal[][] bDfileReader = new BigDecimal[days][100];
+    private String[] transitionProbReader = new String[days];
     
     /*
     Start the process off by checking whether a file has been preprocessed to start the Markov chain
@@ -47,9 +46,9 @@ public class MarkovChain {
         }
     }
     
-    private void fourierSeries(){
-        
-    }
+    
+    //AT SOME POINT LOOK HOW TO DO MLE TO PUT FOURIER SERIES IN HERE!!!
+    
     
     /*
     Calculate the conditional probabilities of the rainfall amount for a P(W|D), P(D|W), P(W|W) and P(D|D) for each day of the year
@@ -57,7 +56,7 @@ public class MarkovChain {
     private void doProcessingDaily() {
         //first step is to count the number of transitions from one state to another for each day
                 
-        fileHelper.readArray("C:\\WD\\luxembourgRainData.csv", rain); //create an array from the first column of the data only
+        fileHelper.readArray("C:\\WD\\luxembourgRainData.csv", rain,0); //create an array from the first column of the data only
         int countDry = 0;
         int countRain = 0;
         for (int i = 0; i < length; i++) {
@@ -66,7 +65,9 @@ public class MarkovChain {
             } else {
                 rain[i][1] = 1;
             }
-        }        
+        }
+        
+        System.out.println(rain.length);
         
         for (int i = 1; i <= days; i++) { //first element in data is only included to calculate transition number for the start of the new year
             int a00 = 0; //number of dry followed by dry
@@ -84,7 +85,8 @@ public class MarkovChain {
                     a01++;
                 }
             }
-            //put the number of occurences into 2x2 matrix for each day
+            //put the number of occurences into 2x2 matrix for each day]
+            
             occurenceNumDay[i-1][0][0] = a00;
             occurenceNumDay[i-1][0][1] = a01;
             occurenceNumDay[i-1][1][0] = a10;
@@ -101,18 +103,55 @@ public class MarkovChain {
             occurenceProbDay[i-1][1][0] = bda10.divide((bda11.add(bda10)),4,RoundingMode.HALF_DOWN);
             occurenceProbDay[i-1][1][1] = one.subtract(occurenceProbDay[i-1][1][0]);
             
-            //fourier series for each day
-            //starting with p00
-            //fourier series given by a0 + sum_n=1^h[an cos(npit/L)+bn(npit/L)]
-            //a0 = new BigDecimal(String.valueOf("0"));
-            //an = new BigDecimal(String.valueOf("0"));
-            //bn = new BigDecimal(String.valueOf("0"));
+   
+            fileHelper.readDArray("C:\\WD\\fsLux.csv",transitionProbReader,0);
+            occurenceProbDay[i-1][0][0] = new BigDecimal(String.valueOf(transitionProbReader[i-1]));
+            occurenceProbDay[i-1][0][1] = one.subtract(occurenceProbDay[i-1][0][0]);
+            fileHelper.readDArray("C:\\WD\\fsLux.csv",transitionProbReader,1);
+            occurenceProbDay[i-1][1][0] = new BigDecimal(String.valueOf(transitionProbReader[i-1]));
+            occurenceProbDay[i-1][1][1] = one.subtract(occurenceProbDay[i-1][1][0]);
             
-            //BigDecimal n182 = new BigDecimal(String.valueOf("182"));
-            //BigDecimal n365 = new BigDecimal(String.valueOf("365"));
-            //a0 = (n182.multiply(occurenceProbDay[i-1][0][0])).divide(n365);
-            //an = 
+            //java does like cos/sin arsehole
+//            //fourier series for each day
+//            //starting with p00
+//            //fourier series given by a0 + sum_n=1^h[an cos(npit/L)+bn(npit/L)]
+//            //a0 = new BigDecimal(String.valueOf("0"));
+//            //an = new BigDecimal(String.valueOf("0"));
+//            //bn = new BigDecimal(String.valueOf("0"));
+//            
+//            //BigDecimal n182 = new BigDecimal(String.valueOf("182"));
+//            //BigDecimal n365 = new BigDecimal(String.valueOf("365"));
+//            //a0 = (n182.multiply(occurenceProbDay[i-1][0][0])).divide(n365);
+//            //an = 
+//            
+//            //USING VALUES FROM MATLAB, WILL NEED TO BE INTEGRATED AT SOME POINT!!! PDD
+//            //FOR LUX a0 = 0.7022, a1 = -0.0370, b1 = -0.0050 w = 0.0379
+//            a0 = new BigDecimal(String.valueOf("0.7022"));
+//            a1 = new BigDecimal(String.valueOf("-0.0370"));
+//            b1 = new BigDecimal(String.valueOf("-0.0050"));
+//            w = new BigDecimal(String.valueOf("0.0379"));
+//            BigDecimal day = new BigDecimal(Integer.valueOf(i));
+//            occurenceProbDay[i-1][0][0] = a0.add(a1.multiply(bdm.cos(day.multiply(w)))).add(b1.multiply(bdm.sin(day.multiply(w))));
+//            occurenceProbDay[i-1][0][1] = one.subtract(occurenceProbDay[i-1][0][0]);
+//            
+//            //USING VALUES FROM MATLAB, WILL NEED TO BE INTEGRATED AT SOME POINT!!! PDD
+//            //FOR LUX a0 = 0.3008, a1 = -0.0535, b1 = 0.01082 w = 0.0016
+//            a0 = new BigDecimal(String.valueOf("0.3008"));
+//            a1 = new BigDecimal(String.valueOf("-0.0535"));
+//            b1 = new BigDecimal(String.valueOf("-0.01082"));
+//            w = new BigDecimal(String.valueOf("0.0016"));
+//            occurenceProbDay[i-1][1][0] = a0.add(a1.multiply(bdm.cos(day.multiply(w)))).add(b1.multiply(bdm.sin(day.multiply(w).setScale(2, RoundingMode.HALF_UP))));
+//            occurenceProbDay[i-1][1][1] = one.subtract(occurenceProbDay[i-1][1][0]);
+            
         }
+        
+        
+        //For now type probs in manually
+        
+        
+        
+        
+        System.out.println("PDD " + "PDR " + "PRD " + "PRR ");
         for (int i = 0; i < days; i++) {
             System.out.print(occurenceProbDay[i][0][0] + " " + occurenceProbDay[i][0][1] + " " + occurenceProbDay[i][1][0] + " " + occurenceProbDay[i][1][1]);
             System.out.println();
@@ -229,6 +268,8 @@ public class MarkovChain {
             }
             System.out.println("");
         }
+        
+        //Calc
     }
     
     /*
@@ -272,5 +313,4 @@ public class MarkovChain {
         }
         return modelV;
     }
-    
 }
