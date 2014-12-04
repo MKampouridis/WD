@@ -27,16 +27,7 @@ public class Run
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;
-    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4), new Parameter(5), new Parameter(6), new Parameter(7), new Parameter(8) };
-    
-
-
-
-
-
-
-
-
+    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4)};
     TreeManager.evolvedMethodParameters = evolvedMethodParameters;
     
     ArrayList methodSet = new ArrayList();
@@ -48,17 +39,9 @@ public class Run
     methodSet.add(SQRT);
     methodSet.add(POW);
     methodSet.add(MOD);
-    methodSet.add(SIN);
-    methodSet.add(COS);
-    
-
-
-
-
-
-
-
-
+//    methodSet.add(SIN);
+//    methodSet.add(COS);
+    methodSet.add(EXP);
 
 
     Random r = new Random();
@@ -66,26 +49,17 @@ public class Run
     for (int i = 0; i < terminals; i++)
     {
       double rc = r.nextDouble();
-      
-      double rc2 = r.nextDouble();
-      if (rc2 >= 0.5D) {
-        rc = -rc;
-      }
-      terminalSet.add(new Constant(new Double(rc * 10.0D), Double.TYPE));
+      terminalSet.add(new Constant(new Double(rc * 100.0D), Double.TYPE)); //Building in a function representing random numbers minimum and maximum, consider avearge
     }
-    terminalSet.add(new Constant(new Double(0.0D), Double.TYPE));
-    terminalSet.add(new Constant(new Double(3.141592653589793D), Double.TYPE));
-    terminalSet.add(new Parameter(0, Double.TYPE, Boolean.valueOf(true), "Rain_t-1"));
-    terminalSet.add(new Parameter(1, Double.TYPE, Boolean.valueOf(true), "Rain_t-2"));
-    terminalSet.add(new Parameter(2, Double.TYPE, Boolean.valueOf(true), "Rain_t-3"));
-    terminalSet.add(new Parameter(3, Double.TYPE, Boolean.valueOf(true), "Rain_t-4"));
-    terminalSet.add(new Parameter(4, Double.TYPE, Boolean.valueOf(true), "Rain_t-5"));
-    terminalSet.add(new Parameter(5, Double.TYPE, Boolean.valueOf(true), "Rain_t-6"));
-    terminalSet.add(new Parameter(6, Double.TYPE, Boolean.valueOf(true), "Rain_t-7"));
-    terminalSet.add(new Parameter(7, Double.TYPE, Boolean.valueOf(true), "Rain_t-8"));
     
-    terminalSet.add(new Parameter(8, Double.TYPE, Boolean.valueOf(true), "t"));
-    
+    //terminalSet.add(new Constant(new Double(0.0D), Double.TYPE));
+    //terminalSet.add(new Constant(new Double(3.141592653589793D), Double.TYPE));
+    terminalSet.add(new Parameter(0, Double.TYPE, Boolean.valueOf(true), "Rain_t-130")); //Last 30 days
+    terminalSet.add(new Parameter(1, Double.TYPE, Boolean.valueOf(true), "Rain_t-3160")); //Last 31-60 days
+    terminalSet.add(new Parameter(2, Double.TYPE, Boolean.valueOf(true), "Rain_t-6190")); //Last 61-90 days
+   
+    //terminalSet.add(new Parameter(3, Double.TYPE, Boolean.valueOf(true), "Rain_t-365")); //Rain in the month last year
+    //terminalSet.add(new Parameter(4, Double.TYPE, Boolean.valueOf(true), "Rain_t-730")); //Rain in the month two years ago
 
     double primProb = 0.6D;
     double terminalNodeCrossBias = 0.1D;
