@@ -57,7 +57,7 @@ public class GA
       System.out.println("GENERATION : " + i);
       evaluate();
       
-      stat.addStat(this.pop, i);
+      //stat.addStat(this.pop, i);
       
       Arrays.sort(this.pop);
       if (i < nGens - 1)
@@ -67,7 +67,7 @@ public class GA
       }
       i++;
     }
-    stat.logStatisticalSummary(nGens - 1);
+    //stat.logStatisticalSummary(nGens - 1);
     
     validate(cursor);
   }

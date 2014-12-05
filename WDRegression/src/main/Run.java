@@ -9,17 +9,18 @@ public class Run
 {
   public static GA alg = null;
   public static Evaluator eval;
-  public static int nRuns = 5;
+  public static int nRuns = 50;
   public static String filename = "Luxembourg";
   public static int maxInitialDepth = 2;
-  public static int maxDepth = 4;
-  public static int nGens = 25;
-  public static int popSize = 250;
-  public static int tournamentSize = 3;
+  public static int maxDepth = 14;
+  public static int nGens = 200;
+  public static int popSize = 1000;
+  public static int tournamentSize = 4;
   public static double mutProb = 0.01D;
   public static double xoverProb = 0.9D;
   public static double elitismPercentage = 0.01D;
-  public static double terminals = 10.0D;
+  public static double terminals = 15.0D;
+  public static double weights = 5.0D;
   
   public static void main(String[] args)
   {
@@ -27,7 +28,7 @@ public class Run
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;
-    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4)};
+    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4), new Parameter(5)};
     TreeManager.evolvedMethodParameters = evolvedMethodParameters;
     
     ArrayList methodSet = new ArrayList();
@@ -52,15 +53,24 @@ public class Run
       terminalSet.add(new Constant(new Double(rc * 100.0D), Double.TYPE)); //Building in a function representing random numbers minimum and maximum, consider avearge
     }
     
+    //Add in some numbers between 0 and 1
+    
+    for (int i = 0; i < weights; i++)
+    {
+      double rc = r.nextDouble();
+      terminalSet.add(new Constant(new Double(rc), Double.TYPE));
+    }
+    
     //terminalSet.add(new Constant(new Double(0.0D), Double.TYPE));
     //terminalSet.add(new Constant(new Double(3.141592653589793D), Double.TYPE));
+    
     terminalSet.add(new Parameter(0, Double.TYPE, Boolean.valueOf(true), "Rain_t-130")); //Last 30 days
     terminalSet.add(new Parameter(1, Double.TYPE, Boolean.valueOf(true), "Rain_t-3160")); //Last 31-60 days
     terminalSet.add(new Parameter(2, Double.TYPE, Boolean.valueOf(true), "Rain_t-6190")); //Last 61-90 days
-   
-    //terminalSet.add(new Parameter(3, Double.TYPE, Boolean.valueOf(true), "Rain_t-365")); //Rain in the month last year
-    //terminalSet.add(new Parameter(4, Double.TYPE, Boolean.valueOf(true), "Rain_t-730")); //Rain in the month two years ago
-
+    terminalSet.add(new Parameter(3, Double.TYPE, Boolean.valueOf(true), "Rain_t-365")); //Rain in the month last year
+    terminalSet.add(new Parameter(4, Double.TYPE, Boolean.valueOf(true), "Rain_t-730")); //Rain in the month two years ago
+    terminalSet.add(new Parameter(5, Double.TYPE, Boolean.valueOf(true), "T"));
+    
     double primProb = 0.6D;
     double terminalNodeCrossBias = 0.1D;
     TreeManager tm = new TreeManager(methodSet, terminalSet, primProb, maxInitialDepth, maxDepth, terminalNodeCrossBias);
@@ -89,7 +99,7 @@ public class Run
     for (int i = 0; i < nRuns; i++)
     {
       System.out.println("========================== Experiment " + i + " ==================================");
-      File experiment = new File("Resultsj/Experiment " + i);
+      File experiment = new File("Results/Experiment " + i);
       experiment.mkdir();
       stat = new StatisticalSummary(nGens, popSize, i);
       alg = new GA(tm, eval, popSize, tournamentSize, stat, mutProb, elitismPercentage, xoverProb, nRuns);

@@ -1,0 +1,355 @@
+  (Method:mul
+     (Method:log
+        (Method:add
+           (Method:mul
+              (Method:add
+                 (Method:mod
+                    (Method:mul
+                       (Method:log
+                          (Method:exp
+                             (Method:mod
+                                (Method:sqrt
+                                   Constant : 6.8745098545277
+                                   
+                                )
+                                
+                                (Method:add
+                                   Parameter[5][T]
+                                   
+                                   Parameter[5][T]
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:add
+                          Constant : 72.47817161163084
+                          
+                          (Method:mod
+                             (Method:mod
+                                (Method:div
+                                   (Method:add
+                                      Constant : 53.41769902254047
+                                      
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                   (Method:div
+                                      (Method:add
+                                         Constant : 53.41769902254047
+                                         
+                                         Parameter[5][T]
+                                         
+                                      )
+                                      
+                                      Constant : 18.320644224174675
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:log
+                                   Parameter[5][T]
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:log
+                                Parameter[5][T]
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:add
+                       (Method:add
+                          Constant : 53.41769902254047
+                          
+                          Parameter[5][T]
+                          
+                       )
+                       
+                       (Method:add
+                          Constant : 53.41769902254047
+                          
+                          Parameter[5][T]
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 (Method:log
+                    (Method:power
+                       (Method:mod
+                          (Method:div
+                             (Method:add
+                                Constant : 53.41769902254047
+                                
+                                Parameter[5][T]
+                                
+                             )
+                             
+                             (Method:div
+                                (Method:add
+                                   (Method:add
+                                      Constant : 72.47817161163084
+                                      
+                                      (Method:mod
+                                         (Method:sqrt
+                                            Constant : 6.8745098545277
+                                            
+                                         )
+                                         
+                                         Constant : 18.320644224174675
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   Parameter[5][T]
+                                   
+                                )
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:log
+                             Parameter[5][T]
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mod
+                          (Method:mod
+                             Constant : 67.42965863518083
+                             
+                             (Method:add
+                                Constant : 53.41769902254047
+                                
+                                (Method:log
+                                   Parameter[5][T]
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:exp
+                             (Method:mod
+                                Constant : 67.42965863518083
+                                
+                                (Method:log
+                                   Parameter[5][T]
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+              (Method:log
+                 (Method:add
+                    Constant : 53.41769902254047
+                    
+                    (Method:power
+                       (Method:sqrt
+                          (Method:add
+                             (Method:add
+                                Constant : 53.41769902254047
+                                
+                                (Method:add
+                                   (Method:add
+                                      Constant : 53.41769902254047
+                                      
+                                      (Method:add
+                                         Constant : 53.41769902254047
+                                         
+                                         (Method:add
+                                            Constant : 53.41769902254047
+                                            
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:sqrt
+                                      (Method:add
+                                         Constant : 53.41769902254047
+                                         
+                                         (Method:log
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:power
+                                (Method:power
+                                   (Method:log
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                   (Method:log
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:mod
+                                   (Method:sqrt
+                                      Constant : 6.8745098545277
+                                      
+                                   )
+                                   
+                                   (Method:mod
+                                      (Method:mod
+                                         Constant : 67.42965863518083
+                                         
+                                         (Method:log
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:add
+                                         Parameter[5][T]
+                                         
+                                         Parameter[5][T]
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mod
+                          (Method:div
+                             (Method:add
+                                (Method:mod
+                                   (Method:div
+                                      (Method:add
+                                         Constant : 53.41769902254047
+                                         
+                                         Parameter[5][T]
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         (Method:add
+                                            Constant : 53.41769902254047
+                                            
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                         Constant : 18.320644224174675
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:log
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                )
+                                
+                                Parameter[5][T]
+                                
+                             )
+                             
+                             (Method:div
+                                (Method:add
+                                   Constant : 53.41769902254047
+                                   
+                                   (Method:mod
+                                      (Method:mod
+                                         Constant : 67.42965863518083
+                                         
+                                         (Method:sqrt
+                                            Constant : 6.8745098545277
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      Constant : 18.320644224174675
+                                      
+                                   )
+                                   
+                                )
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:log
+                             Parameter[5][T]
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           Constant : 24.65052056729915
+           
+        )
+        
+     )
+     
+     Constant : 72.47817161163084
+     
+  )

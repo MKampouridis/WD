@@ -1,0 +1,317 @@
+  (Method:add
+     (Method:sub
+        (Method:add
+           (Method:log
+              (Method:power
+                 (Method:mul
+                    (Method:add
+                       (Method:div
+                          (Method:div
+                             Constant : 89.63278251299882
+                             
+                             (Method:div
+                                Constant : 89.74659333612647
+                                
+                                Parameter[5][T]
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:sub
+                             (Method:mul
+                                (Method:mul
+                                   (Method:div
+                                      (Method:div
+                                         Constant : 30.64580802416993
+                                         
+                                         Constant : 89.74659333612647
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         Constant : 30.64580802416993
+                                         
+                                         Constant : 0.46029858684469227
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:div
+                                      (Method:mul
+                                         Constant : 72.47817161163084
+                                         
+                                         Constant : 6.8745098545277
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         Constant : 89.74659333612647
+                                         
+                                         Parameter[5][T]
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:div
+                                   Constant : 89.74659333612647
+                                   
+                                   Parameter[5][T]
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:mul
+                                (Method:log
+                                   (Method:div
+                                      Constant : 30.64580802416993
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:log
+                                   (Method:div
+                                      Constant : 89.74659333612647
+                                      
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:div
+                          Constant : 30.64580802416993
+                          
+                          Constant : 0.46029858684469227
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:log
+                       (Method:sub
+                          (Method:add
+                             (Method:add
+                                (Method:log
+                                   (Method:power
+                                      Parameter[3][Rain_t-365]
+                                      
+                                      Constant : 72.47817161163084
+                                      
+                                   )
+                                   
+                                )
+                                
+                                Parameter[5][T]
+                                
+                             )
+                             
+                             (Method:mul
+                                (Method:add
+                                   (Method:div
+                                      (Method:mul
+                                         (Method:div
+                                            Constant : 89.74659333612647
+                                            
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                         Constant : 53.41769902254047
+                                         
+                                      )
+                                      
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                   (Method:log
+                                      (Method:div
+                                         (Method:div
+                                            Constant : 30.64580802416993
+                                            
+                                            Constant : 89.74659333612647
+                                            
+                                         )
+                                         
+                                         (Method:div
+                                            Constant : 30.64580802416993
+                                            
+                                            Constant : 0.46029858684469227
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:mul
+                                   (Method:mul
+                                      (Method:div
+                                         Constant : 89.74659333612647
+                                         
+                                         Parameter[5][T]
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         Constant : 89.74659333612647
+                                         
+                                         Parameter[5][T]
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:div
+                                      Constant : 89.74659333612647
+                                      
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:log
+                             (Method:sub
+                                (Method:mul
+                                   (Method:mul
+                                      (Method:mul
+                                         (Method:power
+                                            Parameter[3][Rain_t-365]
+                                            
+                                            Constant : 72.47817161163084
+                                            
+                                         )
+                                         
+                                         (Method:div
+                                            Constant : 30.64580802416993
+                                            
+                                            Constant : 0.46029858684469227
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         (Method:mul
+                                            Constant : 72.47817161163084
+                                            
+                                            Constant : 6.8745098545277
+                                            
+                                         )
+                                         
+                                         (Method:div
+                                            Constant : 89.74659333612647
+                                            
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:div
+                                      Constant : 89.74659333612647
+                                      
+                                      Parameter[5][T]
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:mul
+                                   (Method:div
+                                      (Method:mul
+                                         (Method:div
+                                            Constant : 89.74659333612647
+                                            
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                         Constant : 53.41769902254047
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         Constant : 89.74659333612647
+                                         
+                                         (Method:div
+                                            Constant : 89.74659333612647
+                                            
+                                            Parameter[5][T]
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:mul
+                                      (Method:power
+                                         Parameter[3][Rain_t-365]
+                                         
+                                         Constant : 72.47817161163084
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         Constant : 30.64580802416993
+                                         
+                                         Constant : 0.46029858684469227
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 Constant : 72.47817161163084
+                 
+              )
+              
+           )
+           
+           Parameter[5][T]
+           
+        )
+        
+        Constant : 89.74659333612647
+        
+     )
+     
+     Parameter[5][T]
+     
+  )

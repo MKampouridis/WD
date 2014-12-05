@@ -37,7 +37,7 @@ public class StatisticalSummary
     this.summaryStats = new double[noOfGenerations][9];
     this.summaryStatistics = new double[noOfGenerations][9];
     this.fileName = ("/log" + cursor + ".txt");
-    this.writer = new FWriter("Results/Experiment " + cursor + "/" + this.fileName, cursor);
+    this.writer = new FWriter("Results/Experiment " + cursor + "/" + fileName, cursor);
     this.experimentNo = cursor;
   }
   

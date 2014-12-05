@@ -1,0 +1,526 @@
+  (Method:mul
+     (Method:log
+        (Method:add
+           Constant : 76.43825067784327
+           
+           (Method:sub
+              (Method:sqrt
+                 (Method:div
+                    Parameter[4][Rain_t-730]
+                    
+                    Constant : 0.5047002706246135
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 (Method:add
+                    (Method:add
+                       (Method:div
+                          Parameter[1][Rain_t-3160]
+                          
+                          (Method:add
+                             Constant : 81.7903645128202
+                             
+                             Parameter[0][Rain_t-130]
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:add
+                          (Method:sub
+                             (Method:add
+                                (Method:div
+                                   Parameter[1][Rain_t-3160]
+                                   
+                                   (Method:add
+                                      (Method:add
+                                         (Method:power
+                                            Parameter[0][Rain_t-130]
+                                            
+                                            Constant : 81.7903645128202
+                                            
+                                         )
+                                         
+                                         (Method:mod
+                                            Constant : 47.76687806204084
+                                            
+                                            Constant : 89.74659333612647
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:add
+                                         Constant : 81.7903645128202
+                                         
+                                         Constant : 24.65052056729915
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:add
+                                   (Method:div
+                                      Parameter[1][Rain_t-3160]
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   (Method:sub
+                                      Constant : 34.31292436161335
+                                      
+                                      (Method:log
+                                         (Method:div
+                                            Parameter[0][Rain_t-130]
+                                            
+                                            Constant : 81.7903645128202
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:sqrt
+                                (Method:add
+                                   (Method:sqrt
+                                      Parameter[1][Rain_t-3160]
+                                      
+                                   )
+                                   
+                                   (Method:sub
+                                      Constant : 34.31292436161335
+                                      
+                                      (Method:div
+                                         Parameter[4][Rain_t-730]
+                                         
+                                         Constant : 0.5047002706246135
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:sub
+                             Constant : 34.31292436161335
+                             
+                             (Method:log
+                                (Method:power
+                                   Parameter[0][Rain_t-130]
+                                   
+                                   Constant : 81.7903645128202
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:mod
+                       (Method:sub
+                          (Method:add
+                             (Method:mod
+                                (Method:log
+                                   Constant : 47.76687806204084
+                                   
+                                )
+                                
+                                (Method:log
+                                   (Method:add
+                                      (Method:add
+                                         (Method:add
+                                            Parameter[4][Rain_t-730]
+                                            
+                                            Constant : 81.7903645128202
+                                            
+                                         )
+                                         
+                                         (Method:div
+                                            Parameter[4][Rain_t-730]
+                                            
+                                            Constant : 0.5047002706246135
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:add
+                                         Parameter[5][T]
+                                         
+                                         Constant : 89.74659333612647
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:add
+                                (Method:sqrt
+                                   Parameter[1][Rain_t-3160]
+                                   
+                                )
+                                
+                                (Method:add
+                                   (Method:div
+                                      Parameter[1][Rain_t-3160]
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   (Method:sub
+                                      Constant : 34.31292436161335
+                                      
+                                      (Method:div
+                                         Parameter[4][Rain_t-730]
+                                         
+                                         Constant : 0.5047002706246135
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:log
+                             Constant : 47.76687806204084
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mod
+                          (Method:sub
+                             (Method:add
+                                (Method:div
+                                   Parameter[1][Rain_t-3160]
+                                   
+                                   (Method:add
+                                      Constant : 81.7903645128202
+                                      
+                                      Parameter[0][Rain_t-130]
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:add
+                                   (Method:div
+                                      Parameter[1][Rain_t-3160]
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   (Method:sub
+                                      Constant : 34.31292436161335
+                                      
+                                      (Method:log
+                                         (Method:power
+                                            Parameter[0][Rain_t-130]
+                                            
+                                            Constant : 81.7903645128202
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:sqrt
+                                (Method:add
+                                   (Method:sqrt
+                                      Parameter[1][Rain_t-3160]
+                                      
+                                   )
+                                   
+                                   (Method:mod
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 89.74659333612647
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:div
+                             Parameter[1][Rain_t-3160]
+                             
+                             Constant : 0.46029858684469227
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:sub
+        (Method:add
+           (Method:add
+              (Method:add
+                 (Method:mod
+                    (Method:add
+                       (Method:add
+                          (Method:sqrt
+                             Parameter[1][Rain_t-3160]
+                             
+                          )
+                          
+                          (Method:mod
+                             Constant : 47.76687806204084
+                             
+                             Constant : 89.74659333612647
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:add
+                          Constant : 81.7903645128202
+                          
+                          Constant : 24.65052056729915
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:sqrt
+                       (Method:add
+                          (Method:add
+                             (Method:log
+                                (Method:div
+                                   (Method:div
+                                      Parameter[1][Rain_t-3160]
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   Constant : 0.46029858684469227
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:sub
+                                (Method:log
+                                   (Method:power
+                                      Parameter[0][Rain_t-130]
+                                      
+                                      Constant : 81.7903645128202
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:mod
+                                   (Method:add
+                                      (Method:sqrt
+                                         Parameter[1][Rain_t-3160]
+                                         
+                                      )
+                                      
+                                      (Method:add
+                                         Parameter[4][Rain_t-730]
+                                         
+                                         Constant : 81.7903645128202
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:sqrt
+                                      (Method:add
+                                         (Method:div
+                                            Parameter[4][Rain_t-730]
+                                            
+                                            Constant : 0.5047002706246135
+                                            
+                                         )
+                                         
+                                         Constant : 89.74659333612647
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          Constant : 89.74659333612647
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 (Method:mod
+                    (Method:add
+                       (Method:sqrt
+                          Parameter[1][Rain_t-3160]
+                          
+                       )
+                       
+                       (Method:mod
+                          Constant : 47.76687806204084
+                          
+                          (Method:add
+                             (Method:div
+                                Parameter[1][Rain_t-3160]
+                                
+                                Constant : 0.46029858684469227
+                                
+                             )
+                             
+                             (Method:mod
+                                (Method:sqrt
+                                   (Method:div
+                                      Parameter[4][Rain_t-730]
+                                      
+                                      Constant : 0.5047002706246135
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:div
+                                   Parameter[1][Rain_t-3160]
+                                   
+                                   (Method:add
+                                      Constant : 81.7903645128202
+                                      
+                                      Parameter[0][Rain_t-130]
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:sqrt
+                       (Method:add
+                          (Method:div
+                             Parameter[4][Rain_t-730]
+                             
+                             Constant : 0.5047002706246135
+                             
+                          )
+                          
+                          Constant : 89.74659333612647
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Constant : 30.64580802416993
+                 
+                 Constant : 89.63278251299882
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:add
+                 (Method:add
+                    Constant : 81.7903645128202
+                    
+                    Constant : 24.65052056729915
+                    
+                 )
+                 
+                 (Method:add
+                    Constant : 81.7903645128202
+                    
+                    Constant : 24.65052056729915
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 (Method:add
+                    Parameter[5][T]
+                    
+                    Constant : 89.74659333612647
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:div
+              Parameter[4][Rain_t-730]
+              
+              Constant : 0.5047002706246135
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,679 @@
+  (Method:add
+     (Method:add
+        (Method:add
+           (Method:add
+              (Method:mod
+                 (Method:sub
+                    (Method:add
+                       (Method:add
+                          (Method:add
+                             (Method:sqrt
+                                (Method:mul
+                                   Parameter[2][Rain_t-6190]
+                                   
+                                   Constant : 89.74659333612647
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:mul
+                                Constant : 18.320644224174675
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:log
+                             (Method:mod
+                                (Method:mul
+                                   Constant : 18.320644224174675
+                                   
+                                   Constant : 18.320644224174675
+                                   
+                                )
+                                
+                                (Method:sub
+                                   (Method:add
+                                      (Method:mul
+                                         Constant : 18.320644224174675
+                                         
+                                         (Method:mul
+                                            Constant : 81.7903645128202
+                                            
+                                            Constant : 0.46029858684469227
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:mul
+                                         Constant : 18.320644224174675
+                                         
+                                         Constant : 18.320644224174675
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:add
+                                      Constant : 0.46029858684469227
+                                      
+                                      Parameter[4][Rain_t-730]
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:log
+                          (Method:sub
+                             (Method:add
+                                (Method:mul
+                                   Constant : 18.320644224174675
+                                   
+                                   Constant : 18.320644224174675
+                                   
+                                )
+                                
+                                (Method:add
+                                   (Method:sub
+                                      (Method:mul
+                                         Constant : 18.320644224174675
+                                         
+                                         Constant : 18.320644224174675
+                                         
+                                      )
+                                      
+                                      (Method:mul
+                                         Constant : 18.320644224174675
+                                         
+                                         Constant : 18.320644224174675
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:log
+                                      (Method:div
+                                         (Method:mul
+                                            Constant : 18.320644224174675
+                                            
+                                            Constant : 18.320644224174675
+                                            
+                                         )
+                                         
+                                         Constant : 0.15162291386284676
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:add
+                                Constant : 0.46029858684469227
+                                
+                                Parameter[4][Rain_t-730]
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:mul
+                       Constant : 81.7903645128202
+                       
+                       Constant : 0.46029858684469227
+                       
+                    )
+                    
+                 )
+                 
+                 Constant : 53.41769902254047
+                 
+              )
+              
+              (Method:add
+                 (Method:mod
+                    (Method:sub
+                       (Method:add
+                          (Method:add
+                             (Method:mul
+                                Constant : 18.320644224174675
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                             Parameter[5][T]
+                             
+                          )
+                          
+                          (Method:div
+                             Parameter[3][Rain_t-365]
+                             
+                             (Method:add
+                                (Method:sqrt
+                                   (Method:mul
+                                      Parameter[2][Rain_t-6190]
+                                      
+                                      Constant : 89.74659333612647
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:add
+                                   (Method:mod
+                                      (Method:sub
+                                         (Method:mul
+                                            Constant : 18.320644224174675
+                                            
+                                            Constant : 18.320644224174675
+                                            
+                                         )
+                                         
+                                         (Method:mul
+                                            Constant : 18.320644224174675
+                                            
+                                            Constant : 18.320644224174675
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:mod
+                                         (Method:mul
+                                            Constant : 18.320644224174675
+                                            
+                                            Constant : 18.320644224174675
+                                            
+                                         )
+                                         
+                                         Constant : 53.41769902254047
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:log
+                                      (Method:mul
+                                         Constant : 18.320644224174675
+                                         
+                                         Constant : 18.320644224174675
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mul
+                          Constant : 81.7903645128202
+                          
+                          (Method:log
+                             (Method:log
+                                Constant : 25.400482653178734
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    Constant : 53.41769902254047
+                    
+                 )
+                 
+                 (Method:log
+                    (Method:sub
+                       (Method:mul
+                          Constant : 18.320644224174675
+                          
+                          Constant : 18.320644224174675
+                          
+                       )
+                       
+                       (Method:add
+                          Constant : 0.46029858684469227
+                          
+                          Parameter[4][Rain_t-730]
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:mod
+                 (Method:add
+                    (Method:mod
+                       (Method:add
+                          (Method:mod
+                             Parameter[3][Rain_t-365]
+                             
+                             Constant : 53.41769902254047
+                             
+                          )
+                          
+                          (Method:add
+                             (Method:mul
+                                Constant : 18.320644224174675
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                             Parameter[5][T]
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mul
+                          (Method:log
+                             (Method:sub
+                                (Method:mul
+                                   Constant : 18.320644224174675
+                                   
+                                   Constant : 18.320644224174675
+                                   
+                                )
+                                
+                                (Method:add
+                                   Constant : 0.46029858684469227
+                                   
+                                   Parameter[4][Rain_t-730]
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          Constant : 18.320644224174675
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:mod
+                       (Method:add
+                          (Method:mod
+                             Parameter[3][Rain_t-365]
+                             
+                             Constant : 53.41769902254047
+                             
+                          )
+                          
+                          (Method:add
+                             (Method:mul
+                                Constant : 18.320644224174675
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                             Parameter[5][T]
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mul
+                          (Method:log
+                             (Method:sub
+                                (Method:mul
+                                   Constant : 18.320644224174675
+                                   
+                                   Constant : 18.320644224174675
+                                   
+                                )
+                                
+                                (Method:add
+                                   Constant : 0.46029858684469227
+                                   
+                                   Parameter[4][Rain_t-730]
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          Constant : 18.320644224174675
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 (Method:add
+                    (Method:mul
+                       (Method:log
+                          (Method:sub
+                             (Method:mul
+                                Constant : 18.320644224174675
+                                
+                                Constant : 18.320644224174675
+                                
+                             )
+                             
+                             (Method:add
+                                Constant : 0.46029858684469227
+                                
+                                Parameter[4][Rain_t-730]
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mod
+                          (Method:mul
+                             Constant : 18.320644224174675
+                             
+                             Constant : 18.320644224174675
+                             
+                          )
+                          
+                          (Method:sub
+                             (Method:add
+                                (Method:mul
+                                   Constant : 18.320644224174675
+                                   
+                                   Constant : 18.320644224174675
+                                   
+                                )
+                                
+                                (Method:add
+                                   (Method:log
+                                      (Method:sqrt
+                                         (Method:mul
+                                            Parameter[2][Rain_t-6190]
+                                            
+                                            Constant : 89.74659333612647
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:log
+                                      (Method:log
+                                         Constant : 25.400482653178734
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:add
+                                Constant : 0.46029858684469227
+                                
+                                Parameter[4][Rain_t-730]
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    Parameter[5][T]
+                    
+                 )
+                 
+              )
+              
+              (Method:mul
+                 Constant : 18.320644224174675
+                 
+                 Constant : 18.320644224174675
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           (Method:sub
+              (Method:add
+                 (Method:add
+                    (Method:mul
+                       (Method:log
+                          (Method:add
+                             (Method:mul
+                                Constant : 18.320644224174675
+                                
+                                (Method:sqrt
+                                   (Method:mul
+                                      Parameter[2][Rain_t-6190]
+                                      
+                                      Constant : 89.74659333612647
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:mul
+                                Constant : 81.7903645128202
+                                
+                                Constant : 0.46029858684469227
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:log
+                          Constant : 25.400482653178734
+                          
+                       )
+                       
+                    )
+                    
+                    Parameter[5][T]
+                    
+                 )
+                 
+                 (Method:div
+                    Parameter[3][Rain_t-365]
+                    
+                    (Method:add
+                       (Method:sub
+                          (Method:mul
+                             Constant : 18.320644224174675
+                             
+                             Constant : 18.320644224174675
+                             
+                          )
+                          
+                          (Method:add
+                             Constant : 0.46029858684469227
+                             
+                             Parameter[4][Rain_t-730]
+                             
+                          )
+                          
+                       )
+                       
+                       Parameter[5][T]
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+              (Method:sub
+                 (Method:mul
+                    Constant : 18.320644224174675
+                    
+                    Constant : 18.320644224174675
+                    
+                 )
+                 
+                 (Method:add
+                    Constant : 0.46029858684469227
+                    
+                    Parameter[4][Rain_t-730]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mul
+              (Method:mul
+                 (Method:log
+                    (Method:sub
+                       (Method:add
+                          (Method:mul
+                             Constant : 18.320644224174675
+                             
+                             Constant : 18.320644224174675
+                             
+                          )
+                          
+                          (Method:mul
+                             Constant : 81.7903645128202
+                             
+                             Constant : 0.46029858684469227
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:sqrt
+                          (Method:mul
+                             Parameter[2][Rain_t-6190]
+                             
+                             Constant : 89.74659333612647
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 Constant : 18.320644224174675
+                 
+              )
+              
+              Constant : 18.320644224174675
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:mod
+        (Method:mul
+           Constant : 18.320644224174675
+           
+           (Method:mul
+              Constant : 18.320644224174675
+              
+              Constant : 18.320644224174675
+              
+           )
+           
+        )
+        
+        (Method:mul
+           (Method:log
+              (Method:sub
+                 (Method:add
+                    (Method:mul
+                       Constant : 18.320644224174675
+                       
+                       Constant : 18.320644224174675
+                       
+                    )
+                    
+                    (Method:add
+                       (Method:log
+                          (Method:sqrt
+                             (Method:mul
+                                Parameter[2][Rain_t-6190]
+                                
+                                Constant : 89.74659333612647
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:log
+                          (Method:log
+                             Constant : 25.400482653178734
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 (Method:add
+                    Constant : 0.46029858684469227
+                    
+                    Parameter[4][Rain_t-730]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           Constant : 18.320644224174675
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,680 @@
+  (Method:add
+     (Method:mod
+        (Method:add
+           (Method:add
+              Parameter[5][T]
+              
+              Constant : 34.31292436161335
+              
+           )
+           
+           Constant : 34.31292436161335
+           
+        )
+        
+        (Method:exp
+           (Method:power
+              Constant : 47.76687806204084
+              
+              (Method:mod
+                 (Method:div
+                    (Method:mod
+                       (Method:mod
+                          Constant : 81.7903645128202
+                          
+                          (Method:mod
+                             (Method:add
+                                Parameter[5][T]
+                                
+                                (Method:power
+                                   Parameter[2][Rain_t-6190]
+                                   
+                                   Constant : 0.46029858684469227
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:div
+                                (Method:mod
+                                   Constant : 81.7903645128202
+                                   
+                                   (Method:mod
+                                      (Method:add
+                                         Parameter[5][T]
+                                         
+                                         (Method:power
+                                            Parameter[2][Rain_t-6190]
+                                            
+                                            Constant : 0.46029858684469227
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:div
+                                         Constant : 67.42965863518083
+                                         
+                                         Constant : 0.15162291386284676
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                                Constant : 0.15162291386284676
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:add
+                          Constant : 76.43825067784327
+                          
+                          Parameter[4][Rain_t-730]
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:add
+                       Parameter[5][T]
+                       
+                       (Method:add
+                          Parameter[5][T]
+                          
+                          Constant : 34.31292436161335
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+                 (Method:add
+                    (Method:exp
+                       (Method:mod
+                          Constant : 81.7903645128202
+                          
+                          (Method:mod
+                             (Method:add
+                                Parameter[5][T]
+                                
+                                (Method:add
+                                   (Method:power
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   (Method:power
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:mod
+                                Constant : 81.7903645128202
+                                
+                                (Method:div
+                                   Constant : 67.42965863518083
+                                   
+                                   Constant : 0.15162291386284676
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:div
+                       (Method:add
+                          (Method:add
+                             (Method:power
+                                Constant : 47.76687806204084
+                                
+                                Constant : 0.46029858684469227
+                                
+                             )
+                             
+                             (Method:add
+                                (Method:add
+                                   Parameter[5][T]
+                                   
+                                   Constant : 34.31292436161335
+                                   
+                                )
+                                
+                                Constant : 34.31292436161335
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:power
+                             Constant : 47.76687806204084
+                             
+                             Constant : 0.46029858684469227
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:div
+                          (Method:mod
+                             Constant : 81.7903645128202
+                             
+                             (Method:mod
+                                (Method:power
+                                   Parameter[2][Rain_t-6190]
+                                   
+                                   Constant : 0.46029858684469227
+                                   
+                                )
+                                
+                                (Method:div
+                                   Constant : 67.42965863518083
+                                   
+                                   Constant : 0.15162291386284676
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:mod
+                             (Method:div
+                                Constant : 67.42965863518083
+                                
+                                Constant : 0.15162291386284676
+                                
+                             )
+                             
+                             (Method:exp
+                                (Method:mod
+                                   Constant : 81.7903645128202
+                                   
+                                   (Method:mod
+                                      (Method:add
+                                         Parameter[5][T]
+                                         
+                                         (Method:power
+                                            Parameter[2][Rain_t-6190]
+                                            
+                                            Constant : 0.46029858684469227
+                                            
+                                         )
+                                         
+                                      )
+                                      
+                                      (Method:power
+                                         (Method:add
+                                            Parameter[5][T]
+                                            
+                                            Constant : 34.31292436161335
+                                            
+                                         )
+                                         
+                                         Constant : 0.46029858684469227
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:sub
+        (Method:exp
+           (Method:power
+              Constant : 47.76687806204084
+              
+              Constant : 0.46029858684469227
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:mod
+              (Method:add
+                 (Method:add
+                    (Method:add
+                       (Method:mod
+                          (Method:add
+                             Parameter[5][T]
+                             
+                             (Method:add
+                                Constant : 24.65052056729915
+                                
+                                (Method:add
+                                   (Method:power
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   (Method:power
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:add
+                             Constant : 24.65052056729915
+                             
+                             (Method:div
+                                Constant : 67.42965863518083
+                                
+                                Constant : 0.15162291386284676
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:power
+                          Constant : 47.76687806204084
+                          
+                          Constant : 0.46029858684469227
+                          
+                       )
+                       
+                    )
+                    
+                    Constant : 34.31292436161335
+                    
+                 )
+                 
+                 (Method:div
+                    (Method:mod
+                       Constant : 81.7903645128202
+                       
+                       (Method:div
+                          (Method:exp
+                             (Method:mod
+                                Constant : 81.7903645128202
+                                
+                                (Method:mod
+                                   (Method:add
+                                      Parameter[5][T]
+                                      
+                                      (Method:add
+                                         Parameter[5][T]
+                                         
+                                         Constant : 34.31292436161335
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:mod
+                                      Constant : 81.7903645128202
+                                      
+                                      (Method:div
+                                         Constant : 67.42965863518083
+                                         
+                                         Constant : 0.15162291386284676
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                          Constant : 0.15162291386284676
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:div
+                       (Method:mod
+                          Constant : 81.7903645128202
+                          
+                          (Method:add
+                             (Method:div
+                                (Method:power
+                                   Constant : 47.76687806204084
+                                   
+                                   Constant : 0.46029858684469227
+                                   
+                                )
+                                
+                                Constant : 0.15162291386284676
+                                
+                             )
+                             
+                             (Method:add
+                                Parameter[5][T]
+                                
+                                Constant : 34.31292436161335
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:mod
+                          (Method:add
+                             Parameter[5][T]
+                             
+                             (Method:div
+                                (Method:add
+                                   Constant : 76.43825067784327
+                                   
+                                   (Method:div
+                                      Constant : 0.4750113928916787
+                                      
+                                      Constant : 0.15162291386284676
+                                      
+                                   )
+                                   
+                                )
+                                
+                                Constant : 0.15162291386284676
+                                
+                             )
+                             
+                          )
+                          
+                          (Method:div
+                             Constant : 67.42965863518083
+                             
+                             Constant : 0.15162291386284676
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 Constant : 81.7903645128202
+                 
+                 (Method:div
+                    (Method:exp
+                       (Method:mod
+                          Constant : 81.7903645128202
+                          
+                          (Method:mod
+                             (Method:add
+                                Parameter[5][T]
+                                
+                                (Method:add
+                                   (Method:power
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                   (Method:power
+                                      Constant : 47.76687806204084
+                                      
+                                      Constant : 0.46029858684469227
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                             (Method:mod
+                                Constant : 81.7903645128202
+                                
+                                (Method:div
+                                   Constant : 67.42965863518083
+                                   
+                                   Constant : 0.15162291386284676
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    Constant : 0.15162291386284676
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              (Method:exp
+                 (Method:mod
+                    (Method:div
+                       (Method:add
+                          Constant : 24.65052056729915
+                          
+                          (Method:add
+                             Parameter[5][T]
+                             
+                             Constant : 34.31292436161335
+                             
+                          )
+                          
+                       )
+                       
+                       (Method:add
+                          (Method:div
+                             (Method:div
+                                Constant : 67.42965863518083
+                                
+                                (Method:power
+                                   Parameter[2][Rain_t-6190]
+                                   
+                                   Constant : 0.46029858684469227
+                                   
+                                )
+                                
+                             )
+                             
+                             Constant : 0.15162291386284676
+                             
+                          )
+                          
+                          (Method:mod
+                             (Method:add
+                                (Method:div
+                                   (Method:div
+                                      Constant : 67.42965863518083
+                                      
+                                      Constant : 0.15162291386284676
+                                      
+                                   )
+                                   
+                                   Constant : 0.15162291386284676
+                                   
+                                )
+                                
+                                Constant : 24.65052056729915
+                                
+                             )
+                             
+                             Parameter[1][Rain_t-3160]
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:mod
+                       Constant : 81.7903645128202
+                       
+                       (Method:power
+                          Parameter[2][Rain_t-6190]
+                          
+                          Constant : 0.46029858684469227
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 Constant : 81.7903645128202
+                 
+                 (Method:mod
+                    (Method:add
+                       Parameter[5][T]
+                       
+                       (Method:add
+                          Constant : 24.65052056729915
+                          
+                          (Method:add
+                             (Method:power
+                                Constant : 47.76687806204084
+                                
+                                Constant : 0.46029858684469227
+                                
+                             )
+                             
+                             (Method:power
+                                Constant : 47.76687806204084
+                                
+                                Constant : 0.46029858684469227
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                    (Method:add
+                       Constant : 24.65052056729915
+                       
+                       (Method:exp
+                          (Method:mod
+                             Constant : 81.7903645128202
+                             
+                             (Method:mod
+                                (Method:mod
+                                   (Method:add
+                                      Parameter[5][T]
+                                      
+                                      (Method:add
+                                         Parameter[5][T]
+                                         
+                                         Constant : 34.31292436161335
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                   (Method:mod
+                                      Constant : 81.7903645128202
+                                      
+                                      (Method:div
+                                         Constant : 67.42965863518083
+                                         
+                                         Constant : 0.15162291386284676
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                                (Method:add
+                                   Parameter[5][T]
+                                   
+                                   (Method:add
+                                      (Method:power
+                                         Constant : 47.76687806204084
+                                         
+                                         Constant : 0.46029858684469227
+                                         
+                                      )
+                                      
+                                      (Method:power
+                                         Constant : 47.76687806204084
+                                         
+                                         Constant : 0.46029858684469227
+                                         
+                                      )
+                                      
+                                   )
+                                   
+                                )
+                                
+                             )
+                             
+                          )
+                          
+                       )
+                       
+                    )
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

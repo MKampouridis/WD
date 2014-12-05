@@ -20,10 +20,16 @@ public class PredictionEvaluatorTrue2
   double[] rain_t130_Tr;
   double[] rain_t3160_Tr;
   double[] rain_t6190_Tr;
+  double[] rain_t365_Tr;
+  double[] rain_t730_Tr;
   double[] rain_Ts;
   double[] rain_t130_Ts;
   double[] rain_t3160_Ts;
   double[] rain_t6190_Ts;
+  double[] rain_t365_Ts;
+  double[] rain_t730_Ts;
+  double[]t_Tr;
+  double[]t_Ts;
   public static String sumStat = "\tMSE\n";
   public static String sumStat2 = "";
   
@@ -69,10 +75,17 @@ public class PredictionEvaluatorTrue2
     this.rain_t130_Tr = Misc.copy(data1, 1);
     this.rain_t3160_Tr = Misc.copy(data1, 2);
     this.rain_t6190_Tr = Misc.copy(data1, 3);
+    this.rain_t365_Tr = Misc.copy(data1, 4);
+    this.rain_t730_Tr = Misc.copy(data1, 5);
+    this.t_Tr = Misc.copy(data1,6);
+    
     this.rain_Ts = Misc.copy(data2, 0);
     this.rain_t130_Ts = Misc.copy(data2, 1);
     this.rain_t3160_Ts = Misc.copy(data2, 2);
     this.rain_t6190_Ts = Misc.copy(data2, 3);
+    this.rain_t365_Ts = Misc.copy(data2, 4);
+    this.rain_t730_Ts = Misc.copy(data2, 5);
+    this.t_Ts = Misc.copy(data1, 6);
     
     this.cursor = 0;
     File results = new File("./Results");
@@ -93,8 +106,11 @@ public class PredictionEvaluatorTrue2
       Variable var1 = new Variable(new Double(this.rain_t130_Tr[i]));
       Variable var2 = new Variable(new Double(this.rain_t3160_Tr[i]));
       Variable var3 = new Variable(new Double(this.rain_t6190_Tr[i]));
+      Variable var4 = new Variable(new Double(this.rain_t365_Tr[i]));
+      Variable var5 = new Variable(new Double(this.rain_t730_Tr[i]));
+      Variable var6 = new Variable(new Double(this.t_Tr[i]));
       
-      Expr[] env = { var1, var2, var3};
+      Expr[] env = { var1, var2, var3, var4, var5, var6 };
       Object o = evolvedMethod.eval(env);
       double prediction = ((Double)o).doubleValue();
       
@@ -114,8 +130,11 @@ public class PredictionEvaluatorTrue2
       Variable var1 = new Variable(new Double(this.rain_t130_Ts[i]));
       Variable var2 = new Variable(new Double(this.rain_t3160_Ts[i]));
       Variable var3 = new Variable(new Double(this.rain_t6190_Ts[i]));
+      Variable var4 = new Variable(new Double(this.rain_t365_Ts[i]));
+      Variable var5 = new Variable(new Double(this.rain_t730_Ts[i]));
+      Variable var6 = new Variable(new Double(this.t_Ts[i]));
       
-      Expr[] env = { var1, var2, var3};
+      Expr[] env = { var1, var2, var3, var4, var5, var6 };
       Object o = evolvedMethod.eval(env);
       double prediction = ((Double)o).doubleValue();
       predictions = predictions + prediction + "\n";
