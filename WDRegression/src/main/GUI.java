@@ -119,7 +119,7 @@ public class GUI
   
   public void run()
   {
-    eval = new PredictionEvaluatorTrue2(nRuns, filename);
+    //eval = new PredictionEvaluatorTrue2(nRuns, filename);
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;

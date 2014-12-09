@@ -10,12 +10,14 @@ public class PredictionEvaluatorTrue2
   implements Evaluator
 {
   FWriter writer3;
+  private DataPrep pre;
   int cursor;
   int nRuns;
   String filename;
   int currentRun = 0;
   private int noOfMetrics = 1;
   double[][] summaryStats;
+  double[] rawData;
   double[] rain_Tr;
   double[] rain_t130_Tr;
   double[] rain_t3160_Tr;
@@ -28,13 +30,25 @@ public class PredictionEvaluatorTrue2
   double[] rain_t6190_Ts;
   double[] rain_t365_Ts;
   double[] rain_t730_Ts;
-  double[]t_Tr;
-  double[]t_Ts;
+  //double[]t_Tr;
+  //double[]t_Ts;
+  private double[] rain_Tr_t1;
+  private double[] rain_Tr_t2;
+  private double[] rain_Tr_t3;
+  private double[] rain_Tr_t12;
+  private double[] rain_Tr_t24;
+  private double[] rain_Ts_t1;
+  private double[] rain_Ts_t2;
+  private double[] rain_Ts_t3;
+  private double[] rain_Ts_t12;
+  private double[] rain_Ts_t24;         
   public static String sumStat = "\tMSE\n";
   public static String sumStat2 = "";
   
-  public PredictionEvaluatorTrue2(int nRuns, String filename)
+  public PredictionEvaluatorTrue2(int nRuns, String filename, int contractLength)
   {
+      
+      
     this.nRuns = nRuns;
     this.filename = filename;
     
@@ -56,8 +70,10 @@ public class PredictionEvaluatorTrue2
     {
       e1.printStackTrace();
     }
+    
+    
     double[][] data1 = new double[rows1][cols1];
-    double[][] data2 = new double[rows2][cols2];
+    double[][] data2 = new double[rows2][cols2];    
     try
     {
       FReader.read(training, data1);
@@ -71,21 +87,40 @@ public class PredictionEvaluatorTrue2
     {
       e.printStackTrace();
     }
-    this.rain_Tr = Misc.copy(data1, 0);
-    this.rain_t130_Tr = Misc.copy(data1, 1);
-    this.rain_t3160_Tr = Misc.copy(data1, 2);
-    this.rain_t6190_Tr = Misc.copy(data1, 3);
-    this.rain_t365_Tr = Misc.copy(data1, 4);
-    this.rain_t730_Tr = Misc.copy(data1, 5);
-    this.t_Tr = Misc.copy(data1,6);
     
-    this.rain_Ts = Misc.copy(data2, 0);
-    this.rain_t130_Ts = Misc.copy(data2, 1);
-    this.rain_t3160_Ts = Misc.copy(data2, 2);
-    this.rain_t6190_Ts = Misc.copy(data2, 3);
-    this.rain_t365_Ts = Misc.copy(data2, 4);
-    this.rain_t730_Ts = Misc.copy(data2, 5);
-    this.t_Ts = Misc.copy(data1, 6);
+    
+    rawData = Misc.copy(data1,0);
+    
+    rain_Tr = pre.predictCL(contractLength);
+    rain_Tr_t1 = pre.lastCL(contractLength);
+    rain_Tr_t2 = pre.lastTwoCL(contractLength);
+    rain_Tr_t3 = pre.lastThreeCL(contractLength);
+    rain_Tr_t12 = pre.lastYearCL(contractLength);
+    rain_Tr_t24 = pre.twoYearCL(contractLength);
+            
+//    this.rain_Tr = Misc.copy(data1, 0);
+//    this.rain_t130_Tr = Misc.copy(data1, 1);
+//    this.rain_t3160_Tr = Misc.copy(data1, 2);
+//    this.rain_t6190_Tr = Misc.copy(data1, 3);
+//    this.rain_t365_Tr = Misc.copy(data1, 4);
+//    this.rain_t730_Tr = Misc.copy(data1, 5);
+//    this.t_Tr = Misc.copy(data1,6);
+    
+    rawData = Misc.copy(data2,0);
+    
+    rain_Ts = pre.predictCL(contractLength);
+    rain_Ts_t1 = pre.lastCL(contractLength);
+    rain_Ts_t2 = pre.lastTwoCL(contractLength);
+    rain_Ts_t3 = pre.lastThreeCL(contractLength);
+    rain_Ts_t12 = pre.lastYearCL(contractLength);
+    rain_Ts_t24 = pre.twoYearCL(contractLength);
+//    this.rain_Ts = Misc.copy(data2, 0);
+//    this.rain_t130_Ts = Misc.copy(data2, 1);
+//    this.rain_t3160_Ts = Misc.copy(data2, 2);
+//    this.rain_t6190_Ts = Misc.copy(data2, 3);
+//    this.rain_t365_Ts = Misc.copy(data2, 4);
+//    this.rain_t730_Ts = Misc.copy(data2, 5);
+//    this.t_Ts = Misc.copy(data1, 6);
     
     this.cursor = 0;
     File results = new File("./Results");
@@ -108,9 +143,9 @@ public class PredictionEvaluatorTrue2
       Variable var3 = new Variable(new Double(this.rain_t6190_Tr[i]));
       Variable var4 = new Variable(new Double(this.rain_t365_Tr[i]));
       Variable var5 = new Variable(new Double(this.rain_t730_Tr[i]));
-      Variable var6 = new Variable(new Double(this.t_Tr[i]));
+      //Variable var6 = new Variable(new Double(this.t_Tr[i]));
       
-      Expr[] env = { var1, var2, var3, var4, var5, var6 };
+      Expr[] env = { var1, var2, var3, var4, var5 };
       Object o = evolvedMethod.eval(env);
       double prediction = ((Double)o).doubleValue();
       
@@ -132,9 +167,9 @@ public class PredictionEvaluatorTrue2
       Variable var3 = new Variable(new Double(this.rain_t6190_Ts[i]));
       Variable var4 = new Variable(new Double(this.rain_t365_Ts[i]));
       Variable var5 = new Variable(new Double(this.rain_t730_Ts[i]));
-      Variable var6 = new Variable(new Double(this.t_Ts[i]));
+      //Variable var6 = new Variable(new Double(this.t_Ts[i]));
       
-      Expr[] env = { var1, var2, var3, var4, var5, var6 };
+      Expr[] env = { var1, var2, var3, var4, var5 };
       Object o = evolvedMethod.eval(env);
       double prediction = ((Double)o).doubleValue();
       predictions = predictions + prediction + "\n";

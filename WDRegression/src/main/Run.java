@@ -11,24 +11,26 @@ public class Run
   public static Evaluator eval;
   public static int nRuns = 50;
   public static String filename = "Luxembourg";
+  private static int contractLength = 30;
   public static int maxInitialDepth = 2;
-  public static int maxDepth = 14;
-  public static int nGens = 200;
-  public static int popSize = 1000;
+  public static int maxDepth = 4;
+  public static int nGens = 500;
+  public static int popSize = 500;
   public static int tournamentSize = 4;
   public static double mutProb = 0.01D;
   public static double xoverProb = 0.9D;
   public static double elitismPercentage = 0.01D;
-  public static double terminals = 15.0D;
-  public static double weights = 5.0D;
+  public static double terminals = 100.0D;
+  public static double weights = 40.0D;
   
   public static void main(String[] args)
   {
-    eval = new PredictionEvaluatorTrue2(nRuns, filename);
+    
+    eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;
-    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4), new Parameter(5)};
+    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4)};
     TreeManager.evolvedMethodParameters = evolvedMethodParameters;
     
     ArrayList methodSet = new ArrayList();
@@ -53,11 +55,11 @@ public class Run
       terminalSet.add(new Constant(new Double(rc * 100.0D), Double.TYPE)); //Building in a function representing random numbers minimum and maximum, consider avearge
     }
     
-    //Add in some numbers between 0 and 1
+    //Add in numbers between 0 and 2 in blocks of 0.05 for the purpose of weights
     
     for (int i = 0; i < weights; i++)
     {
-      double rc = r.nextDouble();
+      double rc = (1 + i) * 0.05;
       terminalSet.add(new Constant(new Double(rc), Double.TYPE));
     }
     
@@ -69,7 +71,7 @@ public class Run
     terminalSet.add(new Parameter(2, Double.TYPE, Boolean.valueOf(true), "Rain_t-6190")); //Last 61-90 days
     terminalSet.add(new Parameter(3, Double.TYPE, Boolean.valueOf(true), "Rain_t-365")); //Rain in the month last year
     terminalSet.add(new Parameter(4, Double.TYPE, Boolean.valueOf(true), "Rain_t-730")); //Rain in the month two years ago
-    terminalSet.add(new Parameter(5, Double.TYPE, Boolean.valueOf(true), "T"));
+    //terminalSet.add(new Parameter(5, Double.TYPE, Boolean.valueOf(true), "T")); //input for the actual day
     
     double primProb = 0.6D;
     double terminalNodeCrossBias = 0.1D;
