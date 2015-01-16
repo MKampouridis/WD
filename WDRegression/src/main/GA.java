@@ -30,7 +30,7 @@ public class GA
     this.eval = eval;
     this.popSize = popSize;
     this.tournamentSize = tournamentSize;
-    stat = stat;
+    this.stat = stat;
     this.mutProb = mutProb;
     this.elitismPercentage = elitismPercentage;
     this.crossoverProbability = crossoverProbability;
@@ -57,7 +57,7 @@ public class GA
       System.out.println("GENERATION : " + i);
       evaluate();
       
-      //stat.addStat(this.pop, i);
+      stat.addStat(this.pop, i);
       
       Arrays.sort(this.pop);
       if (i < nGens - 1)
@@ -67,7 +67,7 @@ public class GA
       }
       i++;
     }
-    //stat.logStatisticalSummary(nGens - 1);
+    stat.logStatisticalSummary(nGens - 1);
     
     validate(cursor);
   }
@@ -119,9 +119,9 @@ public class GA
     System.out.println("=== BEST PREDICTOR PROGRAM ===");
     this.pop[0].print(cursor);
     this.pop[0].evaluate(this.eval);
-    System.out.println("Best individual's training fitness (MSE): " + this.pop[0].fitness);
+    System.out.println("Best individual's training fitness (RMSE): " + this.pop[0].fitness);
     this.pop[0].test(this.eval);
-    System.out.println("Best individual's testing fitness (MSE): " + this.pop[0].fitness);
+    System.out.println("Best individual's testing fitness (RMSE): " + this.pop[0].fitness);
     Expr node = this.pop[0].node.copy(new HashSet(), new ArrayList());
     Function f = (Function)node;
     Expr impl = ((Funcall)f.func).impl;

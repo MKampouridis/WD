@@ -121,7 +121,7 @@ public class FReader
     }
     else
     {
-      int row = 0;
+      int row = 1;
       String thisLine;
       while ((thisLine = br.readLine()) != null)
       {
@@ -133,7 +133,7 @@ public class FReader
             pos.add(Integer.valueOf(i));
           }
         }
-        int beginIndex = 0;
+        int beginIndex = 1;
         int endIndex = ((Integer)pos.get(0)).intValue();
         array[row][0] = Double.parseDouble(thisLine.substring(beginIndex, endIndex));
         for (int i = 1; i < array[0].length; i++)
@@ -150,5 +150,23 @@ public class FReader
         row++;
       }
     }
+  }
+  public void readArray(String filename, double[][] array, int col){
+      try {
+          BufferedReader reader = new BufferedReader(new FileReader(filename));
+          int rowCounter = 0;
+          String thisLine;
+          reader.readLine();
+          while ((thisLine = reader.readLine()) != null) {
+              String[] cols = thisLine.split(",");
+              for (int i = 0; i < col; i++) {              
+              array[rowCounter][i] = Double.parseDouble(cols[i]);
+              }
+              rowCounter++;
+          }
+      }       
+      catch (Exception e) { 
+          e.printStackTrace();
+      } 
   }
 }

@@ -21,7 +21,7 @@ public class Evaluated
   
   public void print(int cursor)
   {
-    this.fileName = ("Results/Experiment " + cursor + "/Tree" + cursor + ".txt");
+    this.fileName = (Run.filenameS+"/Experiment " + cursor + "/Tree" + cursor + ".txt");
     writeTree = new FWriter(this.fileName, cursor);
     ((Funcall)((Function)this.node).func).impl.print(System.out, "  ", new HashSet());
     writeTree.closeFile();

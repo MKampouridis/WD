@@ -11,10 +11,10 @@ public class Run
   public static Evaluator eval;
   public static int nRuns = 50;
   public static String filename = "Luxembourg";
-  private static int contractLength = 30;
+  public static int contractLength = 31;
   public static int maxInitialDepth = 2;
   public static int maxDepth = 4;
-  public static int nGens = 500;
+  public static int nGens = 50;
   public static int popSize = 500;
   public static int tournamentSize = 4;
   public static double mutProb = 0.01D;
@@ -22,15 +22,26 @@ public class Run
   public static double elitismPercentage = 0.01D;
   public static double terminals = 100.0D;
   public static double weights = 40.0D;
-  
+  public static int totalT = 3;
+  public static int totalY = 10;
+  public static int totalYears = 1;
+  public static String filenameS;
+  //private static Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
   public static void main(String[] args)
   {
-    
+    while(totalT <= 11) { 
+    while (totalYears <= 10) { //repeat for number of years in a file
+    Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
     eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;
-    Expr[] evolvedMethodParameters = { new Parameter(0), new Parameter(1), new Parameter(2), new Parameter(3), new Parameter(4)};
+
+        
+    for (int i=0; i<totalT+totalY; i++) {
+        
+        evolvedMethodParameters[i] = new Parameter(i);
+    }     
     TreeManager.evolvedMethodParameters = evolvedMethodParameters;
     
     ArrayList methodSet = new ArrayList();
@@ -40,38 +51,41 @@ public class Run
     methodSet.add(DIV);
     methodSet.add(LOG);
     methodSet.add(SQRT);
-    methodSet.add(POW);
+    //methodSet.add(POW);
     methodSet.add(MOD);
 //    methodSet.add(SIN);
 //    methodSet.add(COS);
-    methodSet.add(EXP);
+    //methodSet.add(EXP);
 
 
     Random r = new Random();
     ArrayList terminalSet = new ArrayList();
-    for (int i = 0; i < terminals; i++)
-    {
-      double rc = r.nextDouble();
-      terminalSet.add(new Constant(new Double(rc * 100.0D), Double.TYPE)); //Building in a function representing random numbers minimum and maximum, consider avearge
-    }
-    
-    //Add in numbers between 0 and 2 in blocks of 0.05 for the purpose of weights
-    
-    for (int i = 0; i < weights; i++)
-    {
-      double rc = (1 + i) * 0.05;
-      terminalSet.add(new Constant(new Double(rc), Double.TYPE));
-    }
+//    for (int i = 0; i < terminals; i++)
+//    {
+//      double rc = r.nextDouble();
+//      terminalSet.add(new Constant(new Double(rc * 100.0D), Double.TYPE)); //Building in a function representing random numbers minimum and maximum, consider avearge
+//    }
+//    
+//    //Add in numbers between 0 and 2 in blocks of 0.05 for the purpose of weights
+//    
+//    for (int i = 0; i < weights; i++)
+//    {
+//      double rc = (1 + i) * 0.05;
+//      terminalSet.add(new Constant(new Double(rc), Double.TYPE));
+//    }
     
     //terminalSet.add(new Constant(new Double(0.0D), Double.TYPE));
     //terminalSet.add(new Constant(new Double(3.141592653589793D), Double.TYPE));
     
-    terminalSet.add(new Parameter(0, Double.TYPE, Boolean.valueOf(true), "Rain_t-130")); //Last 30 days
-    terminalSet.add(new Parameter(1, Double.TYPE, Boolean.valueOf(true), "Rain_t-3160")); //Last 31-60 days
-    terminalSet.add(new Parameter(2, Double.TYPE, Boolean.valueOf(true), "Rain_t-6190")); //Last 61-90 days
-    terminalSet.add(new Parameter(3, Double.TYPE, Boolean.valueOf(true), "Rain_t-365")); //Rain in the month last year
-    terminalSet.add(new Parameter(4, Double.TYPE, Boolean.valueOf(true), "Rain_t-730")); //Rain in the month two years ago
-    //terminalSet.add(new Parameter(5, Double.TYPE, Boolean.valueOf(true), "T")); //input for the actual day
+    //Dynamically adds the number of parameters to be estimated, need to refer to data to input correct values
+    for (int i = 0; i < totalT; i++) {
+        terminalSet.add(new Parameter(i, Double.TYPE, Boolean.valueOf(true), "Rain_t-"+i));
+    }
+    for (int i = 0; i < totalY; i++) {
+        terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+i));
+    }
+    
+    
     
     double primProb = 0.6D;
     double terminalNodeCrossBias = 0.1D;
@@ -93,20 +107,30 @@ public class Run
     System.out.println("Mutation probalitity: " + mutProb);
     System.out.println("Elitism percentage: " + elitismPercentage);
     System.out.println("===================================================");
+    
+    if (totalYears == 1)
     StatisticalSummary.logExperimentSetup(methodSet, terminalSet, maxInitialDepth, maxDepth, primProb, terminalNodeCrossBias, nGens, popSize, tournamentSize, mutProb, xoverProb);
     
 
 
-    StatisticalSummary stat = null;
+    
+    
+        StatisticalSummary stat = null;
+    filenameS = "Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
     for (int i = 0; i < nRuns; i++)
     {
       System.out.println("========================== Experiment " + i + " ==================================");
-      File experiment = new File("Results/Experiment " + i);
-      experiment.mkdir();
+      File experiment = new File(filenameS + "/Experiment "+i);
+      experiment.mkdirs();
       stat = new StatisticalSummary(nGens, popSize, i);
       alg = new GA(tm, eval, popSize, tournamentSize, stat, mutProb, elitismPercentage, xoverProb, nRuns);
       alg.evolve(nGens, i);
       System.out.println("===============================================================================");
     }
+    totalYears++;
+    } System.out.println(totalT);
+    totalT++;
+    totalYears = 1;
+  }
   }
 }

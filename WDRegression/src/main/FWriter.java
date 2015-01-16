@@ -12,7 +12,7 @@ public class FWriter
   public FWriter(String fileName, int cursor)
   {
     this.aFile = new File(fileName);
-    if ((this.aFile.toString().equals("Results\\Accuracy.txt")) || (this.aFile.toString().equals("Results\\Summary Statistics.txt")) || (this.aFile.toString().equals("Results\\Experiment " + (cursor - 1) + "\\ConfusionMatrix.txt")))
+    if ((this.aFile.toString().equals(Run.filenameS+"\\Accuracy.txt")) || (this.aFile.toString().equals(Run.filenameS+"\\Summary Statistics.txt")) || (this.aFile.toString().equals(Run.filenameS+"\\Experiment " + (cursor - 1) + "\\ConfusionMatrix.txt")))
     {
       if (cursor == 0)
       {

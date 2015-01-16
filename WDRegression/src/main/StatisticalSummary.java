@@ -17,7 +17,7 @@ public class StatisticalSummary
   double[][] summaryStatistics;
   String fileName = "";
   FWriter writer;
-  static FWriter experimentSetupLogger = new FWriter("Results/Experiment_Setup.txt", 0);
+  static FWriter experimentSetupLogger = new FWriter(Run.filenameS+"/Experiment_Setup.txt", 0);
   int experimentNo;
   
   public StatisticalSummary(int noOfGenerations, int noOfIndividuals)
@@ -37,7 +37,7 @@ public class StatisticalSummary
     this.summaryStats = new double[noOfGenerations][9];
     this.summaryStatistics = new double[noOfGenerations][9];
     this.fileName = ("/log" + cursor + ".txt");
-    this.writer = new FWriter("Results/Experiment " + cursor + "/" + fileName, cursor);
+    this.writer = new FWriter(Run.filenameS+"/Experiment " + cursor + "/" + fileName, cursor);
     this.experimentNo = cursor;
   }
   
