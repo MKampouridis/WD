@@ -78,9 +78,11 @@ public class PredictionEvaluatorTrue2
     File results = new File("./"+Run.filenameS);
     results.mkdir();
     
+    File sumStats = new File("SummaryStats");
+    sumStats.mkdir();
     this.summaryStats = new double[nRuns][1];
     
-    this.writer3 = new FWriter(Run.filenameS+"/Summary Statistics.txt", this.cursor);
+    this.writer3 = new FWriter("SummaryStats/" + Run.filenameS+"_SummaryStatistics.txt", this.cursor);
     this.writer3.writeLog("\tMSE\n");
     this.writer3.closeFile();
     
@@ -139,7 +141,7 @@ public class PredictionEvaluatorTrue2
     double[][] array = new double[4][this.noOfMetrics];
     if (this.currentRun == this.nRuns - 1)
     {
-      this.writer3 = new FWriter(Run.filenameS+"/Summary Statistics.txt", this.cursor);
+      this.writer3 = new FWriter("SummaryStats/" + Run.filenameS+"_SummaryStatistics.txt", this.cursor);
       this.writer3.writeLog(sumStat);
       
 

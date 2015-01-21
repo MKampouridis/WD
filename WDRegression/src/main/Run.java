@@ -13,7 +13,7 @@ public class Run
   public static String filename = "Luxembourg";
   public static int contractLength = 31;
   public static int maxInitialDepth = 2;
-  public static int maxDepth = 4;
+  public static int maxDepth = 6;
   public static int nGens = 50;
   public static int popSize = 500;
   public static int tournamentSize = 4;
@@ -22,15 +22,16 @@ public class Run
   public static double elitismPercentage = 0.01D;
   public static double terminals = 100.0D;
   public static double weights = 40.0D;
-  public static int totalT = 3;
+  public static int totalT = 2;
   public static int totalY = 10;
-  public static int totalYears = 1;
+  public static int totalYears = 11;
   public static String filenameS;
   //private static Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
+  
   public static void main(String[] args)
   {
     while(totalT <= 11) { 
-    while (totalYears <= 10) { //repeat for number of years in a file
+    while (totalYears <= 20) { //repeat for number of years in a file
     Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
     eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     
@@ -79,10 +80,10 @@ public class Run
     
     //Dynamically adds the number of parameters to be estimated, need to refer to data to input correct values
     for (int i = 0; i < totalT; i++) {
-        terminalSet.add(new Parameter(i, Double.TYPE, Boolean.valueOf(true), "Rain_t-"+i));
+        terminalSet.add(new Parameter(i, Double.TYPE, Boolean.valueOf(true), "Rain_t-"+(i+1)));
     }
     for (int i = 0; i < totalY; i++) {
-        terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+i));
+        terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+(i+1)));
     }
     
     
@@ -130,7 +131,7 @@ public class Run
     totalYears++;
     } System.out.println(totalT);
     totalT++;
-    totalYears = 1;
+    totalYears = 11;
   }
   }
 }
