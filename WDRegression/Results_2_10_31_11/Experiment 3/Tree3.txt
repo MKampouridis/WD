@@ -1,0 +1,59 @@
+  (Method:mul
+     (Method:sub
+        Constant : 74.94721502869783
+        
+        Parameter[11][Year_t-10]
+        
+     )
+     
+     (Method:log
+        (Method:mul
+           (Method:div
+              (Method:add
+                 (Method:sub
+                    Parameter[9][Year_t-8]
+                    
+                    Constant : 74.94721502869783
+                    
+                 )
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              Constant : 74.94721502869783
+              
+           )
+           
+           (Method:add
+              (Method:sub
+                 Parameter[9][Year_t-8]
+                 
+                 Constant : 74.94721502869783
+                 
+              )
+              
+              (Method:add
+                 (Method:div
+                    Parameter[9][Year_t-8]
+                    
+                    Constant : 74.94721502869783
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[9][Year_t-8]
+                    
+                    Constant : 74.94721502869783
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

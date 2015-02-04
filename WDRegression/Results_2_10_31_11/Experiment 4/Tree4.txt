@@ -1,0 +1,27 @@
+  (Method:add
+     Constant : 74.94721502869783
+     
+     (Method:sqrt
+        (Method:mul
+           (Method:add
+              (Method:log
+                 Parameter[0][Rain_t-1]
+                 
+              )
+              
+              (Method:add
+                 Parameter[8][Year_t-7]
+                 
+                 Constant : 74.94721502869783
+                 
+              )
+              
+           )
+           
+           Parameter[9][Year_t-8]
+           
+        )
+        
+     )
+     
+  )

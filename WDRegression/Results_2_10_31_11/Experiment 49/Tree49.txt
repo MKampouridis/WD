@@ -1,0 +1,109 @@
+  (Method:add
+     (Method:sqrt
+        (Method:add
+           (Method:div
+              (Method:sqrt
+                 Parameter[5][Year_t-4]
+                 
+              )
+              
+              (Method:div
+                 Parameter[2][Year_t-1]
+                 
+                 (Method:mul
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mul
+              (Method:sqrt
+                 (Method:mul
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 (Method:mul
+                    Parameter[4][Year_t-3]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:add
+           (Method:mul
+              Parameter[9][Year_t-8]
+              
+              Parameter[4][Year_t-3]
+              
+           )
+           
+           (Method:mul
+              Parameter[4][Year_t-3]
+              
+              Parameter[9][Year_t-8]
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:log
+              (Method:mod
+                 (Method:mul
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+                 (Method:mul
+                    Parameter[4][Year_t-3]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              (Method:mul
+                 Parameter[4][Year_t-3]
+                 
+                 (Method:sqrt
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+              )
+              
+              Parameter[10][Year_t-9]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

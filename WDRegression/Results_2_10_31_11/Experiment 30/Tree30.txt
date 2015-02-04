@@ -1,0 +1,103 @@
+  (Method:add
+     (Method:mul
+        (Method:sqrt
+           (Method:add
+              (Method:div
+                 Parameter[2][Year_t-1]
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:sub
+                 Constant : 74.94721502869783
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        Constant : 74.94721502869783
+        
+     )
+     
+     (Method:mod
+        (Method:add
+           (Method:div
+              Parameter[2][Year_t-1]
+              
+              (Method:sub
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+                 (Method:sqrt
+                    Parameter[6][Year_t-5]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              (Method:div
+                 Parameter[2][Year_t-1]
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:add
+           Parameter[8][Year_t-7]
+           
+           (Method:add
+              (Method:div
+                 Parameter[2][Year_t-1]
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:sub
+                 Constant : 74.94721502869783
+                 
+                 (Method:sqrt
+                    Constant : 74.94721502869783
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

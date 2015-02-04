@@ -26,6 +26,10 @@ public class Run
   public static int totalY = 10;
   public static int totalYears = 11;
   public static String filenameS;
+  public static boolean splitData = true; //change to false if you want to use full training data
+  public static boolean randomData = false;
+  public static double splitPercent = 0.7;
+   //Change this value for number of RND numbers
   //private static Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
   
   public static void main(String[] args)
@@ -37,8 +41,8 @@ public class Run
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;
-
-        
+    
+    
     for (int i=0; i<totalT+totalY; i++) {
         
         evolvedMethodParameters[i] = new Parameter(i);
@@ -84,9 +88,8 @@ public class Run
     }
     for (int i = 0; i < totalY; i++) {
         terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+(i+1)));
-    }
-    
-    
+    }    
+    terminalSet.add(new Constant((0.0 + (new Random().nextDouble() * (100.0 - 0.0)) ), Double.TYPE));
     
     double primProb = 0.6D;
     double terminalNodeCrossBias = 0.1D;

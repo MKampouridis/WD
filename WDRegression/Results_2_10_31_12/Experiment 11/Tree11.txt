@@ -1,0 +1,94 @@
+  (Method:add
+     (Method:sqrt
+        (Method:add
+           (Method:add
+              (Method:sub
+                 Parameter[9][Year_t-8]
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+              (Method:mul
+                 (Method:sub
+                    Parameter[2][Year_t-1]
+                    
+                    Parameter[8][Year_t-7]
+                    
+                 )
+                 
+                 Constant : 88.49918482853818
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:mul
+                 (Method:sub
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+                 Constant : 88.49918482853818
+                 
+              )
+              
+              (Method:mul
+                 (Method:sub
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+                 Constant : 88.49918482853818
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:add
+        (Method:log
+           (Method:log
+              Parameter[1][Rain_t-2]
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:add
+              (Method:log
+                 Parameter[8][Year_t-7]
+                 
+              )
+              
+              (Method:mul
+                 (Method:log
+                    Parameter[8][Year_t-7]
+                    
+                 )
+                 
+                 Constant : 88.49918482853818
+                 
+              )
+              
+           )
+           
+           (Method:sqrt
+              Parameter[2][Year_t-1]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

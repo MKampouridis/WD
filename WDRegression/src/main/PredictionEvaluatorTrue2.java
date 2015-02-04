@@ -5,8 +5,10 @@ import files.Misc;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class PredictionEvaluatorTrue2
   implements Evaluator
@@ -59,10 +61,11 @@ public class PredictionEvaluatorTrue2
     env = new Expr[cols-1];
     
     double[][] data1 = new double[rows1][cols];
-    double[][] data2 = new double[rows2][cols];    
-
-    read.readArray(training, data1, cols-1);
-    read.readArray(testing,data2, cols-1);
+    double[][] data2 = new double[rows2][cols];
+    read.readArray(training, data1, cols);
+    read.readArray(testing,data2, cols);
+    
+    if (Run.splitData == false) {
     
     rain_tr.put(0, Misc.copy(data1, 0));
     for(int i = 1; i < cols; i++){
@@ -74,7 +77,55 @@ public class PredictionEvaluatorTrue2
         rain_ts.put(i, Misc.copy(data2, i));
     }
     
+    } else if (Run.splitData == true && Run.randomData == true) { //This will randomly select variables within training data in a mixed order
+        // This may need to be moved to a separate method if training set is required to be recalculated every generation
+        
+        double[][] data3 = new double[data1.length][cols];
+        double[][] data4 = new double[data1.length][cols];
+                
+        int counta = 0;
+        int countb = 0;
+        for (int i = 0; i < data1.length; i++) {
+            Random r = new Random();
+            if (r.nextDouble() >= Run.splitPercent) {
+                for(int j = 0; j < cols; j++) {
+                    data4[i][j] = data1[i][j];
+                    countb++;
+                }
+            } else {
+                for(int j = 0; j < cols; j++) {
+                    data3[i][j] = data1[i][j];
+                    counta++;
+                }
+            }
+        }
+        data3 = Arrays.copyOf(data3, counta);
+        data4 = Arrays.copyOf(data4, countb);
+        rain_tr.put(0, Misc.copy(data3, 0));
+        for(int i = 1; i < cols; i++){
+            rain_tr.put(i, Misc.copy(data3, i));    
+        }
     
+        rain_ts.put(0, Misc.copy(data4, 0));
+        for(int i = 1; i < cols; i++){
+            rain_ts.put(i, Misc.copy(data4, i));
+        }    
+    } else { //separate training into a fixed partition according to split percentage
+        int sizeOfArray = (int)(data1.length * Run.splitPercent) + 1;
+        System.out.println(sizeOfArray);
+        double[][] data3 = Arrays.copyOfRange(data1, 0, sizeOfArray);
+        double[][] data4 = Arrays.copyOfRange(data1, sizeOfArray, data1.length);
+        rain_tr.put(0, Misc.copy(data3, 0));
+        for(int i = 1; i < cols; i++){
+            rain_tr.put(i, Misc.copy(data3, i));    
+        }
+    
+        rain_ts.put(0, Misc.copy(data4, 0));
+        for(int i = 1; i < cols; i++){
+            rain_ts.put(i, Misc.copy(data4, i));
+        }
+        
+    }
     File results = new File("./"+Run.filenameS);
     results.mkdir();
     
@@ -93,7 +144,7 @@ public class PredictionEvaluatorTrue2
   {
       
     double SE = 0.0D;
-    for (int i = 0; i < rows1; i++)
+    for (int i = 0; i < rain_tr.size(); i++)
     {
         for (int j = 1; j < cols; j++) {
             temp = rain_tr.get(j);
@@ -102,6 +153,9 @@ public class PredictionEvaluatorTrue2
       
       Object o = evolvedMethod.eval(env);
       double prediction = ((Double)o).doubleValue();
+      if(prediction < 0) { 
+          prediction = 0;
+      }
       temp = rain_tr.get(0);
       SE += Math.pow(prediction - temp[i], 2.0D);
     }
@@ -122,8 +176,12 @@ public class PredictionEvaluatorTrue2
         }
       Object o = evolvedMethod.eval(env);
       double prediction = ((Double)o).doubleValue();
+      if(prediction < 0) { 
+          prediction = 0;
+      }
       predictions = predictions + prediction + "\n";
       SE += Math.pow(prediction - temp[i], 2.0D);
+      
     }
     double MSE = Arithmetic.sqrt(SE / rows2);
     

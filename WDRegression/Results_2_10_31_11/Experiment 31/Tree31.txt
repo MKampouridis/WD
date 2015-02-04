@@ -1,0 +1,108 @@
+  (Method:mul
+     (Method:mod
+        (Method:sqrt
+           (Method:add
+              (Method:mul
+                 (Method:log
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+                 (Method:mod
+                    Constant : 74.94721502869783
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+              )
+              
+              (Method:sub
+                 Parameter[9][Year_t-8]
+                 
+                 (Method:sqrt
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:add
+           Parameter[6][Year_t-5]
+           
+           (Method:add
+              (Method:sqrt
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+              (Method:log
+                 Parameter[2][Year_t-1]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:sqrt
+        (Method:sub
+           (Method:sub
+              (Method:mul
+                 (Method:log
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+                 (Method:mod
+                    Constant : 74.94721502869783
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 (Method:mod
+                    Constant : 74.94721502869783
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+                 (Method:sqrt
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:mod
+                 Constant : 74.94721502869783
+                 
+                 Parameter[2][Year_t-1]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,113 @@
+  (Method:add
+     (Method:mod
+        (Method:add
+           (Method:log
+              (Method:mul
+                 (Method:add
+                    Parameter[9][Year_t-8]
+                    
+                    Constant : 88.49918482853818
+                    
+                 )
+                 
+                 (Method:mul
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           Constant : 88.49918482853818
+           
+        )
+        
+        (Method:sqrt
+           (Method:add
+              (Method:add
+                 (Method:add
+                    Parameter[9][Year_t-8]
+                    
+                    Constant : 88.49918482853818
+                    
+                 )
+                 
+                 Constant : 88.49918482853818
+                 
+              )
+              
+              (Method:add
+                 Parameter[9][Year_t-8]
+                 
+                 Constant : 88.49918482853818
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:add
+        (Method:add
+           (Method:mod
+              (Method:mul
+                 (Method:add
+                    Parameter[9][Year_t-8]
+                    
+                    Constant : 88.49918482853818
+                    
+                 )
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[4][Year_t-3]
+                 
+              )
+              
+           )
+           
+           Constant : 88.49918482853818
+           
+        )
+        
+        (Method:sqrt
+           (Method:add
+              (Method:add
+                 (Method:mul
+                    Parameter[8][Year_t-7]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[7][Year_t-6]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Parameter[10][Year_t-9]
+                 
+                 Parameter[7][Year_t-6]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

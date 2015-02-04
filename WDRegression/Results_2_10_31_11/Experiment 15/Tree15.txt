@@ -1,0 +1,122 @@
+  (Method:add
+     (Method:add
+        (Method:mul
+           (Method:log
+              (Method:add
+                 Parameter[9][Year_t-8]
+                 
+                 (Method:log
+                    Parameter[8][Year_t-7]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              Constant : 74.94721502869783
+              
+              (Method:log
+                 (Method:add
+                    Parameter[8][Year_t-7]
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:add
+              (Method:log
+                 (Method:add
+                    Parameter[8][Year_t-7]
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Parameter[2][Year_t-1]
+                 
+                 (Method:sqrt
+                    Constant : 74.94721502869783
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:log
+              (Method:add
+                 Parameter[8][Year_t-7]
+                 
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:add
+           (Method:sub
+              (Method:add
+                 Parameter[8][Year_t-7]
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              Parameter[10][Year_t-9]
+              
+           )
+           
+           (Method:add
+              Parameter[2][Year_t-1]
+              
+              (Method:mod
+                 (Method:mod
+                    Parameter[6][Year_t-5]
+                    
+                    Parameter[6][Year_t-5]
+                    
+                 )
+                 
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:log
+           (Method:add
+              Parameter[2][Year_t-1]
+              
+              (Method:mod
+                 Parameter[6][Year_t-5]
+                 
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )
