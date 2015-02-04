@@ -231,7 +231,7 @@ public class TreeManager
   }
   
   public static Expr getTypedTerminal(Class<?> type, ArrayList<?> termList)
-  {
+  {     
     Object term = termList.get(r.nextInt(termList.size()));
     if ((term instanceof MethodCall)) {
       return new Function((MethodCall)term, new Expr[0], type, new Class[0]);
