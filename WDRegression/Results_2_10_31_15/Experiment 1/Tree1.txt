@@ -1,0 +1,102 @@
+  (Method:add
+     (Method:sub
+        Parameter[9][Year_t-8]
+        
+        (Method:mod
+           (Method:add
+              (Method:add
+                 Parameter[2][Year_t-1]
+                 
+                 Parameter[2][Year_t-1]
+                 
+              )
+              
+              (Method:add
+                 Parameter[2][Year_t-1]
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+           (Method:div
+              (Method:mul
+                 (Method:add
+                    Parameter[2][Year_t-1]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+              Parameter[5][Year_t-4]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:mod
+        (Method:sqrt
+           (Method:add
+              (Method:add
+                 Constant : 34.20925443272183
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:add
+                 (Method:add
+                    Parameter[2][Year_t-1]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[2][Year_t-1]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           (Method:add
+              Parameter[2][Year_t-1]
+              
+              Parameter[1][Rain_t-2]
+              
+           )
+           
+           (Method:mod
+              Parameter[8][Year_t-7]
+              
+              (Method:sqrt
+                 (Method:add
+                    Parameter[2][Year_t-1]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

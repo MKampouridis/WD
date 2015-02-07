@@ -1,0 +1,92 @@
+  (Method:sqrt
+     (Method:add
+        (Method:sub
+           (Method:sub
+              (Method:mul
+                 Parameter[8][Year_t-6]
+                 
+                 Parameter[12][Year_t-10]
+                 
+              )
+              
+              (Method:sqrt
+                 (Method:mul
+                    Parameter[8][Year_t-6]
+                    
+                    Parameter[12][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mul
+              Parameter[3][Year_t-1]
+              
+              (Method:add
+                 (Method:sub
+                    Parameter[4][Year_t-2]
+                    
+                    Parameter[2][Rain_t-3]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[9][Year_t-7]
+                    
+                    Parameter[9][Year_t-7]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sub
+           (Method:mul
+              (Method:sub
+                 (Method:add
+                    Parameter[6][Year_t-4]
+                    
+                    Parameter[9][Year_t-7]
+                    
+                 )
+                 
+                 Parameter[2][Rain_t-3]
+                 
+              )
+              
+              (Method:sub
+                 Parameter[4][Year_t-2]
+                 
+                 Parameter[2][Rain_t-3]
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:sub
+                 Parameter[4][Year_t-2]
+                 
+                 Parameter[2][Rain_t-3]
+                 
+              )
+              
+              (Method:add
+                 Parameter[9][Year_t-7]
+                 
+                 Parameter[9][Year_t-7]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

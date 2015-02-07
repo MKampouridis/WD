@@ -1,0 +1,116 @@
+  (Method:sub
+     (Method:sub
+        (Method:sub
+           (Method:sub
+              Parameter[9][Year_t-8]
+              
+              (Method:sqrt
+                 (Method:sub
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sqrt
+              (Method:sub
+                 Parameter[10][Year_t-9]
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:add
+              (Method:add
+                 (Method:mod
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 (Method:mod
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:sqrt
+        (Method:sqrt
+           (Method:mul
+              (Method:add
+                 (Method:mod
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 (Method:mul
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

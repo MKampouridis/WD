@@ -1,0 +1,45 @@
+  (Method:sqrt
+     (Method:mul
+        (Method:sqrt
+           (Method:mul
+              (Method:sub
+                 Parameter[10][Year_t-9]
+                 
+                 Parameter[5][Year_t-4]
+                 
+              )
+              
+              (Method:mod
+                 Parameter[8][Year_t-7]
+                 
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:mul
+              Parameter[4][Year_t-3]
+              
+              (Method:add
+                 (Method:sub
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+                 Constant : 53.90397179215154
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

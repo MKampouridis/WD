@@ -1,0 +1,46 @@
+  (Method:add
+     Parameter[5][Year_t-4]
+     
+     (Method:add
+        (Method:mod
+           (Method:add
+              (Method:mod
+                 (Method:add
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Parameter[5][Year_t-4]
+                 
+                 Parameter[3][Year_t-2]
+                 
+              )
+              
+           )
+           
+           (Method:add
+              Parameter[1][Rain_t-2]
+              
+              Parameter[1][Rain_t-2]
+              
+           )
+           
+        )
+        
+        Parameter[3][Year_t-2]
+        
+     )
+     
+  )

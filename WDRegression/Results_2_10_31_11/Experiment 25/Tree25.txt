@@ -1,26 +1,20 @@
-  (Method:sqrt
+  (Method:add
      (Method:add
-        (Method:mul
-           (Method:sub
-              Parameter[9][Year_t-8]
+        Parameter[6][Year_t-5]
+        
+        (Method:add
+           (Method:mod
+              Constant : 54.60359759988271
               
-              Parameter[11][Year_t-10]
+              Parameter[3][Year_t-2]
               
            )
            
-           (Method:add
-              (Method:sqrt
-                 (Method:mul
-                    Parameter[8][Year_t-7]
-                    
-                    Parameter[5][Year_t-4]
-                    
-                 )
+           (Method:sqrt
+              (Method:mod
+                 Constant : 54.60359759988271
                  
-              )
-              
-              (Method:sqrt
-                 Parameter[5][Year_t-4]
+                 Parameter[3][Year_t-2]
                  
               )
               
@@ -28,18 +22,43 @@
            
         )
         
-        (Method:add
-           (Method:mul
-              Constant : 74.94721502869783
+     )
+     
+     (Method:mod
+        Parameter[4][Year_t-3]
+        
+        (Method:mod
+           (Method:add
+              Parameter[6][Year_t-5]
               
-              Parameter[2][Year_t-1]
+              (Method:mod
+                 (Method:mod
+                    Constant : 54.60359759988271
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+                 Parameter[3][Year_t-2]
+                 
+              )
               
            )
            
-           (Method:mul
-              Constant : 74.94721502869783
+           (Method:add
+              (Method:mod
+                 Constant : 54.60359759988271
+                 
+                 Parameter[3][Year_t-2]
+                 
+              )
               
-              Parameter[2][Year_t-1]
+              (Method:mod
+                 Constant : 54.60359759988271
+                 
+                 Parameter[3][Year_t-2]
+                 
+              )
               
            )
            

@@ -1,24 +1,14 @@
   (Method:add
-     (Method:sqrt
-        (Method:sqrt
-           (Method:mul
-              (Method:mul
-                 Constant : 74.94721502869783
-                 
-                 Parameter[5][Year_t-4]
-                 
-              )
+     (Method:add
+        Constant : 54.60359759988271
+        
+        (Method:mod
+           (Method:sub
+              Parameter[6][Year_t-5]
               
-              (Method:mul
-                 (Method:sub
-                    Parameter[8][Year_t-7]
-                    
-                    Parameter[1][Rain_t-2]
-                    
-                 )
-                 
+              (Method:log
                  (Method:sqrt
-                    Constant : 74.94721502869783
+                    Parameter[9][Year_t-8]
                     
                  )
                  
@@ -26,31 +16,23 @@
               
            )
            
+           (Method:sqrt
+              Constant : 54.60359759988271
+              
+           )
+           
         )
         
      )
      
-     (Method:add
-        (Method:sqrt
-           (Method:add
-              (Method:mul
-                 (Method:mul
-                    Constant : 74.94721502869783
-                    
-                    Parameter[9][Year_t-8]
-                    
-                 )
-                 
-                 (Method:log
-                    Parameter[2][Year_t-1]
-                    
-                 )
-                 
-              )
+     (Method:mod
+        (Method:add
+           Constant : 54.60359759988271
+           
+           (Method:sub
+              Parameter[6][Year_t-5]
               
-              (Method:mul
-                 Constant : 74.94721502869783
-                 
+              (Method:sqrt
                  Parameter[2][Year_t-1]
                  
               )
@@ -59,7 +41,26 @@
            
         )
         
-        Constant : 74.94721502869783
+        (Method:mul
+           (Method:mul
+              (Method:sqrt
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:log
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+           (Method:sqrt
+              Parameter[9][Year_t-8]
+              
+           )
+           
+        )
         
      )
      

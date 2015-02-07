@@ -1,0 +1,44 @@
+  (Method:sub
+     Parameter[9][Year_t-8]
+     
+     (Method:add
+        (Method:sub
+           (Method:mod
+              Parameter[4][Year_t-3]
+              
+              Parameter[5][Year_t-4]
+              
+           )
+           
+           (Method:mod
+              (Method:mod
+                 Parameter[7][Year_t-6]
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+              Parameter[1][Rain_t-2]
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:mod
+              Parameter[9][Year_t-8]
+              
+              (Method:mod
+                 Parameter[7][Year_t-6]
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

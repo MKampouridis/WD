@@ -13,29 +13,25 @@ public class Run
   public static String filename = "Luxembourg";
   public static int contractLength = 31;
   public static int maxInitialDepth = 2;
-  public static int maxDepth = 6;
+  public static int maxDepth = 4;
   public static int nGens = 50;
   public static int popSize = 500;
   public static int tournamentSize = 4;
   public static double mutProb = 0.01D;
   public static double xoverProb = 0.9D;
   public static double elitismPercentage = 0.01D;
-  public static double terminals = 100.0D;
-  public static double weights = 40.0D;
-  public static int totalT = 2;
+  public static int totalT = 10;
   public static int totalY = 10;
   public static int totalYears = 11;
   public static String filenameS;
-  public static boolean splitData = true; //change to false if you want to use full training data
+  public static boolean splitData = false; //change to false if you want to use full training data
   public static boolean randomData = false;
   public static double splitPercent = 0.7;
    //Change this value for number of RND numbers
-  //private static Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
   
   public static void main(String[] args)
   {
-    while(totalT <= 11) { 
-    while (totalYears <= 20) { //repeat for number of years in a file
+      
     Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
     eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     
@@ -111,15 +107,10 @@ public class Run
     System.out.println("Mutation probalitity: " + mutProb);
     System.out.println("Elitism percentage: " + elitismPercentage);
     System.out.println("===================================================");
-    
-    if (totalYears == 1)
+   
     StatisticalSummary.logExperimentSetup(methodSet, terminalSet, maxInitialDepth, maxDepth, primProb, terminalNodeCrossBias, nGens, popSize, tournamentSize, mutProb, xoverProb);
     
-
-
-    
-    
-        StatisticalSummary stat = null;
+    StatisticalSummary stat = null;
     filenameS = "Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
     for (int i = 0; i < nRuns; i++)
     {
@@ -131,10 +122,5 @@ public class Run
       alg.evolve(nGens, i);
       System.out.println("===============================================================================");
     }
-    totalYears++;
-    } System.out.println(totalT);
-    totalT++;
-    totalYears = 11;
-  }
-  }
+}
 }

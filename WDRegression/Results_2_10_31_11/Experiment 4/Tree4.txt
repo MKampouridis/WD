@@ -1,24 +1,87 @@
   (Method:add
-     Constant : 74.94721502869783
-     
-     (Method:sqrt
-        (Method:mul
+     (Method:add
+        (Method:add
            (Method:add
-              (Method:log
-                 Parameter[0][Rain_t-1]
+              (Method:add
+                 Constant : 39.00207803061233
+                 
+                 Constant : 39.00207803061233
                  
               )
               
-              (Method:add
-                 Parameter[8][Year_t-7]
-                 
-                 Constant : 74.94721502869783
+              Parameter[6][Year_t-5]
+              
+           )
+           
+           (Method:mod
+              Parameter[6][Year_t-5]
+              
+              (Method:sqrt
+                 Parameter[6][Year_t-5]
                  
               )
               
            )
            
-           Parameter[9][Year_t-8]
+        )
+        
+        (Method:mod
+           Parameter[6][Year_t-5]
+           
+           (Method:sqrt
+              Parameter[6][Year_t-5]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:sub
+           (Method:mod
+              Parameter[6][Year_t-5]
+              
+              (Method:mod
+                 Parameter[6][Year_t-5]
+                 
+                 (Method:add
+                    Constant : 39.00207803061233
+                    
+                    Constant : 39.00207803061233
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           Constant : 39.00207803061233
+           
+        )
+        
+        (Method:mod
+           Parameter[6][Year_t-5]
+           
+           (Method:add
+              (Method:sqrt
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+              (Method:mod
+                 Parameter[6][Year_t-5]
+                 
+                 (Method:add
+                    Constant : 39.00207803061233
+                    
+                    Constant : 39.00207803061233
+                    
+                 )
+                 
+              )
+              
+           )
            
         )
         

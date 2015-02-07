@@ -1,0 +1,103 @@
+  (Method:sub
+     (Method:add
+        (Method:add
+           Parameter[10][Year_t-9]
+           
+           (Method:add
+              (Method:sub
+                 Parameter[5][Year_t-4]
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              Parameter[8][Year_t-7]
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:sub
+              (Method:sub
+                 Parameter[11][Year_t-10]
+                 
+                 Parameter[0][Rain_t-1]
+                 
+              )
+              
+              (Method:sub
+                 (Method:sub
+                    Parameter[5][Year_t-4]
+                    
+                    Constant : 93.089583905734
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:log
+              (Method:sqrt
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:sub
+           (Method:sub
+              Parameter[11][Year_t-10]
+              
+              Parameter[0][Rain_t-1]
+              
+           )
+           
+           (Method:sub
+              (Method:add
+                 Parameter[4][Year_t-3]
+                 
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+              (Method:log
+                 (Method:sub
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:sub
+              Parameter[5][Year_t-4]
+              
+              Constant : 93.089583905734
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,114 @@
+  (Method:add
+     (Method:add
+        (Method:mod
+           (Method:mod
+              (Method:add
+                 (Method:mod
+                    Parameter[4][Year_t-2]
+                    
+                    Parameter[6][Year_t-4]
+                    
+                 )
+                 
+                 Parameter[12][Year_t-10]
+                 
+              )
+              
+              (Method:sub
+                 Parameter[7][Year_t-5]
+                 
+                 Parameter[10][Year_t-8]
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:mod
+                 (Method:sub
+                    Parameter[7][Year_t-5]
+                    
+                    Parameter[10][Year_t-8]
+                    
+                 )
+                 
+                 Parameter[6][Year_t-4]
+                 
+              )
+              
+              Parameter[3][Year_t-1]
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:mod
+              Parameter[4][Year_t-2]
+              
+              Parameter[6][Year_t-4]
+              
+           )
+           
+           Parameter[12][Year_t-10]
+           
+        )
+        
+     )
+     
+     (Method:mod
+        (Method:sub
+           (Method:sqrt
+              (Method:add
+                 (Method:mod
+                    Parameter[4][Year_t-2]
+                    
+                    Parameter[6][Year_t-4]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[7][Year_t-5]
+                    
+                    Parameter[10][Year_t-8]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           Parameter[8][Year_t-6]
+           
+        )
+        
+        (Method:div
+           (Method:add
+              (Method:mod
+                 Parameter[4][Year_t-2]
+                 
+                 Parameter[6][Year_t-4]
+                 
+              )
+              
+              Parameter[12][Year_t-10]
+              
+           )
+           
+           (Method:mod
+              Parameter[4][Year_t-2]
+              
+              (Method:sub
+                 Parameter[7][Year_t-5]
+                 
+                 Parameter[6][Year_t-4]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,94 @@
+  (Method:sub
+     Parameter[8][Year_t-7]
+     
+     (Method:add
+        (Method:div
+           (Method:mod
+              (Method:mul
+                 Parameter[10][Year_t-9]
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+           )
+           
+           (Method:div
+              (Method:add
+                 Parameter[4][Year_t-3]
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 (Method:mul
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:mod
+              (Method:add
+                 Parameter[4][Year_t-3]
+                 
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:mod
+                 (Method:mul
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

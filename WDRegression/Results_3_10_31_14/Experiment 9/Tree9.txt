@@ -1,0 +1,121 @@
+  (Method:add
+     (Method:add
+        (Method:div
+           (Method:sub
+              (Method:mod
+                 Parameter[10][Year_t-8]
+                 
+                 Parameter[3][Year_t-1]
+                 
+              )
+              
+              Constant : 11.482678730125928
+              
+           )
+           
+           (Method:add
+              (Method:sqrt
+                 (Method:div
+                    Parameter[10][Year_t-8]
+                    
+                    Parameter[3][Year_t-1]
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[8][Year_t-6]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:div
+              (Method:sub
+                 (Method:mod
+                    Parameter[10][Year_t-8]
+                    
+                    Parameter[3][Year_t-1]
+                    
+                 )
+                 
+                 Constant : 11.482678730125928
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[8][Year_t-6]
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:sub
+                 Parameter[5][Year_t-3]
+                 
+                 Constant : 11.482678730125928
+                 
+              )
+              
+              (Method:div
+                 Parameter[10][Year_t-8]
+                 
+                 Parameter[3][Year_t-1]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:add
+        (Method:mod
+           Parameter[4][Year_t-2]
+           
+           (Method:mod
+              (Method:sqrt
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+              (Method:sub
+                 (Method:sub
+                    Parameter[4][Year_t-2]
+                    
+                    Parameter[8][Year_t-6]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[12][Year_t-10]
+                    
+                    Parameter[5][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           Parameter[4][Year_t-2]
+           
+           (Method:sqrt
+              Parameter[8][Year_t-6]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

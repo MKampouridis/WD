@@ -1,0 +1,111 @@
+  (Method:sub
+     (Method:add
+        (Method:sub
+           Parameter[6][Year_t-5]
+           
+           (Method:add
+              Parameter[9][Year_t-8]
+              
+              Constant : 38.08868447973721
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:mod
+              (Method:mod
+                 (Method:sub
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              Parameter[4][Year_t-3]
+              
+           )
+           
+           Parameter[11][Year_t-10]
+           
+        )
+        
+     )
+     
+     (Method:mod
+        (Method:mod
+           (Method:add
+              (Method:sub
+                 Parameter[6][Year_t-5]
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:sub
+                 Parameter[3][Year_t-2]
+                 
+                 (Method:sub
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              Parameter[3][Year_t-2]
+              
+              Parameter[4][Year_t-3]
+              
+           )
+           
+        )
+        
+        (Method:add
+           Parameter[0][Rain_t-1]
+           
+           (Method:mod
+              (Method:sub
+                 (Method:mod
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 Parameter[4][Year_t-3]
+                 
+              )
+              
+              (Method:add
+                 (Method:sub
+                    Parameter[6][Year_t-5]
+                    
+                    Parameter[9][Year_t-8]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

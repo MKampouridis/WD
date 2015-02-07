@@ -1,0 +1,114 @@
+  (Method:add
+     (Method:add
+        (Method:add
+           (Method:add
+              (Method:add
+                 Parameter[5][Year_t-4]
+                 
+                 Parameter[3][Year_t-2]
+                 
+              )
+              
+              Constant : 93.089583905734
+              
+           )
+           
+           (Method:mod
+              (Method:mod
+                 (Method:add
+                    Parameter[8][Year_t-7]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 (Method:add
+                    Parameter[8][Year_t-7]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[6][Year_t-5]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           (Method:sub
+              (Method:add
+                 Parameter[8][Year_t-7]
+                 
+                 (Method:add
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 (Method:add
+                    Parameter[8][Year_t-7]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+                 (Method:sqrt
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:mod
+                 (Method:add
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[6][Year_t-5]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+              Constant : 93.089583905734
+              
+           )
+           
+        )
+        
+     )
+     
+     Constant : 93.089583905734
+     
+  )

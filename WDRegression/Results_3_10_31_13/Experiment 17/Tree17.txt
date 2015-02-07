@@ -1,0 +1,46 @@
+  (Method:add
+     (Method:mod
+        (Method:mul
+           (Method:mul
+              (Method:mul
+                 Parameter[8][Year_t-6]
+                 
+                 Parameter[6][Year_t-4]
+                 
+              )
+              
+              (Method:add
+                 Parameter[12][Year_t-10]
+                 
+                 (Method:mul
+                    Parameter[8][Year_t-6]
+                    
+                    Parameter[6][Year_t-4]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:add
+                 Parameter[4][Year_t-2]
+                 
+                 Parameter[12][Year_t-10]
+                 
+              )
+              
+              Parameter[5][Year_t-3]
+              
+           )
+           
+        )
+        
+        Parameter[5][Year_t-3]
+        
+     )
+     
+     Parameter[12][Year_t-10]
+     
+  )

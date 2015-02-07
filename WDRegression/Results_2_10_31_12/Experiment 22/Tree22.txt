@@ -1,0 +1,52 @@
+  (Method:sub
+     Parameter[4][Year_t-3]
+     
+     (Method:div
+        (Method:sub
+           Parameter[4][Year_t-3]
+           
+           (Method:mod
+              Parameter[11][Year_t-10]
+              
+              (Method:mod
+                 Parameter[11][Year_t-10]
+                 
+                 Parameter[5][Year_t-4]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:add
+              (Method:mod
+                 Parameter[11][Year_t-10]
+                 
+                 (Method:sqrt
+                    Parameter[8][Year_t-7]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 Parameter[11][Year_t-10]
+                 
+                 (Method:mod
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[7][Year_t-6]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

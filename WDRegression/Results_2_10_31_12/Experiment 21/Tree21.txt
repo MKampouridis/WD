@@ -1,0 +1,146 @@
+  (Method:add
+     (Method:div
+        (Method:sub
+           (Method:sub
+              (Method:div
+                 (Method:sub
+                    Parameter[4][Year_t-3]
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+              Constant : 61.76044021478351
+              
+           )
+           
+           (Method:sub
+              Parameter[2][Year_t-1]
+              
+              Constant : 61.76044021478351
+              
+           )
+           
+        )
+        
+        (Method:sub
+           (Method:sub
+              Parameter[4][Year_t-3]
+              
+              (Method:mod
+                 Parameter[1][Rain_t-2]
+                 
+                 Parameter[11][Year_t-10]
+                 
+              )
+              
+           )
+           
+           Constant : 61.76044021478351
+           
+        )
+        
+     )
+     
+     (Method:add
+        (Method:div
+           (Method:sub
+              (Method:add
+                 (Method:sub
+                    Parameter[4][Year_t-3]
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[4][Year_t-3]
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+              Constant : 61.76044021478351
+              
+           )
+           
+           (Method:sub
+              Parameter[4][Year_t-3]
+              
+              (Method:sub
+                 Parameter[4][Year_t-3]
+                 
+                 Constant : 61.76044021478351
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sub
+           (Method:sub
+              (Method:sub
+                 Parameter[4][Year_t-3]
+                 
+                 Constant : 61.76044021478351
+                 
+              )
+              
+              Constant : 61.76044021478351
+              
+           )
+           
+           (Method:div
+              (Method:add
+                 (Method:sub
+                    Parameter[11][Year_t-10]
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[2][Year_t-1]
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+              (Method:sub
+                 (Method:mod
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[4][Year_t-3]
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,51 @@
+  (Method:sub
+     Parameter[10][Year_t-9]
+     
+     (Method:mod
+        (Method:sub
+           Parameter[10][Year_t-9]
+           
+           Parameter[4][Year_t-3]
+           
+        )
+        
+        (Method:mod
+           Parameter[10][Year_t-9]
+           
+           (Method:mul
+              (Method:div
+                 (Method:sub
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[4][Year_t-3]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 (Method:mod
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+                 Parameter[11][Year_t-10]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

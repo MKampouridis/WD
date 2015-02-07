@@ -1,0 +1,75 @@
+  (Method:sub
+     Parameter[4][Year_t-3]
+     
+     (Method:add
+        (Method:mod
+           Parameter[11][Year_t-10]
+           
+           (Method:add
+              (Method:sqrt
+                 (Method:add
+                    Constant : 61.76044021478351
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Constant : 61.76044021478351
+                 
+                 Constant : 61.76044021478351
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sub
+           (Method:sub
+              (Method:mod
+                 Parameter[11][Year_t-10]
+                 
+                 (Method:add
+                    Constant : 61.76044021478351
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 (Method:add
+                    Constant : 61.76044021478351
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sqrt
+              (Method:add
+                 Constant : 61.76044021478351
+                 
+                 (Method:add
+                    Constant : 61.76044021478351
+                    
+                    Constant : 61.76044021478351
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

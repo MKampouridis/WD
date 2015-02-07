@@ -1,0 +1,57 @@
+  (Method:add
+     (Method:add
+        (Method:mul
+           (Method:mod
+              Constant : 80.56351436380284
+              
+              Parameter[13][Year_t-4]
+              
+           )
+           
+           (Method:log
+              Parameter[3][Rain_t-4]
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:mod
+              Parameter[19][Year_t-10]
+              
+              Parameter[16][Year_t-7]
+              
+           )
+           
+           (Method:mod
+              Parameter[19][Year_t-10]
+              
+              Constant : 80.56351436380284
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:log
+        (Method:div
+           (Method:div
+              Constant : 80.56351436380284
+              
+              Parameter[13][Year_t-4]
+              
+           )
+           
+           (Method:mod
+              Parameter[16][Year_t-7]
+              
+              Parameter[5][Rain_t-6]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

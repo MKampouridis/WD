@@ -1,0 +1,79 @@
+  (Method:add
+     (Method:add
+        (Method:div
+           Parameter[8][Year_t-7]
+           
+           (Method:log
+              (Method:sqrt
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           Parameter[6][Year_t-5]
+           
+           (Method:div
+              (Method:mod
+                 Parameter[6][Year_t-5]
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:mod
+           Parameter[6][Year_t-5]
+           
+           Parameter[9][Year_t-8]
+           
+        )
+        
+        (Method:div
+           (Method:div
+              Parameter[8][Year_t-7]
+              
+              (Method:log
+                 (Method:sqrt
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:div
+              (Method:mod
+                 Parameter[6][Year_t-5]
+                 
+                 Parameter[9][Year_t-8]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

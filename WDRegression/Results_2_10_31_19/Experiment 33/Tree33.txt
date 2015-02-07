@@ -1,0 +1,96 @@
+  (Method:add
+     (Method:add
+        (Method:sub
+           Parameter[11][Year_t-10]
+           
+           Parameter[0][Rain_t-1]
+           
+        )
+        
+        (Method:add
+           Parameter[5][Year_t-4]
+           
+           Parameter[11][Year_t-10]
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:sub
+           (Method:sub
+              Parameter[7][Year_t-6]
+              
+              (Method:add
+                 (Method:add
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[8][Year_t-7]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:add
+                 (Method:add
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 (Method:add
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[5][Year_t-4]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sub
+           Parameter[7][Year_t-6]
+           
+           (Method:sub
+              Parameter[7][Year_t-6]
+              
+              Parameter[0][Rain_t-1]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

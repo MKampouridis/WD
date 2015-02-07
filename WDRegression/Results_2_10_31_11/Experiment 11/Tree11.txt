@@ -1,35 +1,22 @@
   (Method:add
-     (Method:sqrt
-        (Method:sub
-           (Method:mul
-              Parameter[8][Year_t-7]
-              
-              (Method:add
-                 Parameter[11][Year_t-10]
-                 
-                 Parameter[9][Year_t-8]
-                 
-              )
+     (Method:mod
+        (Method:mod
+           (Method:sqrt
+              Parameter[3][Year_t-2]
               
            )
            
-           (Method:sub
-              Parameter[11][Year_t-10]
-              
-              (Method:add
-                 (Method:mul
-                    Constant : 74.94721502869783
-                    
-                    Parameter[2][Year_t-1]
+           (Method:add
+              (Method:sqrt
+                 (Method:sqrt
+                    Parameter[5][Year_t-4]
                     
                  )
                  
-                 (Method:mul
-                    Constant : 74.94721502869783
-                    
-                    Parameter[2][Year_t-1]
-                    
-                 )
+              )
+              
+              (Method:sqrt
+                 Parameter[5][Year_t-4]
                  
               )
               
@@ -37,8 +24,55 @@
            
         )
         
+        (Method:sqrt
+           Parameter[5][Year_t-4]
+           
+        )
+        
      )
      
-     Constant : 74.94721502869783
+     (Method:add
+        (Method:mod
+           (Method:sqrt
+              Parameter[5][Year_t-4]
+              
+           )
+           
+           (Method:sqrt
+              (Method:sqrt
+                 Parameter[5][Year_t-4]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:add
+           Constant : 54.60359759988271
+           
+           (Method:add
+              (Method:mod
+                 (Method:add
+                    Parameter[9][Year_t-8]
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+                 (Method:sqrt
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+              )
+              
+              Parameter[6][Year_t-5]
+              
+           )
+           
+        )
+        
+     )
      
   )

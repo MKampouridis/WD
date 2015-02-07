@@ -1,9 +1,26 @@
-  (Method:add
-     (Method:mul
+  (Method:sub
+     (Method:add
         (Method:sqrt
-           (Method:sqrt
-              (Method:log
-                 Parameter[9][Year_t-8]
+           (Method:add
+              (Method:sqrt
+                 (Method:mod
+                    Parameter[4][Year_t-3]
+                    
+                    Constant : 54.60359759988271
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Constant : 54.60359759988271
+                 
+                 (Method:mod
+                    Constant : 54.60359759988271
+                    
+                    Constant : 54.60359759988271
+                    
+                 )
                  
               )
               
@@ -11,24 +28,21 @@
            
         )
         
-        (Method:div
-           (Method:add
-              (Method:add
-                 (Method:log
-                    Parameter[3][Year_t-2]
-                    
-                 )
+        (Method:add
+           (Method:sqrt
+              (Method:mod
+                 Parameter[4][Year_t-3]
                  
-                 Parameter[5][Year_t-4]
+                 Constant : 54.60359759988271
                  
               )
               
-              Parameter[8][Year_t-7]
-              
            )
            
-           (Method:log
-              Parameter[3][Year_t-2]
+           (Method:add
+              Parameter[6][Year_t-5]
+              
+              Constant : 54.60359759988271
               
            )
            
@@ -36,18 +50,23 @@
         
      )
      
-     (Method:div
-        (Method:add
-           (Method:add
-              Parameter[9][Year_t-8]
+     (Method:sub
+        (Method:mod
+           (Method:mod
+              Parameter[4][Year_t-3]
               
-              (Method:add
-                 Constant : 74.94721502869783
+              (Method:mod
+                 (Method:mod
+                    Parameter[4][Year_t-3]
+                    
+                    Constant : 54.60359759988271
+                    
+                 )
                  
                  (Method:add
-                    Constant : 74.94721502869783
+                    Constant : 54.60359759988271
                     
-                    Parameter[2][Year_t-1]
+                    Parameter[6][Year_t-5]
                     
                  )
                  
@@ -55,52 +74,19 @@
               
            )
            
-           (Method:div
-              (Method:add
-                 Parameter[9][Year_t-8]
-                 
-                 (Method:log
-                    Parameter[9][Year_t-8]
-                    
-                 )
-                 
-              )
-              
-              (Method:sqrt
-                 (Method:log
-                    Parameter[3][Year_t-2]
-                    
-                 )
-                 
-              )
-              
-           )
+           Constant : 54.60359759988271
            
         )
         
-        (Method:log
-           (Method:add
-              (Method:div
-                 (Method:add
-                    Constant : 74.94721502869783
-                    
-                    Parameter[5][Year_t-4]
-                    
-                 )
-                 
-                 (Method:log
-                    Parameter[9][Year_t-8]
-                    
-                 )
-                 
-              )
+        (Method:mod
+           (Method:mod
+              Parameter[4][Year_t-3]
               
-              (Method:log
-                 Parameter[3][Year_t-2]
-                 
-              )
+              Constant : 54.60359759988271
               
            )
+           
+           Constant : 54.60359759988271
            
         )
         

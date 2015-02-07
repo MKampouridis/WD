@@ -1,0 +1,116 @@
+  (Method:add
+     (Method:mod
+        (Method:sub
+           Parameter[1][Rain_t-2]
+           
+           (Method:sub
+              Parameter[7][Year_t-6]
+              
+              Parameter[11][Year_t-10]
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:sqrt
+              Parameter[0][Rain_t-1]
+              
+           )
+           
+           (Method:sub
+              Parameter[1][Rain_t-2]
+              
+              Parameter[11][Year_t-10]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:add
+        (Method:add
+           (Method:sub
+              Parameter[1][Rain_t-2]
+              
+              (Method:sub
+                 Parameter[10][Year_t-9]
+                 
+                 (Method:sub
+                    Parameter[7][Year_t-6]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:sub
+                 Parameter[1][Rain_t-2]
+                 
+                 (Method:sub
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 (Method:sqrt
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           (Method:sub
+              Parameter[1][Rain_t-2]
+              
+              Parameter[11][Year_t-10]
+              
+           )
+           
+           (Method:add
+              (Method:sqrt
+                 Parameter[0][Rain_t-1]
+                 
+              )
+              
+              (Method:add
+                 (Method:sqrt
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+                 (Method:sqrt
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -49,29 +49,32 @@ public class PredictionEvaluatorTrue2
     
     try
     {
-      rows1 = read.getRowLength(training);
+      rows1 = read.getRowLength(training) -1; //minus 1 because the data includes headers
       cols = read.getColumnLength(training);
-      rows2 = read.getRowLength(testing);
+      rows2 = read.getRowLength(testing) -1; //minus 1 because the data includes headers
     }
     catch (IOException e1)
     {
       e1.printStackTrace();
     }
     
-    env = new Expr[cols-1];
+    env = new Expr[cols];
     
     double[][] data1 = new double[rows1][cols];
     double[][] data2 = new double[rows2][cols];
     read.readArray(training, data1, cols);
     read.readArray(testing,data2, cols);
-    
+    System.out.println(rows1);
     if (Run.splitData == false) {
-    
+    System.out.println("Hi are you here?");
     rain_tr.put(0, Misc.copy(data1, 0));
     for(int i = 1; i < cols; i++){
         rain_tr.put(i, Misc.copy(data1, i));    
     }
+    System.out.println(rain_tr.size());
     
+    System.out.println(Arrays.toString(rain_tr.get(0)));
+        
     rain_ts.put(0, Misc.copy(data2, 0));
     for(int i = 1; i < cols; i++){
         rain_ts.put(i, Misc.copy(data2, i));
@@ -79,7 +82,7 @@ public class PredictionEvaluatorTrue2
     
     } else if (Run.splitData == true && Run.randomData == true) { //This will randomly select variables within training data in a mixed order
         // This may need to be moved to a separate method if training set is required to be recalculated every generation
-        
+        System.out.println("Hi are you hereeee?");
         double[][] data3 = new double[data1.length][cols];
         double[][] data4 = new double[data1.length][cols];
                 
@@ -111,7 +114,10 @@ public class PredictionEvaluatorTrue2
             rain_ts.put(i, Misc.copy(data4, i));
         }    
     } else { //separate training into a fixed partition according to split percentage
+                
         int sizeOfArray = (int)(data1.length * Run.splitPercent) + 1;
+        System.out.println(data1.length);
+        System.out.println(Run.splitPercent);
         System.out.println(sizeOfArray);
         double[][] data3 = Arrays.copyOfRange(data1, 0, sizeOfArray);
         double[][] data4 = Arrays.copyOfRange(data1, sizeOfArray, data1.length);
@@ -119,7 +125,7 @@ public class PredictionEvaluatorTrue2
         for(int i = 1; i < cols; i++){
             rain_tr.put(i, Misc.copy(data3, i));    
         }
-    
+        
         rain_ts.put(0, Misc.copy(data4, 0));
         for(int i = 1; i < cols; i++){
             rain_ts.put(i, Misc.copy(data4, i));
@@ -144,7 +150,7 @@ public class PredictionEvaluatorTrue2
   {
       
     double SE = 0.0D;
-    for (int i = 0; i < rain_tr.size(); i++)
+    for (int i = 0; i < rows1; i++)
     {
         for (int j = 1; j < cols; j++) {
             temp = rain_tr.get(j);

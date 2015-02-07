@@ -1,0 +1,117 @@
+  (Method:add
+     (Method:add
+        (Method:sub
+           (Method:sub
+              Parameter[8][Year_t-6]
+              
+              (Method:mod
+                 Parameter[2][Rain_t-3]
+                 
+                 (Method:add
+                    Parameter[5][Year_t-3]
+                    
+                    Parameter[4][Year_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sqrt
+              (Method:add
+                 (Method:add
+                    Parameter[6][Year_t-4]
+                    
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+                 Parameter[0][Rain_t-1]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:add
+              Parameter[5][Year_t-3]
+              
+              (Method:add
+                 Parameter[5][Year_t-3]
+                 
+                 Parameter[4][Year_t-2]
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              Parameter[3][Year_t-1]
+              
+              (Method:mod
+                 Parameter[3][Year_t-1]
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:add
+           Parameter[5][Year_t-3]
+           
+           Parameter[4][Year_t-2]
+           
+        )
+        
+        (Method:sub
+           (Method:mod
+              (Method:sqrt
+                 (Method:mod
+                    Parameter[2][Rain_t-3]
+                    
+                    Parameter[12][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 Constant : 59.90859038896357
+                 
+                 Parameter[12][Year_t-10]
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:add
+                 Parameter[6][Year_t-4]
+                 
+                 Parameter[0][Rain_t-1]
+                 
+              )
+              
+              (Method:mod
+                 Parameter[2][Rain_t-3]
+                 
+                 Parameter[12][Year_t-10]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

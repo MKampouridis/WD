@@ -1,0 +1,87 @@
+  (Method:add
+     (Method:add
+        (Method:add
+           (Method:add
+              Parameter[1][Rain_t-2]
+              
+              Parameter[2][Year_t-1]
+              
+           )
+           
+           (Method:log
+              (Method:sub
+                 (Method:add
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        Constant : 34.20925443272183
+        
+     )
+     
+     (Method:log
+        (Method:sub
+           (Method:add
+              Parameter[11][Year_t-10]
+              
+              (Method:sub
+                 (Method:add
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:add
+                 Parameter[1][Rain_t-2]
+                 
+                 Parameter[2][Year_t-1]
+                 
+              )
+              
+              (Method:sub
+                 (Method:add
+                    Parameter[1][Rain_t-2]
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+                 (Method:add
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[7][Year_t-6]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

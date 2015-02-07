@@ -1,0 +1,70 @@
+  (Method:sub
+     (Method:add
+        (Method:div
+           Parameter[3][Year_t-1]
+           
+           (Method:div
+              (Method:sub
+                 (Method:sqrt
+                    Parameter[12][Year_t-10]
+                    
+                 )
+                 
+                 (Method:div
+                    Parameter[12][Year_t-10]
+                    
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+              )
+              
+              (Method:div
+                 Parameter[4][Year_t-2]
+                 
+                 Parameter[0][Rain_t-1]
+                 
+              )
+              
+           )
+           
+        )
+        
+        Parameter[5][Year_t-3]
+        
+     )
+     
+     (Method:div
+        (Method:sub
+           (Method:sqrt
+              Parameter[6][Year_t-4]
+              
+           )
+           
+           (Method:div
+              Parameter[4][Year_t-2]
+              
+              Parameter[0][Rain_t-1]
+              
+           )
+           
+        )
+        
+        (Method:mod
+           (Method:div
+              Parameter[4][Year_t-2]
+              
+              Parameter[0][Rain_t-1]
+              
+           )
+           
+           (Method:log
+              Parameter[12][Year_t-10]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

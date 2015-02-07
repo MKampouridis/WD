@@ -1,0 +1,39 @@
+  (Method:add
+     Parameter[11][Year_t-10]
+     
+     (Method:mul
+        (Method:mod
+           (Method:log
+              (Method:sub
+                 (Method:add
+                    Parameter[3][Year_t-2]
+                    
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+                 Parameter[8][Year_t-7]
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              (Method:sub
+                 Parameter[11][Year_t-10]
+                 
+                 Parameter[8][Year_t-7]
+                 
+              )
+              
+              Parameter[8][Year_t-7]
+              
+           )
+           
+        )
+        
+        Constant : 38.08868447973721
+        
+     )
+     
+  )

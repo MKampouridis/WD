@@ -1,0 +1,89 @@
+  (Method:add
+     (Method:sub
+        (Method:sub
+           (Method:div
+              Parameter[6][Year_t-5]
+              
+              (Method:add
+                 (Method:sub
+                    Parameter[4][Year_t-3]
+                    
+                    Parameter[5][Year_t-4]
+                    
+                 )
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+           (Method:div
+              (Method:mod
+                 (Method:add
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[3][Year_t-2]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[6][Year_t-5]
+                    
+                 )
+                 
+              )
+              
+              (Method:sqrt
+                 (Method:mod
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[1][Rain_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:mod
+              (Method:sub
+                 Parameter[4][Year_t-3]
+                 
+                 Parameter[5][Year_t-4]
+                 
+              )
+              
+              (Method:mod
+                 Parameter[10][Year_t-9]
+                 
+                 Parameter[6][Year_t-5]
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:sub
+                 Parameter[4][Year_t-3]
+                 
+                 Parameter[5][Year_t-4]
+                 
+              )
+              
+              Parameter[1][Rain_t-2]
+              
+           )
+           
+        )
+        
+     )
+     
+     Parameter[10][Year_t-9]
+     
+  )

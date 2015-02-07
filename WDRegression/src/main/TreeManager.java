@@ -406,8 +406,8 @@ public class TreeManager implements MethodSet{
                 
                 //THIS IS WHERE THE NODE IS RANDOMLY CHOSEN!!!!!
                 
-		//Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
-                Object o = possibleTypedElements.get(2); //This sets the node always to ADD
+		Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
+                //Object o = possibleTypedElements.get(2); //This sets the node always to ADD
                 
 		if(o instanceof MethodCall){
 			MethodCall methCall = (MethodCall)o;
@@ -428,13 +428,8 @@ public class TreeManager implements MethodSet{
 			tree = new If(children, type, parameterTypes);
 		}
                 
-               // children[0] = new Function(methCall, children, type, parameterTypes); 
-               // children[1] = new Function(methCall, children, type, parameterTypes); 
-                
-                // Could force the grow method to only do nodes by changing primProb
-                
+                //
 		//continue and fill the root node's arguments in
-                generationMethod = 2; //force grow
 		for(int i=0; i<children.length; i++){
 			Class<?> subTreeType = parameterTypes[i];
 			if(generationMethod == 1){  //full method of random tree generation
@@ -444,9 +439,6 @@ public class TreeManager implements MethodSet{
 				children[i] = makeTypedTreeGrowMethod(depth-1, subTreeType);
 			}
 		}
-                
-                
-                
 		Function f = new Function(new Funcall(tree), evolvedMethodParameters);
 
 		return f;

@@ -1,0 +1,98 @@
+  (Method:sub
+     (Method:add
+        (Method:sqrt
+           (Method:mod
+              Parameter[10][Year_t-8]
+              
+              (Method:add
+                 Constant : 11.482678730125928
+                 
+                 Parameter[5][Year_t-3]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:add
+           (Method:mod
+              (Method:add
+                 Constant : 11.482678730125928
+                 
+                 Parameter[5][Year_t-3]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[10][Year_t-8]
+                 
+              )
+              
+           )
+           
+           (Method:add
+              Parameter[5][Year_t-3]
+              
+              Constant : 11.482678730125928
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:sub
+           (Method:add
+              Constant : 11.482678730125928
+              
+              (Method:add
+                 (Method:add
+                    Parameter[5][Year_t-3]
+                    
+                    Constant : 11.482678730125928
+                    
+                 )
+                 
+                 Constant : 11.482678730125928
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              Parameter[3][Year_t-1]
+              
+              (Method:add
+                 Parameter[5][Year_t-3]
+                 
+                 Constant : 11.482678730125928
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:sqrt
+              (Method:mod
+                 Parameter[10][Year_t-8]
+                 
+                 (Method:add
+                    Parameter[5][Year_t-3]
+                    
+                    Constant : 11.482678730125928
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

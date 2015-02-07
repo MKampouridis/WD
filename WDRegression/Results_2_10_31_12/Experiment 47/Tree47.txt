@@ -1,0 +1,101 @@
+  (Method:sub
+     (Method:sub
+        (Method:sub
+           (Method:sub
+              Parameter[4][Year_t-3]
+              
+              (Method:mod
+                 (Method:mod
+                    Parameter[10][Year_t-9]
+                    
+                    Parameter[2][Year_t-1]
+                    
+                 )
+                 
+                 (Method:mod
+                    Constant : 61.76044021478351
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:add
+                 Parameter[1][Rain_t-2]
+                 
+                 (Method:mod
+                    Constant : 61.76044021478351
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 Constant : 61.76044021478351
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+        )
+        
+        (Method:mod
+           (Method:mod
+              (Method:mod
+                 Parameter[10][Year_t-9]
+                 
+                 Parameter[2][Year_t-1]
+                 
+              )
+              
+              (Method:mod
+                 Constant : 61.76044021478351
+                 
+                 Parameter[10][Year_t-9]
+                 
+              )
+              
+           )
+           
+           (Method:mod
+              (Method:add
+                 Parameter[1][Rain_t-2]
+                 
+                 (Method:mod
+                    Constant : 61.76044021478351
+                    
+                    Parameter[10][Year_t-9]
+                    
+                 )
+                 
+              )
+              
+              (Method:mod
+                 Constant : 61.76044021478351
+                 
+                 Parameter[1][Rain_t-2]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:mod
+        Constant : 61.76044021478351
+        
+        Parameter[10][Year_t-9]
+        
+     )
+     
+  )

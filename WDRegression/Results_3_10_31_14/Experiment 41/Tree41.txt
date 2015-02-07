@@ -1,0 +1,42 @@
+  (Method:mul
+     (Method:mod
+        (Method:sqrt
+           Parameter[10][Year_t-8]
+           
+        )
+        
+        (Method:add
+           Parameter[6][Year_t-4]
+           
+           Parameter[4][Year_t-2]
+           
+        )
+        
+     )
+     
+     (Method:log
+        (Method:mul
+           (Method:add
+              Parameter[6][Year_t-4]
+              
+              Parameter[4][Year_t-2]
+              
+           )
+           
+           (Method:mul
+              Parameter[4][Year_t-2]
+              
+              (Method:div
+                 Parameter[11][Year_t-9]
+                 
+                 Parameter[8][Year_t-6]
+                 
+              )
+              
+           )
+           
+        )
+        
+     )
+     
+  )

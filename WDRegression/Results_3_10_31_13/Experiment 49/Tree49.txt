@@ -1,0 +1,87 @@
+  (Method:add
+     Parameter[12][Year_t-10]
+     
+     (Method:sub
+        (Method:sub
+           (Method:sub
+              Parameter[4][Year_t-2]
+              
+              Parameter[2][Rain_t-3]
+              
+           )
+           
+           (Method:sub
+              (Method:add
+                 (Method:mod
+                    Parameter[10][Year_t-8]
+                    
+                    Parameter[4][Year_t-2]
+                    
+                 )
+                 
+                 (Method:sqrt
+                    Parameter[12][Year_t-10]
+                    
+                 )
+                 
+              )
+              
+              Parameter[6][Year_t-4]
+              
+           )
+           
+        )
+        
+        (Method:div
+           (Method:add
+              (Method:add
+                 Parameter[3][Year_t-1]
+                 
+                 Parameter[12][Year_t-10]
+                 
+              )
+              
+              (Method:div
+                 (Method:sqrt
+                    Parameter[12][Year_t-10]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[10][Year_t-8]
+                    
+                    Parameter[4][Year_t-2]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+           (Method:sub
+              (Method:add
+                 (Method:mod
+                    Constant : 59.90859038896357
+                    
+                    Parameter[4][Year_t-2]
+                    
+                 )
+                 
+                 (Method:sub
+                    Parameter[4][Year_t-2]
+                    
+                    Parameter[2][Rain_t-3]
+                    
+                 )
+                 
+              )
+              
+              Parameter[6][Year_t-4]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,33 @@
+  (Method:sub
+     Parameter[5][Year_t-3]
+     
+     (Method:add
+        (Method:sqrt
+           Parameter[2][Rain_t-3]
+           
+        )
+        
+        (Method:add
+           (Method:add
+              (Method:sqrt
+                 Parameter[2][Rain_t-3]
+                 
+              )
+              
+              (Method:sqrt
+                 Parameter[2][Rain_t-3]
+                 
+              )
+              
+           )
+           
+           (Method:sqrt
+              Parameter[2][Rain_t-3]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

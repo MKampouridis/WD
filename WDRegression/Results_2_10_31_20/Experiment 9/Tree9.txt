@@ -1,0 +1,64 @@
+  (Method:sub
+     Parameter[1][Rain_t-2]
+     
+     (Method:mod
+        (Method:add
+           (Method:add
+              (Method:mod
+                 Parameter[1][Rain_t-2]
+                 
+                 Constant : 24.431196185446435
+                 
+              )
+              
+              (Method:mod
+                 Parameter[1][Rain_t-2]
+                 
+                 Constant : 24.431196185446435
+                 
+              )
+              
+           )
+           
+           (Method:add
+              (Method:add
+                 (Method:sqrt
+                    Parameter[11][Year_t-10]
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[1][Rain_t-2]
+                    
+                    Constant : 24.431196185446435
+                    
+                 )
+                 
+              )
+              
+              (Method:add
+                 (Method:mod
+                    Parameter[1][Rain_t-2]
+                    
+                    Constant : 24.431196185446435
+                    
+                 )
+                 
+                 (Method:mod
+                    Parameter[11][Year_t-10]
+                    
+                    Parameter[0][Rain_t-1]
+                    
+                 )
+                 
+              )
+              
+           )
+           
+        )
+        
+        Parameter[8][Year_t-7]
+        
+     )
+     
+  )
