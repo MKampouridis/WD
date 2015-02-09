@@ -1,6 +1,0 @@
-  (Method:mod
-     Parameter[10][Year_t-9]
-     
-     Parameter[9][Year_t-8]
-     
-  )

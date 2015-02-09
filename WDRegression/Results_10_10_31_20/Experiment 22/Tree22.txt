@@ -1,0 +1,22 @@
+  (Method:sqrt
+     (Method:sqrt
+        (Method:mul
+           (Method:mul
+              Parameter[13][Year_t-4]
+              
+              Parameter[12][Year_t-3]
+              
+           )
+           
+           (Method:mul
+              Parameter[13][Year_t-4]
+              
+              Parameter[12][Year_t-3]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

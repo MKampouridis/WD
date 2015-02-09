@@ -64,16 +64,16 @@ public class PredictionEvaluatorTrue2
     double[][] data2 = new double[rows2][cols];
     read.readArray(training, data1, cols);
     read.readArray(testing,data2, cols);
-    System.out.println(rows1);
+    //System.out.println(rows1);
     if (Run.splitData == false) {
-    System.out.println("Hi are you here?");
+    //System.out.println("Hi are you here?");
     rain_tr.put(0, Misc.copy(data1, 0));
     for(int i = 1; i < cols; i++){
         rain_tr.put(i, Misc.copy(data1, i));    
     }
-    System.out.println(rain_tr.size());
+    //System.out.println(rain_tr.size());
     
-    System.out.println(Arrays.toString(rain_tr.get(0)));
+    //System.out.println(Arrays.toString(rain_tr.get(0)));
         
     rain_ts.put(0, Misc.copy(data2, 0));
     for(int i = 1; i < cols; i++){
@@ -82,7 +82,7 @@ public class PredictionEvaluatorTrue2
     
     } else if (Run.splitData == true && Run.randomData == true) { //This will randomly select variables within training data in a mixed order
         // This may need to be moved to a separate method if training set is required to be recalculated every generation
-        System.out.println("Hi are you hereeee?");
+        //System.out.println("Hi are you hereeee?");
         double[][] data3 = new double[data1.length][cols];
         double[][] data4 = new double[data1.length][cols];
                 
@@ -104,6 +104,8 @@ public class PredictionEvaluatorTrue2
         }
         data3 = Arrays.copyOf(data3, counta);
         data4 = Arrays.copyOf(data4, countb);
+        rows1 = data3.length;
+        rows2 = data4.length;
         rain_tr.put(0, Misc.copy(data3, 0));
         for(int i = 1; i < cols; i++){
             rain_tr.put(i, Misc.copy(data3, i));    
@@ -121,6 +123,10 @@ public class PredictionEvaluatorTrue2
         System.out.println(sizeOfArray);
         double[][] data3 = Arrays.copyOfRange(data1, 0, sizeOfArray);
         double[][] data4 = Arrays.copyOfRange(data1, sizeOfArray, data1.length);
+        rows1 = data3.length;
+        rows2 = data4.length;
+        System.out.println(rows1);
+        System.out.println(rows2);
         rain_tr.put(0, Misc.copy(data3, 0));
         for(int i = 1; i < cols; i++){
             rain_tr.put(i, Misc.copy(data3, i));    
@@ -134,11 +140,10 @@ public class PredictionEvaluatorTrue2
     }
     File results = new File("./"+Run.filenameS);
     results.mkdir();
-    
-    File sumStats = new File("SummaryStats");
-    sumStats.mkdir();
+   
     this.summaryStats = new double[nRuns][1];
-    
+    File sumStats = new File ("./"+"SummaryStats");
+    sumStats.mkdir();
     this.writer3 = new FWriter("SummaryStats/" + Run.filenameS+"_SummaryStatistics.txt", this.cursor);
     this.writer3.writeLog("\tMSE\n");
     this.writer3.closeFile();
@@ -254,9 +259,13 @@ public class PredictionEvaluatorTrue2
     }
     sumStat2 = "\n\nMean" + ar0 + "\nStand. Dev.\t" + ar1 + "\nMax\t" + ar2 + "\nMin\t" + ar3;
     
-
-    this.currentRun += 1;
     
+    
+    this.currentRun += 1;
+    System.out.println(currentRun);
+    if (currentRun == Run.nRuns) {
+        System.out.println("Average fitness: " + ar0);
+    }
     return MSE;
   }
 }

@@ -20,7 +20,7 @@ public class TreeManager implements MethodSet{
 	int maxInitialDepth;
 	int maxDepth;
 	double terminalNodeCrossoverBias; //the probability of selecting a leaf node in crossover operator
-
+        int index; //This will be the index value for deciding on which children either 1 or 2   
 
 	public TreeManager(ArrayList<?> methodSet, ArrayList<?> terminalSet, double primProb,
 			int maxInitialDepth, int maxDepth, double terminalNodeCrossoverBias) {
@@ -85,13 +85,13 @@ public class TreeManager implements MethodSet{
 	    return toReturn;
 	  }
 	
-	public Expr makeTypedTreeFullMethod(int depth, Class<?> type){
+	public Expr makeTypedTreeFullMethod(int depth, Class<?> type, int index){
 		Expr[] children = {};
 		if(depth < 1){
 			//get the array list of the terminal elements of the appropriate type
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
 
-			return getTypedTerminal(type,termList);
+			return getTypedTerminal(type,termList,index);
 		}
 		Expr toReturn = null;
 
@@ -102,7 +102,7 @@ public class TreeManager implements MethodSet{
 
 		if(funcList == null){
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
-			return getTypedTerminal(type,termList);
+			return getTypedTerminal(type,termList,index);
 		}
 		//get possible elements for the given depth
 		ArrayList<?> possibleElements = (ArrayList<?>)typeManager.elementPossibilityFull.get(new Integer(depth));
@@ -112,7 +112,7 @@ public class TreeManager implements MethodSet{
 
 		if(possibleTypedElements.size() == 0){
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
-			return getTypedTerminal(type,termList);
+			return getTypedTerminal(type,termList,index);
 		}
 
 		Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
@@ -137,8 +137,9 @@ public class TreeManager implements MethodSet{
 		}
 
 		for(int i = 0; i < children.length; i++){
+                    index = i;
 			Class<?> treeType = parameterTypes[i];
-			children[i] = makeTypedTreeFullMethod(depth-1, treeType);
+			children[i] = makeTypedTreeFullMethod(depth-1, treeType, index);
 		}
 		return toReturn;
 	}
@@ -189,18 +190,20 @@ public class TreeManager implements MethodSet{
 
 
 
-	public Expr makeTypedTreeGrowMethod(int depth, Class<?> type){
+	public Expr makeTypedTreeGrowMethod(int depth, Class<?> type, int index){
 
 		if(depth < 1){
 			//get the array list of the terminal elements of the appropriate type
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
-			return getTypedTerminal(type,termList);
+                        
+			return getTypedTerminal(type,termList,index);
 		}
 
 		if(r.nextDouble() < this.primProb){
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
-			if(termList != null){
-				return getTypedTerminal(type,termList);
+			
+                        if(termList != null){
+				return getTypedTerminal(type,termList,index);
 			}
 		}
 
@@ -214,7 +217,7 @@ public class TreeManager implements MethodSet{
 			//get the array list of the terminal elements of the appropriate type
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
 
-			return getTypedTerminal(type,termList);
+			return getTypedTerminal(type,termList,index);
 		}
 		//get possible elements for the given depth
 		ArrayList<?> possibleElements = (ArrayList<?>)typeManager.elementPossibilityGrow.get(new Integer(depth));
@@ -225,7 +228,7 @@ public class TreeManager implements MethodSet{
 		if(possibleTypedElements.size() == 0){
 			ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
 
-			return getTypedTerminal(type,termList);
+			return getTypedTerminal(type,termList,index);
 		}
 
 		Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
@@ -249,8 +252,9 @@ public class TreeManager implements MethodSet{
 			toReturn = new If(children, type, parameterTypes);
 		}
 		for(int i=0; i<children.length; i++){
+                    index = i;
 			Class<?> treeType = parameterTypes[i];
-			children[i] = makeTypedTreeGrowMethod(depth-1, treeType);
+			children[i] = makeTypedTreeGrowMethod(depth-1, treeType, index);
 		}
 		return toReturn;
 	}
@@ -261,9 +265,19 @@ public class TreeManager implements MethodSet{
 	 * @param type Class The type of the returned node
 	 * @return Expr The returned node
 	 */
-	public static Expr getTypedTerminal(Class<?> type, ArrayList<?> termList){
+	public static Expr getTypedTerminal(Class<?> type, ArrayList<?> termList, int index){
 		//get a random element
-		Object term = termList.get(r.nextInt(termList.size()));
+                Object term;
+                if (index == 0) { //Forces children 0 to be a parameter                    
+                    term = termList.get(r.nextInt(termList.size()-1));
+                } else { // allows children 1 to either be a parameter or a rnd number
+                    
+                    term = termList.get(r.nextInt(termList.size()));
+                    if (term.toString().equals("ERC")) { //If ERC is selected then calculate a new random number
+                        term = new Constant((0.0 + (new Random().nextDouble() * (100.0 - 0.0)) ), Double.TYPE);
+                        System.out.println(term.toString());
+                    }
+                }
 
 		if (term instanceof MethodCall) {
 			return new Function((MethodCall) term, new Expr[] {}, type, new Class[] {});
@@ -431,12 +445,14 @@ public class TreeManager implements MethodSet{
                 //
 		//continue and fill the root node's arguments in
 		for(int i=0; i<children.length; i++){
+                    index = i;
 			Class<?> subTreeType = parameterTypes[i];
 			if(generationMethod == 1){  //full method of random tree generation
-				children[i] = makeTypedTreeFullMethod(depth-1, subTreeType);
+                            
+				children[i] = makeTypedTreeFullMethod(depth-1, subTreeType, index);
 			}
 			else {  //grow method in random tree generation
-				children[i] = makeTypedTreeGrowMethod(depth-1, subTreeType);
+				children[i] = makeTypedTreeGrowMethod(depth-1, subTreeType, index);
 			}
 		}
 		Function f = new Function(new Funcall(tree), evolvedMethodParameters);
@@ -475,7 +491,13 @@ public class TreeManager implements MethodSet{
         //we are looking at a leaf node
         if(arity == 0){
             ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
-            tNew = ((Expr)termList.get(r.nextInt(termList.size()))).copy(new HashSet<Object>(), new ArrayList<Object>());
+            Object term = termList.get(r.nextInt(termList.size()));
+            if (term.toString().equals("ERC")) { //If ERC is selected then calculate a new random number
+                        term = new Constant((0.0 + (new Random().nextDouble() * (100.0 - 0.0)) ), Double.TYPE);
+                        System.out.println(term.toString());
+                    }
+            tNew = ((Expr)term).copy(new HashSet<Object>(), new ArrayList<Object>());
+            
             Util.replace(impl, tOld, tNew); //i use replace and not replace2 because we are replacing a leaf
         }
         else{
@@ -529,10 +551,10 @@ public class TreeManager implements MethodSet{
 			}
 			if(genMethod == 1){
 				//randomly create a new tree preserving the max depth and type constraints
-				tNew = makeTypedTreeFullMethod(selectedDepth, type);
+				tNew = makeTypedTreeFullMethod(selectedDepth, type, index);
 			}
 			else{
-				tNew = makeTypedTreeGrowMethod(selectedDepth, type);
+				tNew = makeTypedTreeGrowMethod(selectedDepth, type, index);
 			}
 			Util.replace(impl, tOld, tNew);
 			return f;
@@ -620,8 +642,10 @@ public class TreeManager implements MethodSet{
 
 		if(maxAllowedDepth == 0){  //a terminal node is required
 			ArrayList<?> termList = (ArrayList<?>)typedTerminals.get(type);
+                        
+                        index = 1;
 			if(termList != null){
-				return getTypedTerminal(type, termList);
+				return getTypedTerminal(type, termList,index);
 			}
 			else {
 				return null;

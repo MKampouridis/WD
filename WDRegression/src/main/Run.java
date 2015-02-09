@@ -1,6 +1,7 @@
 package main;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,29 +10,51 @@ public class Run
 {
   public static GA alg = null;
   public static Evaluator eval;
-  public static int nRuns = 50;
+  public static int nRuns = 30;
   public static String filename = "Luxembourg";
   public static int contractLength = 31;
   public static int maxInitialDepth = 2;
   public static int maxDepth = 4;
   public static int nGens = 50;
-  public static int popSize = 500;
+  public static int popSize = 10;
   public static int tournamentSize = 4;
   public static double mutProb = 0.01D;
   public static double xoverProb = 0.9D;
   public static double elitismPercentage = 0.01D;
+  public static double primProb = 0.6D;
+  public static double terminalNodeCrossBias = 0.1D;
   public static int totalT = 10;
   public static int totalY = 10;
-  public static int totalYears = 11;
+  public static int totalYears = 20;
   public static String filenameS;
-  public static boolean splitData = false; //change to false if you want to use full training data
+  public static boolean splitData = true; //change to false if you want to use full training data
   public static boolean randomData = false;
   public static double splitPercent = 0.7;
    //Change this value for number of RND numbers
   
   public static void main(String[] args)
   {
-      
+    //if we run the code without any arguments then use default, else overwrite
+      int lnth = args.length;
+    if (lnth != 0 ) {
+        int diff = lnth - 10;
+        try {
+            totalT = Integer.valueOf(args[0+diff]);
+            totalY = Integer.valueOf(args[1+diff]);
+            totalYears = Integer.valueOf(args[2+diff]);
+            maxDepth = Integer.valueOf(args[3+diff]);
+            popSize = Integer.valueOf(args[4+diff]);
+            tournamentSize = (popSize / 100) - 1;
+            mutProb = Double.valueOf(args[5+diff]);
+            xoverProb = Double.valueOf(args[6+diff]);      
+            elitismPercentage = Double.valueOf(args[7+diff]);
+            primProb = Double.valueOf(args[8+diff]);
+            terminalNodeCrossBias = Double.valueOf(args[9+diff]);
+        } catch (NullPointerException e) {
+              System.out.println("args not enough, please check");
+        }
+    }
+    filenameS = "Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
     Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
     eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     
@@ -52,10 +75,10 @@ public class Run
     methodSet.add(DIV);
     methodSet.add(LOG);
     methodSet.add(SQRT);
-    //methodSet.add(POW);
-    methodSet.add(MOD);
-//    methodSet.add(SIN);
-//    methodSet.add(COS);
+    methodSet.add(POW);
+    //methodSet.add(MOD);
+    //methodSet.add(SIN);
+    //methodSet.add(COS);
     //methodSet.add(EXP);
 
 
@@ -85,7 +108,8 @@ public class Run
     for (int i = 0; i < totalY; i++) {
         terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+(i+1)));
     }    
-    terminalSet.add(new Constant((0.0 + (new Random().nextDouble() * (100.0 - 0.0)) ), Double.TYPE));
+   
+    terminalSet.add(new Constant("ERC", Double.TYPE));
     
     double primProb = 0.6D;
     double terminalNodeCrossBias = 0.1D;
@@ -108,10 +132,13 @@ public class Run
     System.out.println("Elitism percentage: " + elitismPercentage);
     System.out.println("===================================================");
    
-    StatisticalSummary.logExperimentSetup(methodSet, terminalSet, maxInitialDepth, maxDepth, primProb, terminalNodeCrossBias, nGens, popSize, tournamentSize, mutProb, xoverProb);
+    
+    
+    
+    
+    StatisticalSummary.logExperimentSetup(methodSet, terminalSet, maxInitialDepth, maxDepth, primProb, terminalNodeCrossBias, nGens, popSize, tournamentSize, mutProb, xoverProb);  
     
     StatisticalSummary stat = null;
-    filenameS = "Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
     for (int i = 0; i < nRuns; i++)
     {
       System.out.println("========================== Experiment " + i + " ==================================");

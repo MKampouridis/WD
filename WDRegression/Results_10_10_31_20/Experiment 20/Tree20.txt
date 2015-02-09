@@ -1,0 +1,23 @@
+  (Method:mul
+     (Method:sqrt
+        (Method:mul
+           (Method:sqrt
+              Parameter[16][Year_t-7]
+              
+           )
+           
+           (Method:sqrt
+              Parameter[16][Year_t-7]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:sqrt
+        Parameter[1][Rain_t-2]
+        
+     )
+     
+  )
