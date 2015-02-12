@@ -1,0 +1,19 @@
+  (Method:sub
+     Parameter[3][Rain_t-4]
+     
+     (Method:div
+        (Method:div
+           (Method:log
+              Parameter[8][Rain_t-9]
+              
+           )
+           
+           Parameter[8][Rain_t-9]
+           
+        )
+        
+        Parameter[8][Rain_t-9]
+        
+     )
+     
+  )

@@ -1,4 +1,0 @@
-  (Method:sqrt
-     Parameter[16][Year_t-7]
-     
-  )

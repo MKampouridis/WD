@@ -1,4 +1,0 @@
-  (Method:sqrt
-     Parameter[15][Year_t-6]
-     
-  )

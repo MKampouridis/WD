@@ -1,0 +1,25 @@
+  (Method:sub
+     (Method:log
+        (Method:sub
+           (Method:log
+              Parameter[16][Year_t-7]
+              
+           )
+           
+           Parameter[16][Year_t-7]
+           
+        )
+        
+     )
+     
+     (Method:sub
+        (Method:log
+           Parameter[16][Year_t-7]
+           
+        )
+        
+        Parameter[16][Year_t-7]
+        
+     )
+     
+  )

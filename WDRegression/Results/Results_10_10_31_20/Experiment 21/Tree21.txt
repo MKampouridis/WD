@@ -1,0 +1,31 @@
+  (Method:sub
+     (Method:sub
+        Parameter[2][Rain_t-3]
+        
+        (Method:div
+           Parameter[12][Year_t-3]
+           
+           Parameter[4][Rain_t-5]
+           
+        )
+        
+     )
+     
+     (Method:div
+        (Method:sub
+           Parameter[2][Rain_t-3]
+           
+           (Method:div
+              Parameter[12][Year_t-3]
+              
+              Parameter[4][Rain_t-5]
+              
+           )
+           
+        )
+        
+        Parameter[4][Rain_t-5]
+        
+     )
+     
+  )

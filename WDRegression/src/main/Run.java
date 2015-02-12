@@ -10,7 +10,7 @@ public class Run
 {
   public static GA alg = null;
   public static Evaluator eval;
-  public static int nRuns = 30;
+  public static int nRuns = 1;
   public static String filename = "Luxembourg";
   public static int contractLength = 31;
   public static int maxInitialDepth = 2;
@@ -54,7 +54,7 @@ public class Run
               System.out.println("args not enough, please check");
         }
     }
-    filenameS = "Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
+    filenameS = "Results/Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
     Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
     eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     

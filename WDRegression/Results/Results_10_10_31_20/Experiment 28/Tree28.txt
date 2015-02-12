@@ -1,0 +1,23 @@
+  (Method:add
+     Parameter[9][Rain_t-10]
+     
+     (Method:add
+        (Method:sqrt
+           (Method:log
+              Parameter[10][Year_t-1]
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:log
+              Parameter[10][Year_t-1]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

@@ -142,8 +142,8 @@ public class PredictionEvaluatorTrue2
     results.mkdir();
    
     this.summaryStats = new double[nRuns][1];
-    File sumStats = new File ("./"+"SummaryStats");
-    sumStats.mkdir();
+    File sumStats = new File ("./SummaryStats/Results/");
+    sumStats.mkdirs();
     this.writer3 = new FWriter("SummaryStats/" + Run.filenameS+"_SummaryStatistics.txt", this.cursor);
     this.writer3.writeLog("\tMSE\n");
     this.writer3.closeFile();

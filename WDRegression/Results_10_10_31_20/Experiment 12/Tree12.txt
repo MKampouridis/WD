@@ -1,4 +1,0 @@
-  (Method:sqrt
-     Parameter[4][Rain_t-5]
-     
-  )

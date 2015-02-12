@@ -1,0 +1,15 @@
+  (Method:add
+     Parameter[7][Rain_t-8]
+     
+     (Method:log
+        (Method:log
+           (Method:sqrt
+              Parameter[19][Year_t-10]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

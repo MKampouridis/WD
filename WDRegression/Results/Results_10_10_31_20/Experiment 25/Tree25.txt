@@ -1,0 +1,28 @@
+  (Method:add
+     (Method:sqrt
+        (Method:mul
+           (Method:log
+              Parameter[18][Year_t-9]
+              
+           )
+           
+           Parameter[18][Year_t-9]
+           
+        )
+        
+     )
+     
+     (Method:sqrt
+        (Method:mul
+           (Method:log
+              Parameter[18][Year_t-9]
+              
+           )
+           
+           Parameter[18][Year_t-9]
+           
+        )
+        
+     )
+     
+  )

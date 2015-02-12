@@ -1,0 +1,12 @@
+  (Method:div
+     Parameter[14][Year_t-5]
+     
+     (Method:log
+        (Method:log
+           Parameter[5][Rain_t-6]
+           
+        )
+        
+     )
+     
+  )

@@ -1,0 +1,26 @@
+  (Method:add
+     (Method:add
+        Parameter[7][Rain_t-8]
+        
+        (Method:log
+           (Method:log
+              Parameter[10][Year_t-1]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:log
+        (Method:log
+           (Method:log
+              Parameter[10][Year_t-1]
+              
+           )
+           
+        )
+        
+     )
+     
+  )

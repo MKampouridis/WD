@@ -1,9 +1,0 @@
-  (Method:sqrt
-     (Method:mul
-        Parameter[13][Year_t-4]
-        
-        Parameter[11][Year_t-2]
-        
-     )
-     
-  )
