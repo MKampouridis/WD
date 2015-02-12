@@ -34,14 +34,19 @@ public class Run
   
   public static void main(String[] args)
   {
+      
+      for(String s : args)
+      {
+          System.out.println(s);
+      }
     //if we run the code without any arguments then use default, else overwrite
       int lnth = args.length;
     if (lnth != 0 ) {
-        int diff = lnth - 10;
+        int diff = lnth - 11;
         try {
-            totalT = Integer.valueOf(args[0+diff]);
-            totalY = Integer.valueOf(args[1+diff]);
-            totalYears = Integer.valueOf(args[2+diff]);
+            totalT = Integer.valueOf(args[0]);
+            totalY = Integer.valueOf(args[1]);
+            totalYears = Integer.valueOf(args[2]);            
             maxDepth = Integer.valueOf(args[3+diff]);
             popSize = Integer.valueOf(args[4+diff]);
             tournamentSize = (popSize / 100) - 1;
@@ -50,7 +55,8 @@ public class Run
             elitismPercentage = Double.valueOf(args[7+diff]);
             primProb = Double.valueOf(args[8+diff]);
             terminalNodeCrossBias = Double.valueOf(args[9+diff]);
-        } catch (NullPointerException e) {
+            nGens = Integer.valueOf(args[10+diff]);
+        } catch (ArrayIndexOutOfBoundsException t) {
               System.out.println("args not enough, please check");
         }
     }
