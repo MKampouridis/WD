@@ -1,0 +1,37 @@
+  (Method:add
+     (Method:power
+        (Method:sqrt
+           (Method:mul
+              Parameter[5][Rain_t-6]
+              
+              Parameter[4][Rain_t-5]
+              
+           )
+           
+        )
+        
+        Constant : 0.5075337783782508
+        
+     )
+     
+     (Method:log
+        (Method:add
+           (Method:mul
+              Parameter[2][Rain_t-3]
+              
+              Parameter[6][Year_t-1]
+              
+           )
+           
+           (Method:add
+              Parameter[10][Year_t-5]
+              
+              Constant : 0.5075337783782508
+              
+           )
+           
+        )
+        
+     )
+     
+  )

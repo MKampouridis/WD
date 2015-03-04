@@ -1,9 +1,17 @@
-  (Method:sqrt
-     (Method:mul
-        Parameter[1][Rain_t-2]
-        
-        Parameter[13][Year_t-4]
+  (Method:add
+     (Method:log
+        (Method:log
+           (Method:div
+              Parameter[13][Year_t-4]
+              
+              Parameter[15][Year_t-6]
+              
+           )
+           
+        )
         
      )
+     
+     Parameter[13][Year_t-4]
      
   )

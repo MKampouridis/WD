@@ -1,0 +1,24 @@
+  (Method:log
+     (Method:mul
+        (Method:add
+           Parameter[5][Rain_t-6]
+           
+           Parameter[4][Rain_t-5]
+           
+        )
+        
+        (Method:add
+           (Method:mul
+              Parameter[12][Year_t-7]
+              
+              Parameter[2][Rain_t-3]
+              
+           )
+           
+           Parameter[2][Rain_t-3]
+           
+        )
+        
+     )
+     
+  )

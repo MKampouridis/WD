@@ -1,0 +1,35 @@
+  (Method:sub
+     (Method:add
+        (Method:log
+           Parameter[6][Year_t-1]
+           
+        )
+        
+        (Method:log
+           (Method:mul
+              Parameter[2][Rain_t-3]
+              
+              Parameter[4][Rain_t-5]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:log
+        (Method:div
+           (Method:power
+              Parameter[11][Year_t-6]
+              
+              Constant : 0.5393756762368368
+              
+           )
+           
+           Parameter[11][Year_t-6]
+           
+        )
+        
+     )
+     
+  )

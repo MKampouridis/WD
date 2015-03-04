@@ -40,9 +40,12 @@ public class PredictionEvaluatorTrue2
     this.nRuns = nRuns;
     this.filename = filename;
     
-    String training = "Data/" + Run.totalY + "/" + Run.totalT + "/luxTraining"+Run.totalYears+"_"+Run.contractLength+".csv";
-    String testing = "Data/"  + Run.totalY + "/" + Run.totalT + "/luxTesting1_"+Run.contractLength+".csv";
+    //Old data
+    // String training = "Data/" + Run.totalY + "/" + Run.totalT + "/luxTraining"+Run.totalYears+"_"+Run.contractLength+".csv";
+    //Commented out as not needed for now, will avoid possible errors String testing = "Data/"  + Run.totalY + "/" + Run.totalT + "/luxTesting1_"+Run.contractLength+".csv";
     
+    //data with lots of params, access of files is dependent on MA
+    String training = "Data/MA" + Run.movingAverage + "/luxTraining" + Run.yrs + "_" + Run.spreadYrs + "_MA" + Run.movingAverage + "_" + Run.contractLength;
     rows1 = 0;
     cols = 0;
     rows2 = 0;
@@ -51,7 +54,7 @@ public class PredictionEvaluatorTrue2
     {
       rows1 = read.getRowLength(training) -1; //minus 1 because the data includes headers
       cols = read.getColumnLength(training);
-      rows2 = read.getRowLength(testing) -1; //minus 1 because the data includes headers
+      //Commented out as not needed for now, will avoid possible errors rows2 = read.getRowLength(testing) -1; //minus 1 because the data includes headers
     }
     catch (IOException e1)
     {
@@ -63,7 +66,7 @@ public class PredictionEvaluatorTrue2
     double[][] data1 = new double[rows1][cols];
     double[][] data2 = new double[rows2][cols];
     read.readArray(training, data1, cols);
-    read.readArray(testing,data2, cols);
+    //Commented out as not needed for now, will avoid possible errors read.readArray(testing,data2, cols);
     //System.out.println(rows1);
     if (Run.splitData == false) {
     //System.out.println("Hi are you here?");
@@ -117,9 +120,10 @@ public class PredictionEvaluatorTrue2
         }    
     } else { //separate training into a fixed partition according to split percentage
                 
-        int sizeOfArray = (int)(data1.length * Run.splitPercent) + 1;
+        //int sizeOfArray = (int)(data1.length * Run.splitPercent) + 1; //used if you want a percentage split of data
+        int sizeOfArray = (data1.length - 365); //used if you want a certain number of periods
         System.out.println(data1.length);
-        System.out.println(Run.splitPercent);
+        //System.out.println(Run.splitPercent);
         System.out.println(sizeOfArray);
         double[][] data3 = Arrays.copyOfRange(data1, 0, sizeOfArray);
         double[][] data4 = Arrays.copyOfRange(data1, sizeOfArray, data1.length);

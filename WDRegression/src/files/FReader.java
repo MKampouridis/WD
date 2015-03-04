@@ -169,4 +169,17 @@ public class FReader
           e.printStackTrace();
       } 
   }
+  
+  public String[] readHeader(String filename) {
+      try {
+          BufferedReader reader = new BufferedReader(new FileReader(filename));          
+          String thisLine = reader.readLine();
+          String[] cols = thisLine.split(" ");
+          return cols;
+      }       
+      catch (Exception e) { 
+          e.printStackTrace();
+      }
+      return null;
+  }
 }

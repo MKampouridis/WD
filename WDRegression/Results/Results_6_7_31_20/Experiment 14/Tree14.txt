@@ -1,0 +1,46 @@
+  (Method:add
+     (Method:add
+        (Method:add
+           (Method:log
+              Parameter[10][Year_t-5]
+              
+           )
+           
+           (Method:div
+              Parameter[4][Rain_t-5]
+              
+              Parameter[10][Year_t-5]
+              
+           )
+           
+        )
+        
+        (Method:sqrt
+           (Method:log
+              Parameter[10][Year_t-5]
+              
+           )
+           
+        )
+        
+     )
+     
+     (Method:add
+        (Method:log
+           Parameter[2][Rain_t-3]
+           
+        )
+        
+        (Method:div
+           (Method:log
+              Parameter[10][Year_t-5]
+              
+           )
+           
+           Parameter[10][Year_t-5]
+           
+        )
+        
+     )
+     
+  )

@@ -12,6 +12,8 @@ import java.util.Iterator;
  */
 
 public class TreeManager implements MethodSet{
+    Object parent;
+    int individual =0;
 	public ArrayList<?> methodSet;
 	public ArrayList<?> terminalSet;
 	static Random r = new Random();
@@ -116,7 +118,7 @@ public class TreeManager implements MethodSet{
 		}
 
 		Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
-
+                parent=o;
 		if(o instanceof MethodCall){
 			MethodCall methCall = (MethodCall)o;
 			parameterTypes = methCall.method.getParameterTypes();
@@ -232,7 +234,7 @@ public class TreeManager implements MethodSet{
 		}
 
 		Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
-
+                parent=o;
 		if(o instanceof MethodCall){
 			MethodCall methCall = (MethodCall)o;
 			parameterTypes = methCall.method.getParameterTypes();
@@ -274,8 +276,8 @@ public class TreeManager implements MethodSet{
                     
                     term = termList.get(r.nextInt(termList.size()));
                     if (term.toString().equals("ERC")) { //If ERC is selected then calculate a new random number
-                        term = new Constant((0.0 + (new Random().nextDouble() * (100.0 - 0.0)) ), Double.TYPE);
-                        System.out.println(term.toString());
+                        term = new Constant((Run.lowerBound + (new Random().nextDouble() * (Run.upperBound - Run.lowerBound)) ), Double.TYPE);
+                        //System.out.println(term.toString());
                     }
                 }
 
@@ -387,6 +389,7 @@ public class TreeManager implements MethodSet{
 	 * @return Expr The root node of the tree
 	 */
 	public Expr generateTypedTree(int depth, Class<?> type, int generationMethod){
+            individual += 1;
 		Expr tree = null;
 		Expr[] children = {};
 		Class<?>[] parameterTypes = {};
@@ -421,6 +424,7 @@ public class TreeManager implements MethodSet{
                 //THIS IS WHERE THE NODE IS RANDOMLY CHOSEN!!!!!
                 
 		Object o = possibleTypedElements.get(r.nextInt(possibleTypedElements.size()));
+                parent=o;
                 //Object o = possibleTypedElements.get(2); //This sets the node always to ADD
                 
 		if(o instanceof MethodCall){
@@ -493,8 +497,8 @@ public class TreeManager implements MethodSet{
             ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
             Object term = termList.get(r.nextInt(termList.size()));
             if (term.toString().equals("ERC")) { //If ERC is selected then calculate a new random number
-                        term = new Constant((0.0 + (new Random().nextDouble() * (100.0 - 0.0)) ), Double.TYPE);
-                        System.out.println(term.toString());
+                        term = new Constant((Run.lowerBound + (new Random().nextDouble() * (Run.upperBound - Run.lowerBound)) ), Double.TYPE);
+                        //System.out.println(term.toString());
                     }
             tNew = ((Expr)term).copy(new HashSet<Object>(), new ArrayList<Object>());
             

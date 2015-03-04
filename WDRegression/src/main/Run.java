@@ -1,5 +1,6 @@
 package main;
 
+import files.FReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,21 +17,29 @@ public class Run
   public static int maxInitialDepth = 2;
   public static int maxDepth = 4;
   public static int nGens = 50;
-  public static int popSize = 10;
+  public static int popSize = 500;
   public static int tournamentSize = 4;
   public static double mutProb = 0.01D;
   public static double xoverProb = 0.9D;
   public static double elitismPercentage = 0.01D;
   public static double primProb = 0.6D;
   public static double terminalNodeCrossBias = 0.1D;
-  public static int totalT = 10;
-  public static int totalY = 10;
-  public static int totalYears = 20;
+  // Old data public static int totalT = 6;
+  //Old data public static int totalY = 7;
+  public static int yrs = 4;
+  public static int spreadYrs = 4;
+  //public static int totalYears = 20;
+  public static double lowerBound = 0.0;
+  public static double upperBound = 100.0;
   public static String filenameS;
+  public static int movingAverage = 10;
+  public static int totalNumParams = 130;
+  public static int[] parameters = new int[totalNumParams];
+  public static ArrayList<Integer> parameterIndex = new ArrayList();
   public static boolean splitData = true; //change to false if you want to use full training data
   public static boolean randomData = false;
-  public static double splitPercent = 0.7;
-   //Change this value for number of RND numbers
+  public static double splitPercent = 0.7; //Has been hard coded in predictionEval to 365 days
+//Change this value for number of RND numbers
   
   public static void main(String[] args)
   {
@@ -42,33 +51,46 @@ public class Run
     //if we run the code without any arguments then use default, else overwrite
       int lnth = args.length;
     if (lnth != 0 ) {
-        int diff = lnth - 11;
+        int diff = lnth - 13;
         try {
-            totalT = Integer.valueOf(args[0]);
-            totalY = Integer.valueOf(args[1]);
-            totalYears = Integer.valueOf(args[2]);            
-            maxDepth = Integer.valueOf(args[3+diff]);
-            popSize = Integer.valueOf(args[4+diff]);
+            //totalT = Integer.valueOf(args[0+diff]);
+            //totalY = Integer.valueOf(args[1+diff]);
+            //totalYears = Integer.valueOf(args[2+diff]);
+            yrs =  Integer.valueOf(args[0+diff]);
+            spreadYrs = Integer.valueOf(args[1+diff]);
+            maxDepth = Integer.valueOf(args[2+diff]);
+            popSize = Integer.valueOf(args[3+diff]);
             tournamentSize = (popSize / 100) - 1;
-            mutProb = Double.valueOf(args[5+diff]);
-            xoverProb = Double.valueOf(args[6+diff]);      
-            elitismPercentage = Double.valueOf(args[7+diff]);
-            primProb = Double.valueOf(args[8+diff]);
-            terminalNodeCrossBias = Double.valueOf(args[9+diff]);
-            nGens = Integer.valueOf(args[10+diff]);
+            mutProb = Double.valueOf(args[4+diff]);
+            xoverProb = Double.valueOf(args[5+diff]);      
+            elitismPercentage = Double.valueOf(args[6+diff]);
+            primProb = Double.valueOf(args[7+diff]);
+            terminalNodeCrossBias = Double.valueOf(args[8+diff]);
+            nGens = Integer.valueOf(args[9+diff]);
+            lowerBound = Double.valueOf(args[10+diff]);
+            upperBound = Double.valueOf(args[11+diff]);
+            movingAverage = Integer.valueOf(args[12+diff]);
+            totalNumParams = 0;
+            for (int i = 13; i < args.length - diff; i++) {
+                parameters[i-13] = Integer.valueOf(args[i]);
+                if (Integer.valueOf(args[i]) == 1) {
+                    totalNumParams++;
+                    parameterIndex.add(i-13);
+                }
+            }                
         } catch (ArrayIndexOutOfBoundsException t) {
               System.out.println("args not enough, please check");
         }
     }
-    filenameS = "Results/Results_"+totalT+"_"+totalY+"_"+contractLength+"_"+totalYears;
-    Expr[] evolvedMethodParameters = new Expr[totalT+totalY];
+    
+    Expr[] evolvedMethodParameters = new Expr[totalNumParams];
     eval = new PredictionEvaluatorTrue2(nRuns, filename, contractLength);
     
     Function evolvedMethod = new Function(Double.TYPE, new Class[0]);
     TreeManager.evolvedMethod = evolvedMethod;
     
     
-    for (int i=0; i<totalT+totalY; i++) {
+    for (int i=0; i<totalNumParams; i++) {
         
         evolvedMethodParameters[i] = new Parameter(i);
     }     
@@ -107,14 +129,26 @@ public class Run
     //terminalSet.add(new Constant(new Double(0.0D), Double.TYPE));
     //terminalSet.add(new Constant(new Double(3.141592653589793D), Double.TYPE));
     
+    //For old data
     //Dynamically adds the number of parameters to be estimated, need to refer to data to input correct values
-    for (int i = 0; i < totalT; i++) {
-        terminalSet.add(new Parameter(i, Double.TYPE, Boolean.valueOf(true), "Rain_t-"+(i+1)));
+    //for (int i = 0; i < totalT; i++) {
+    //    terminalSet.add(new Parameter(i, Double.TYPE, Boolean.valueOf(true), "Rain_t-"+(i+1)));
+    //}
+    //for (int i = 0; i < totalY; i++) {
+    //    terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+(i+1)));
+    //}
+    
+    //For new data have headers read in and name accordingly.
+    FReader read = new FReader();
+    String[] header = read.readHeader("header.txt");
+    for (int i = 0; i < totalNumParams; i++) {
+        terminalSet.add(new Parameter(i, Double.TYPE, Boolean.valueOf(true), header[parameterIndex.get(i)]));
     }
-    for (int i = 0; i < totalY; i++) {
-        terminalSet.add(new Parameter(i+totalT, Double.TYPE, Boolean.valueOf(true), "Year_t-"+(i+1)));
-    }    
+    
    
+    //consider 3 ERC's one big range, 2 smaller ranges between -1 and 1
+    //terminalSet.add(new Constant("ERC", Double.TYPE));
+    //terminalSet.add(new Constant("ERC", Double.TYPE));
     terminalSet.add(new Constant("ERC", Double.TYPE));
     
     double primProb = 0.6D;
@@ -145,6 +179,7 @@ public class Run
     StatisticalSummary.logExperimentSetup(methodSet, terminalSet, maxInitialDepth, maxDepth, primProb, terminalNodeCrossBias, nGens, popSize, tournamentSize, mutProb, xoverProb);  
     
     StatisticalSummary stat = null;
+    filenameS = "Results/Results_"+yrs+"_"+spreadYrs+"_MA"+movingAverage+"_"+contractLength;
     for (int i = 0; i < nRuns; i++)
     {
       System.out.println("========================== Experiment " + i + " ==================================");
