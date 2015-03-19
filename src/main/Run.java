@@ -104,7 +104,7 @@ public class Run
         }
     }
     FReader read = new FReader();
-    header = read.readHeader("Data/header.txt");
+    header = read.readHeader("Data/header.txt");//Getting the features.
     parametersLength = header.length - 9; //take away the 9 parameters that will be calculated within GP
     
     Expr[] evolvedMethodParameters = new Expr[totalNumParams-1];
