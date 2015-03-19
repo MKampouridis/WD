@@ -7,6 +7,8 @@ import java.util.List;
 public class Parameter
   implements Expr
 {
+    public static int useLowerBound = 0;
+    public static int usePredCL = 0;
   private static final long serialVersionUID = 1L;
   int index;
   Class<?> type;
@@ -54,6 +56,18 @@ public class Parameter
   
   public Object eval(Expr[] env)
   {
+      if(terminalFunction != null) {
+          if(terminalFunction.startsWith("PM") && Run.lowerBound == 1) {
+              useLowerBound = 1;
+              if(terminalFunction.endsWith("CL")) {
+                  usePredCL = 1;
+              } else {
+                  //do nothing
+              }
+          } else {
+          //do nothing
+          }
+      }
     return env[this.index].eval(null);
   }
   

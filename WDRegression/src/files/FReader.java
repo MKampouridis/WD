@@ -169,12 +169,46 @@ public class FReader
           e.printStackTrace();
       } 
   }
+  public void readCol2D(String filename, double[][] array, ArrayList<Integer> col){
+      try {
+          BufferedReader reader = new BufferedReader(new FileReader(filename));
+          int rowCounter = 0;
+          String thisLine;
+          reader.readLine();
+          while ((thisLine = reader.readLine()) != null) {
+              String[] cols = thisLine.split(",");
+              for (int i = 0; i < col.size(); i++) {              
+              array[rowCounter][col.get(i)] = Double.parseDouble(cols[i]);
+              }
+              rowCounter++;
+          }
+      }       
+      catch (Exception e) { 
+          e.printStackTrace();
+      } 
+  }
+  public void readCol1D(String filename, double[] array, int col){
+      try {
+          BufferedReader reader = new BufferedReader(new FileReader(filename));
+          int rowCounter = 0;
+          String thisLine;
+          reader.readLine();
+          while ((thisLine = reader.readLine()) != null) {
+              String[] cols = thisLine.split(",");                            
+              array[rowCounter] = Double.parseDouble(cols[col]);              
+              rowCounter++;
+          }
+      }       
+      catch (Exception e) { 
+          e.printStackTrace();
+      } 
+  }
   
   public String[] readHeader(String filename) {
       try {
           BufferedReader reader = new BufferedReader(new FileReader(filename));          
           String thisLine = reader.readLine();
-          String[] cols = thisLine.split(" ");
+          String[] cols = thisLine.split("\t");
           return cols;
       }       
       catch (Exception e) { 

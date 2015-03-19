@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Collection;
 import java.util.Iterator;
+import static main.Run.lowerBound;
 
 /**
  *
@@ -270,16 +271,23 @@ public class TreeManager implements MethodSet{
 	public static Expr getTypedTerminal(Class<?> type, ArrayList<?> termList, int index){
 		//get a random element
                 Object term;
+                
                 if (index == 0) { //Forces children 0 to be a parameter                    
-                    term = termList.get(r.nextInt(termList.size()-1));
+                    term = termList.get(r.nextInt(termList.size()-3));
                 } else { // allows children 1 to either be a parameter or a rnd number
+                    int rand = r.nextInt(termList.size());
                     
-                    term = termList.get(r.nextInt(termList.size()));
-                    if (term.toString().equals("ERC")) { //If ERC is selected then calculate a new random number
-                        term = new Constant((Run.lowerBound + (new Random().nextDouble() * (Run.upperBound - Run.lowerBound)) ), Double.TYPE);
+                    if (rand == termList.size()-3) { //If ERC is selected then calculate a new random number
+                        term = new Constant((Run.lowerLowBound + (new Random().nextDouble() * (Run.lowerUpBound - Run.lowerLowBound)) ), Double.TYPE);
                         //System.out.println(term.toString());
+                    } else if (rand == termList.size()-2) {
+                        term = new Constant((-1 + (new Random().nextDouble() * (1 + 1)) ), Double.TYPE);
+                    } else if (rand == termList.size()-1) {
+                        term = new Constant((Run.upperLowBound + (new Random().nextDouble() * (Run.upperUpBound - Run.upperLowBound)) ), Double.TYPE);
+                    } else {
+                        term = termList.get(rand);
                     }
-                }
+                }  
 
 		if (term instanceof MethodCall) {
 			return new Function((MethodCall) term, new Expr[] {}, type, new Class[] {});
@@ -497,9 +505,13 @@ public class TreeManager implements MethodSet{
             ArrayList<?> termList = (ArrayList<?>)typeManager.typedTerminals.get(type);
             Object term = termList.get(r.nextInt(termList.size()));
             if (term.toString().equals("ERC")) { //If ERC is selected then calculate a new random number
-                        term = new Constant((Run.lowerBound + (new Random().nextDouble() * (Run.upperBound - Run.lowerBound)) ), Double.TYPE);
-                        //System.out.println(term.toString());
-                    }
+                term = new Constant((Run.lowerLowBound + (new Random().nextDouble() * (Run.lowerUpBound - Run.lowerLowBound)) ), Double.TYPE);
+                    //System.out.println(term.toString());
+            } else if (term.toString().equals("ERC2")) {
+                term = new Constant((-1 + (new Random().nextDouble() * (1 + 1)) ), Double.TYPE);
+            } else if (term.toString().equals("ERC3")) {
+                term = new Constant((Run.upperLowBound + (new Random().nextDouble() * (Run.upperUpBound - Run.upperLowBound)) ), Double.TYPE);
+            }
             tNew = ((Expr)term).copy(new HashSet<Object>(), new ArrayList<Object>());
             
             Util.replace(impl, tOld, tNew); //i use replace and not replace2 because we are replacing a leaf
